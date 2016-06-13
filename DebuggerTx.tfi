@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+DebuggerTx instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .sendSignal(sendSignal), 
+    .sendData(sendData), 
+    .tx_done_tick(tx_done_tick), 
+    .wr_uart(wr_uart), 
+    .dataSent(dataSent), 
+    .w_data(w_data)
+    );
+
+

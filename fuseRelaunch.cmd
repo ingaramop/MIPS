@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Tincho/Xilinx/UART/Testbench_1_isim_beh.exe" -prj "C:/Users/Tincho/Xilinx/UART/Testbench_1_beh.prj" "work.Testbench_1" "work.glbl" 

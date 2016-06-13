@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+UART instance_name (
+    .clock(clock), 
+    .reset(reset), 
+    .rx(rx), 
+    .rd_uart(rd_uart), 
+    .tx_done(tx_done), 
+    .t_data(t_data), 
+    .rx_buf_out(rx_buf_out), 
+    .tx(tx)
+    );
+
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Tincho/Xilinx/UART/Testbench_1_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Testbench_1" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/Testbench_1/tx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/dataSent" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dataSent</obj_property>
+      <obj_property name="ObjectShortName">dataSent</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/rx" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/FF_Buf_Interface_Rx_unit/flag" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Baud_Rate_unit/tick" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tick</obj_property>
+      <obj_property name="ObjectShortName">tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/FF_Buf_Interface_Rx_unit/flag" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Test_unit/sendSignal" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sendSignal</obj_property>
+      <obj_property name="ObjectShortName">sendSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/state_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state_reg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/aux_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aux_reg[10:0]</obj_property>
+      <obj_property name="ObjectShortName">aux_reg[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/aux_next" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aux_next[10:0]</obj_property>
+      <obj_property name="ObjectShortName">aux_next[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Test_unit/sendData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">sendData[1759:0]</obj_property>
+      <obj_property name="ObjectShortName">sendData[1759:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/aux_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aux_data[1759:0]</obj_property>
+      <obj_property name="ObjectShortName">aux_data[1759:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Test_unit/rd_uart" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_uart</obj_property>
+      <obj_property name="ObjectShortName">rd_uart</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Tx_unit/tx_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_start</obj_property>
+      <obj_property name="ObjectShortName">tx_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/w_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">w_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">w_data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Tx_unit/tx_done_tick" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_done_tick</obj_property>
+      <obj_property name="ObjectShortName">tx_done_tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/Tx_unit/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench_1/uut/debuggertx_unit/contBytes" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">contBytes[7:0]</obj_property>
+      <obj_property name="ObjectShortName">contBytes[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

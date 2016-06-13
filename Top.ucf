@@ -1,0 +1,9 @@
+
+
+NET "clock" LOC = V10;
+NET "reset" LOC = C9;
+NET "rx" LOC = N17;
+NET "tx" LOC = N18;
+
+# PlanAhead Generated physical constraints 
+

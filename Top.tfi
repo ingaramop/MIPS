@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+Top instance_name (
+    .led(led), 
+    .dataSent(dataSent), 
+    .analiza(analiza)
+    );
+
+

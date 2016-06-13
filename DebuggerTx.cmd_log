@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj UART -o C:/Users/Tincho/Xilinx/UART/DebuggerTx.tfi -lib work C:/Users/Tincho/Xilinx/UART//debugger_TX.v -module DebuggerTx -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
