@@ -49,7 +49,7 @@ always@(posedge clock)
 					begin
 						rd_uart<=0;
 						sendSignal<=0;
-						sendData<=0;
+						//sendData<=0;
 					end
 
 //		sendData [1759:0] <= {220{8'd5}};

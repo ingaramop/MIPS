@@ -1,45 +1,13 @@
 Release 14.7 Drc P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jun 13 18:14:05 2016
+Tue Jun 14 19:44:36 2016
 
 drc -z Top.ncd Top.pcf
 
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[2]_AND_3515_o is sourced by a combinatorial
+   debuggertx_unit/state_reg[1]_PWR_11_o_Mux_51_o is sourced by a combinatorial
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[3]_AND_3513_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[4]_AND_3511_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[5]_AND_3509_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[6]_AND_3507_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[7]_AND_3505_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[0]_AND_3519_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/reset_sendData[1]_AND_3517_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   debuggertx_unit/state_reg[1]_PWR_11_o_Mux_53_o is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-DRC detected 0 errors and 9 warnings.  Please see the previously displayed
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
