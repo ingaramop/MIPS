@@ -1,0 +1,2 @@
+vhdtdtfi -lang verilog -prj UART -o E:/UARTTincho/DebuggerRx_2.tfi -lib work E:/UARTTincho//DebuggerRx_2.v -module DebuggerRx_2 -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lang verilog -prj UART -o E:/UARTTincho/DebuggerRx_2.tfi -lib work E:/UARTTincho//DebuggerRx_2.v -module DebuggerRx_2 -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

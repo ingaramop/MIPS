@@ -47,7 +47,7 @@ UART UART_Unit (
     );
 
 // Instantiate the module
-Test Test_unit (
+DebuggerRx debuggertx_unit (
     .clock(clock),
 	 .reset(reset),	
     .r_data(rx_buf_out), 

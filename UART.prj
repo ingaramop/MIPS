@@ -1,0 +1,5 @@
+verilog work "Tx.v"
+verilog work "Rx.v"
+verilog work "FF_Buf_Interface.v"
+verilog work "Baud_Rate.v"
+verilog work "UART.v"
