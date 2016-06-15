@@ -9,7 +9,8 @@ module DebuggerTx(
 		input tx_busy,
 		output reg wr_uart,
 		output reg dataSent,
-		output reg [7:0] w_data
+		output reg [7:0] w_data,
+		output reg [1:0] state_reg_tx
     );
 
 localparam frameSize = 1760;
@@ -20,7 +21,7 @@ localparam [1:0]
 		closing 		= 2'b11,
 		sending		= 2'b00;
 		
-		reg [1:0] state_reg, state_next;
+		reg [1:0] state_next;
 		reg [10:0] aux_reg, aux_next;
 		//reg [1759:0] aux_data;
 		reg dataSent_next;
@@ -30,7 +31,7 @@ localparam [1:0]
 
 always @(posedge clk, posedge reset)
 		if (reset) begin
-			state_reg 		= idle;
+			state_reg_tx		= idle;
 			aux_reg			= frameSize-1;
 			dataSent			= 1'b1;
 			//aux_data 		= sendData;
@@ -38,7 +39,7 @@ always @(posedge clk, posedge reset)
 			contBytes		= 8'b0;
 		end
 		else begin
-			state_reg 		= state_next;
+			state_reg_tx		= state_next;
 			aux_reg 			= aux_next;
 			dataSent			= dataSent_next;
 			//block_data		= block_data_next;
@@ -49,20 +50,20 @@ always @(posedge clk, posedge reset)
 		
 always @(*) 
 		begin
-			state_next 		= state_reg;
+			state_next 		= state_reg_tx;
 			aux_next 		= aux_reg;
 			wr_uart		 	= 1'b0 ;
 			dataSent_next 	= dataSent;
 			contBytes_next	= contBytes;
 			//block_data_next= block_data;
-			case (state_reg)
+			case (state_reg_tx)
 				idle:
 					begin
 						//block_data_next= 1'b0;
-						dataSent_next 	= 1'b0;
+						dataSent_next 	= 1'b1;
 						wr_uart		 	= 1'b0 ;
 						w_data			= 8'b0;
-						state_next		= (sendSignal) ?  sending : state_reg;
+						state_next		= (sendSignal) ?  sending : state_reg_tx;
 					end
 				firstByte:
 					begin

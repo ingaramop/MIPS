@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: Top.prj
 
@@ -237,26 +237,43 @@ Unit <Tx> synthesized.
 
 Synthesizing Unit <DebuggerRx>.
     Related source file is "E:\UARTTincho\DebuggerRx.v".
-    Register <rd_uart> equivalent to <sendSignal> has been removed
     Found 1-bit register for signal <sendSignal>.
     Found 1760-bit register for signal <sendData>.
-    Found 8-bit adder for signal <r_data[7]_GND_7_o_add_1_OUT> created at line 44.
+    Found 3-bit register for signal <current_state>.
+    Found 1-bit register for signal <rd_uart>.
+    Found finite state machine <FSM_2> for signal <current_state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clock (falling_edge)                           |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <r_data[7]_GND_7_o_add_7_OUT> created at line 76.
+    Found 8-bit adder for signal <r_data[7]_GND_7_o_add_8_OUT> created at line 83.
+    Found 8-bit adder for signal <r_data[7]_GND_7_o_add_9_OUT> created at line 90.
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred 1761 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred 1762 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
 Unit <DebuggerRx> synthesized.
 
 Synthesizing Unit <DebuggerTx>.
     Related source file is "E:\UARTTincho\debugger_TX.v".
     Found 1-bit register for signal <dataSent>.
     Found 11-bit register for signal <aux_reg>.
-    Found 2-bit register for signal <state_reg>.
-    Found finite state machine <FSM_2> for signal <state_reg>.
+    Found 2-bit register for signal <state_reg_tx>.
+    Found finite state machine <FSM_3> for signal <state_reg_tx>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
     | Inputs             | 3                                              |
-    | Outputs            | 3                                              |
+    | Outputs            | 2                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | reset (positive)                               |
     | Reset type         | asynchronous                                   |
@@ -264,45 +281,45 @@ Synthesizing Unit <DebuggerTx>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 11-bit subtractor for signal <aux_reg[10]_GND_8_o_sub_21_OUT> created at line 94.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_6_OUT<10:0>> created at line 76.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_8_OUT<10:0>> created at line 77.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_10_OUT<10:0>> created at line 78.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_12_OUT<10:0>> created at line 79.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_14_OUT<10:0>> created at line 80.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_16_OUT<10:0>> created at line 81.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_18_OUT<10:0>> created at line 82.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_23_OUT<10:0>> created at line 96.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_25_OUT<10:0>> created at line 97.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_27_OUT<10:0>> created at line 98.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_29_OUT<10:0>> created at line 99.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_31_OUT<10:0>> created at line 100.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_33_OUT<10:0>> created at line 101.
-    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_35_OUT<10:0>> created at line 102.
-    Found 1-bit 1760-to-1 multiplexer for signal <aux_reg[10]_X_8_o_Mux_4_o> created at line 75.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_6_o> created at line 76.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_8_o> created at line 77.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_10_o> created at line 78.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_12_o> created at line 79.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_14_o> created at line 80.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_16_o> created at line 81.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_18_o> created at line 82.
-    Found 1-bit 1760-to-1 multiplexer for signal <aux_reg[10]_X_8_o_Mux_21_o> created at line 95.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_23_o> created at line 96.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_25_o> created at line 97.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_27_o> created at line 98.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_29_o> created at line 99.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_31_o> created at line 100.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_33_o> created at line 101.
-    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_35_o> created at line 102.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_50_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_52_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_54_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_56_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_58_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_60_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_62_o> created at line 58.
-    Found 1-bit 4-to-1 multiplexer for signal <state_reg[1]_GND_8_o_Mux_64_o> created at line 58.
+    Found 11-bit subtractor for signal <aux_reg[10]_GND_8_o_sub_21_OUT> created at line 95.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_6_OUT<10:0>> created at line 77.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_8_OUT<10:0>> created at line 78.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_10_OUT<10:0>> created at line 79.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_12_OUT<10:0>> created at line 80.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_14_OUT<10:0>> created at line 81.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_16_OUT<10:0>> created at line 82.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_18_OUT<10:0>> created at line 83.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_23_OUT<10:0>> created at line 97.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_25_OUT<10:0>> created at line 98.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_27_OUT<10:0>> created at line 99.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_29_OUT<10:0>> created at line 100.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_31_OUT<10:0>> created at line 101.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_33_OUT<10:0>> created at line 102.
+    Found 11-bit subtractor for signal <GND_8_o_GND_8_o_sub_35_OUT<10:0>> created at line 103.
+    Found 1-bit 1760-to-1 multiplexer for signal <aux_reg[10]_X_8_o_Mux_4_o> created at line 76.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_6_o> created at line 77.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_8_o> created at line 78.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_10_o> created at line 79.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_12_o> created at line 80.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_14_o> created at line 81.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_16_o> created at line 82.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_18_o> created at line 83.
+    Found 1-bit 1760-to-1 multiplexer for signal <aux_reg[10]_X_8_o_Mux_21_o> created at line 96.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_23_o> created at line 97.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_25_o> created at line 98.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_27_o> created at line 99.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_29_o> created at line 100.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_31_o> created at line 101.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_33_o> created at line 102.
+    Found 1-bit 1760-to-1 multiplexer for signal <GND_8_o_X_8_o_Mux_35_o> created at line 103.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_49_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_51_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_53_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_55_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_57_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_59_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_61_o> created at line 59.
+    Found 1-bit 4-to-1 multiplexer for signal <state_reg_tx[1]_GND_8_o_Mux_63_o> created at line 59.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -311,7 +328,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <w_data<3>>. Latches may be gener
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <w_data<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 11-bit comparator greater for signal <aux_reg[10]_GND_8_o_LessThan_37_o> created at line 103
+    Found 11-bit comparator greater for signal <aux_reg[10]_GND_8_o_LessThan_37_o> created at line 104
     Summary:
 	inferred  15 Adder/Subtractor(s).
 	inferred  12 D-type flip-flop(s).
@@ -325,14 +342,14 @@ Unit <DebuggerTx> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 21
+# Adders/Subtractors                                   : 23
  11-bit subtractor                                     : 15
  3-bit adder                                           : 2
  4-bit adder                                           : 2
- 8-bit adder                                           : 1
+ 8-bit adder                                           : 3
  9-bit adder                                           : 1
-# Registers                                            : 17
- 1-bit register                                        : 6
+# Registers                                            : 18
+ 1-bit register                                        : 7
  11-bit register                                       : 1
  1760-bit register                                     : 1
  3-bit register                                        : 2
@@ -352,7 +369,7 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 12
  4-bit 4-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 1
-# FSMs                                                 : 3
+# FSMs                                                 : 4
 
 =========================================================================
 
@@ -360,38 +377,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-INFO:Xst:2261 - The FF/Latch <sendData_4> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_12> <sendData_20> <sendData_28> <sendData_36> <sendData_44> <sendData_52> <sendData_60> <sendData_68> <sendData_76> <sendData_84> <sendData_92> <sendData_100> <sendData_108> <sendData_116> <sendData_124> <sendData_132> <sendData_140> <sendData_148> <sendData_156> <sendData_164> <sendData_172> <sendData_180> <sendData_188> <sendData_196> <sendData_204> <sendData_212> <sendData_220> <sendData_228> <sendData_236> <sendData_244> <sendData_252> <sendData_260> <sendData_268> <sendData_276> <sendData_284> <sendData_292> <sendData_300> <sendData_308> <sendData_316> <sendData_324> <sendData_332> <sendData_340> <sendData_348> <sendData_356> <sendData_364> <sendData_372> <sendData_380> <sendData_388> <sendData_396> <sendData_404> <sendData_412> <sendData_420> <sendData_428> <sendData_436> <sendData_444> <sendData_452> <sendData_460> <sendData_468> <sendData_476>
-   <sendData_484> <sendData_492> <sendData_500> <sendData_508> <sendData_516> <sendData_524> <sendData_532> <sendData_540> <sendData_548> <sendData_556> <sendData_564> <sendData_572> <sendData_580> <sendData_588> <sendData_596> <sendData_604> <sendData_612> <sendData_620> <sendData_628> <sendData_636> <sendData_644> <sendData_652> <sendData_660> <sendData_668> <sendData_676> <sendData_684> <sendData_692> <sendData_700> <sendData_708> <sendData_716> <sendData_724> <sendData_732> <sendData_740> <sendData_748> <sendData_756> <sendData_764> <sendData_772> <sendData_780> <sendData_788> <sendData_796> <sendData_804> <sendData_812> <sendData_820> <sendData_828> <sendData_836> <sendData_844> <sendData_852> <sendData_860> <sendData_868> <sendData_876> <sendData_884> <sendData_892> <sendData_900> <sendData_908> <sendData_916> <sendData_924> <sendData_932> <sendData_940> <sendData_948> <sendData_956> <sendData_964> <sendData_972> <sendData_980> <sendData_988> <sendData_996> <sendData_1004> <sendData_1012>
-   <sendData_1020> <sendData_1028> <sendData_1036> <sendData_1044> <sendData_1052> <sendData_1060> <sendData_1068> <sendData_1076> <sendData_1084> <sendData_1092> <sendData_1100> <sendData_1108> <sendData_1116> <sendData_1124> <sendData_1132> <sendData_1140> <sendData_1148> <sendData_1156> <sendData_1164> <sendData_1172> <sendData_1180> <sendData_1188> <sendData_1196> <sendData_1204> <sendData_1212> <sendData_1220> <sendData_1228> <sendData_1236> <sendData_1244> <sendData_1252> <sendData_1260> <sendData_1268> <sendData_1276> <sendData_1284> <sendData_1292> <sendData_1300> <sendData_1308> <sendData_1316> <sendData_1324> <sendData_1332> <sendData_1340> <sendData_1348> <sendData_1356> <sendData_1364> <sendData_1372> <sendData_1380> <sendData_1388> <sendData_1396> <sendData_1404> <sendData_1412> <sendData_1420> <sendData_1428> <sendData_1436> <sendData_1444> <sendData_1452> <sendData_1460> <sendData_1468> <sendData_1476> <sendData_1484> <sendData_1492> <sendData_1500> <sendData_1508> <sendData_1516>
-   <sendData_1524> <sendData_1532> <sendData_1540> <sendData_1548> <sendData_1556> <sendData_1564> <sendData_1572> <sendData_1580> <sendData_1588> <sendData_1596> <sendData_1604> <sendData_1612> <sendData_1620> <sendData_1628> <sendData_1636> <sendData_1644> <sendData_1652> <sendData_1660> <sendData_1668> <sendData_1676> <sendData_1684> <sendData_1692> <sendData_1700> <sendData_1708> <sendData_1716> <sendData_1724> <sendData_1732> <sendData_1740> <sendData_1748> <sendData_1756> 
-INFO:Xst:2261 - The FF/Latch <sendData_3> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_11> <sendData_19> <sendData_27> <sendData_35> <sendData_43> <sendData_51> <sendData_59> <sendData_67> <sendData_75> <sendData_83> <sendData_91> <sendData_99> <sendData_107> <sendData_115> <sendData_123> <sendData_131> <sendData_139> <sendData_147> <sendData_155> <sendData_163> <sendData_171> <sendData_179> <sendData_187> <sendData_195> <sendData_203> <sendData_211> <sendData_219> <sendData_227> <sendData_235> <sendData_243> <sendData_251> <sendData_259> <sendData_267> <sendData_275> <sendData_283> <sendData_291> <sendData_299> <sendData_307> <sendData_315> <sendData_323> <sendData_331> <sendData_339> <sendData_347> <sendData_355> <sendData_363> <sendData_371> <sendData_379> <sendData_387> <sendData_395> <sendData_403> <sendData_411> <sendData_419> <sendData_427> <sendData_435> <sendData_443> <sendData_451> <sendData_459> <sendData_467> <sendData_475>
-   <sendData_483> <sendData_491> <sendData_499> <sendData_507> <sendData_515> <sendData_523> <sendData_531> <sendData_539> <sendData_547> <sendData_555> <sendData_563> <sendData_571> <sendData_579> <sendData_587> <sendData_595> <sendData_603> <sendData_611> <sendData_619> <sendData_627> <sendData_635> <sendData_643> <sendData_651> <sendData_659> <sendData_667> <sendData_675> <sendData_683> <sendData_691> <sendData_699> <sendData_707> <sendData_715> <sendData_723> <sendData_731> <sendData_739> <sendData_747> <sendData_755> <sendData_763> <sendData_771> <sendData_779> <sendData_787> <sendData_795> <sendData_803> <sendData_811> <sendData_819> <sendData_827> <sendData_835> <sendData_843> <sendData_851> <sendData_859> <sendData_867> <sendData_875> <sendData_883> <sendData_891> <sendData_899> <sendData_907> <sendData_915> <sendData_923> <sendData_931> <sendData_939> <sendData_947> <sendData_955> <sendData_963> <sendData_971> <sendData_979> <sendData_987> <sendData_995> <sendData_1003> <sendData_1011>
-   <sendData_1019> <sendData_1027> <sendData_1035> <sendData_1043> <sendData_1051> <sendData_1059> <sendData_1067> <sendData_1075> <sendData_1083> <sendData_1091> <sendData_1099> <sendData_1107> <sendData_1115> <sendData_1123> <sendData_1131> <sendData_1139> <sendData_1147> <sendData_1155> <sendData_1163> <sendData_1171> <sendData_1179> <sendData_1187> <sendData_1195> <sendData_1203> <sendData_1211> <sendData_1219> <sendData_1227> <sendData_1235> <sendData_1243> <sendData_1251> <sendData_1259> <sendData_1267> <sendData_1275> <sendData_1283> <sendData_1291> <sendData_1299> <sendData_1307> <sendData_1315> <sendData_1323> <sendData_1331> <sendData_1339> <sendData_1347> <sendData_1355> <sendData_1363> <sendData_1371> <sendData_1379> <sendData_1387> <sendData_1395> <sendData_1403> <sendData_1411> <sendData_1419> <sendData_1427> <sendData_1435> <sendData_1443> <sendData_1451> <sendData_1459> <sendData_1467> <sendData_1475> <sendData_1483> <sendData_1491> <sendData_1499> <sendData_1507> <sendData_1515>
-   <sendData_1523> <sendData_1531> <sendData_1539> <sendData_1547> <sendData_1555> <sendData_1563> <sendData_1571> <sendData_1579> <sendData_1587> <sendData_1595> <sendData_1603> <sendData_1611> <sendData_1619> <sendData_1627> <sendData_1635> <sendData_1643> <sendData_1651> <sendData_1659> <sendData_1667> <sendData_1675> <sendData_1683> <sendData_1691> <sendData_1699> <sendData_1707> <sendData_1715> <sendData_1723> <sendData_1731> <sendData_1739> <sendData_1747> <sendData_1755> 
-INFO:Xst:2261 - The FF/Latch <sendData_7> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_15> <sendData_23> <sendData_31> <sendData_39> <sendData_47> <sendData_55> <sendData_63> <sendData_71> <sendData_79> <sendData_87> <sendData_95> <sendData_103> <sendData_111> <sendData_119> <sendData_127> <sendData_135> <sendData_143> <sendData_151> <sendData_159> <sendData_167> <sendData_175> <sendData_183> <sendData_191> <sendData_199> <sendData_207> <sendData_215> <sendData_223> <sendData_231> <sendData_239> <sendData_247> <sendData_255> <sendData_263> <sendData_271> <sendData_279> <sendData_287> <sendData_295> <sendData_303> <sendData_311> <sendData_319> <sendData_327> <sendData_335> <sendData_343> <sendData_351> <sendData_359> <sendData_367> <sendData_375> <sendData_383> <sendData_391> <sendData_399> <sendData_407> <sendData_415> <sendData_423> <sendData_431> <sendData_439> <sendData_447> <sendData_455> <sendData_463> <sendData_471> <sendData_479>
-   <sendData_487> <sendData_495> <sendData_503> <sendData_511> <sendData_519> <sendData_527> <sendData_535> <sendData_543> <sendData_551> <sendData_559> <sendData_567> <sendData_575> <sendData_583> <sendData_591> <sendData_599> <sendData_607> <sendData_615> <sendData_623> <sendData_631> <sendData_639> <sendData_647> <sendData_655> <sendData_663> <sendData_671> <sendData_679> <sendData_687> <sendData_695> <sendData_703> <sendData_711> <sendData_719> <sendData_727> <sendData_735> <sendData_743> <sendData_751> <sendData_759> <sendData_767> <sendData_775> <sendData_783> <sendData_791> <sendData_799> <sendData_807> <sendData_815> <sendData_823> <sendData_831> <sendData_839> <sendData_847> <sendData_855> <sendData_863> <sendData_871> <sendData_879> <sendData_887> <sendData_895> <sendData_903> <sendData_911> <sendData_919> <sendData_927> <sendData_935> <sendData_943> <sendData_951> <sendData_959> <sendData_967> <sendData_975> <sendData_983> <sendData_991> <sendData_999> <sendData_1007> <sendData_1015>
-   <sendData_1023> <sendData_1031> <sendData_1039> <sendData_1047> <sendData_1055> <sendData_1063> <sendData_1071> <sendData_1079> <sendData_1087> <sendData_1095> <sendData_1103> <sendData_1111> <sendData_1119> <sendData_1127> <sendData_1135> <sendData_1143> <sendData_1151> <sendData_1159> <sendData_1167> <sendData_1175> <sendData_1183> <sendData_1191> <sendData_1199> <sendData_1207> <sendData_1215> <sendData_1223> <sendData_1231> <sendData_1239> <sendData_1247> <sendData_1255> <sendData_1263> <sendData_1271> <sendData_1279> <sendData_1287> <sendData_1295> <sendData_1303> <sendData_1311> <sendData_1319> <sendData_1327> <sendData_1335> <sendData_1343> <sendData_1351> <sendData_1359> <sendData_1367> <sendData_1375> <sendData_1383> <sendData_1391> <sendData_1399> <sendData_1407> <sendData_1415> <sendData_1423> <sendData_1431> <sendData_1439> <sendData_1447> <sendData_1455> <sendData_1463> <sendData_1471> <sendData_1479> <sendData_1487> <sendData_1495> <sendData_1503> <sendData_1511> <sendData_1519>
-   <sendData_1527> <sendData_1535> <sendData_1543> <sendData_1551> <sendData_1559> <sendData_1567> <sendData_1575> <sendData_1583> <sendData_1591> <sendData_1599> <sendData_1607> <sendData_1615> <sendData_1623> <sendData_1631> <sendData_1639> <sendData_1647> <sendData_1655> <sendData_1663> <sendData_1671> <sendData_1679> <sendData_1687> <sendData_1695> <sendData_1703> <sendData_1711> <sendData_1719> <sendData_1727> <sendData_1735> <sendData_1743> <sendData_1751> <sendData_1759> 
-INFO:Xst:2261 - The FF/Latch <sendData_2> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_10> <sendData_18> <sendData_26> <sendData_34> <sendData_42> <sendData_50> <sendData_58> <sendData_66> <sendData_74> <sendData_82> <sendData_90> <sendData_98> <sendData_106> <sendData_114> <sendData_122> <sendData_130> <sendData_138> <sendData_146> <sendData_154> <sendData_162> <sendData_170> <sendData_178> <sendData_186> <sendData_194> <sendData_202> <sendData_210> <sendData_218> <sendData_226> <sendData_234> <sendData_242> <sendData_250> <sendData_258> <sendData_266> <sendData_274> <sendData_282> <sendData_290> <sendData_298> <sendData_306> <sendData_314> <sendData_322> <sendData_330> <sendData_338> <sendData_346> <sendData_354> <sendData_362> <sendData_370> <sendData_378> <sendData_386> <sendData_394> <sendData_402> <sendData_410> <sendData_418> <sendData_426> <sendData_434> <sendData_442> <sendData_450> <sendData_458> <sendData_466> <sendData_474>
-   <sendData_482> <sendData_490> <sendData_498> <sendData_506> <sendData_514> <sendData_522> <sendData_530> <sendData_538> <sendData_546> <sendData_554> <sendData_562> <sendData_570> <sendData_578> <sendData_586> <sendData_594> <sendData_602> <sendData_610> <sendData_618> <sendData_626> <sendData_634> <sendData_642> <sendData_650> <sendData_658> <sendData_666> <sendData_674> <sendData_682> <sendData_690> <sendData_698> <sendData_706> <sendData_714> <sendData_722> <sendData_730> <sendData_738> <sendData_746> <sendData_754> <sendData_762> <sendData_770> <sendData_778> <sendData_786> <sendData_794> <sendData_802> <sendData_810> <sendData_818> <sendData_826> <sendData_834> <sendData_842> <sendData_850> <sendData_858> <sendData_866> <sendData_874> <sendData_882> <sendData_890> <sendData_898> <sendData_906> <sendData_914> <sendData_922> <sendData_930> <sendData_938> <sendData_946> <sendData_954> <sendData_962> <sendData_970> <sendData_978> <sendData_986> <sendData_994> <sendData_1002> <sendData_1010>
-   <sendData_1018> <sendData_1026> <sendData_1034> <sendData_1042> <sendData_1050> <sendData_1058> <sendData_1066> <sendData_1074> <sendData_1082> <sendData_1090> <sendData_1098> <sendData_1106> <sendData_1114> <sendData_1122> <sendData_1130> <sendData_1138> <sendData_1146> <sendData_1154> <sendData_1162> <sendData_1170> <sendData_1178> <sendData_1186> <sendData_1194> <sendData_1202> <sendData_1210> <sendData_1218> <sendData_1226> <sendData_1234> <sendData_1242> <sendData_1250> <sendData_1258> <sendData_1266> <sendData_1274> <sendData_1282> <sendData_1290> <sendData_1298> <sendData_1306> <sendData_1314> <sendData_1322> <sendData_1330> <sendData_1338> <sendData_1346> <sendData_1354> <sendData_1362> <sendData_1370> <sendData_1378> <sendData_1386> <sendData_1394> <sendData_1402> <sendData_1410> <sendData_1418> <sendData_1426> <sendData_1434> <sendData_1442> <sendData_1450> <sendData_1458> <sendData_1466> <sendData_1474> <sendData_1482> <sendData_1490> <sendData_1498> <sendData_1506> <sendData_1514>
-   <sendData_1522> <sendData_1530> <sendData_1538> <sendData_1546> <sendData_1554> <sendData_1562> <sendData_1570> <sendData_1578> <sendData_1586> <sendData_1594> <sendData_1602> <sendData_1610> <sendData_1618> <sendData_1626> <sendData_1634> <sendData_1642> <sendData_1650> <sendData_1658> <sendData_1666> <sendData_1674> <sendData_1682> <sendData_1690> <sendData_1698> <sendData_1706> <sendData_1714> <sendData_1722> <sendData_1730> <sendData_1738> <sendData_1746> <sendData_1754> 
-INFO:Xst:2261 - The FF/Latch <sendData_6> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_14> <sendData_22> <sendData_30> <sendData_38> <sendData_46> <sendData_54> <sendData_62> <sendData_70> <sendData_78> <sendData_86> <sendData_94> <sendData_102> <sendData_110> <sendData_118> <sendData_126> <sendData_134> <sendData_142> <sendData_150> <sendData_158> <sendData_166> <sendData_174> <sendData_182> <sendData_190> <sendData_198> <sendData_206> <sendData_214> <sendData_222> <sendData_230> <sendData_238> <sendData_246> <sendData_254> <sendData_262> <sendData_270> <sendData_278> <sendData_286> <sendData_294> <sendData_302> <sendData_310> <sendData_318> <sendData_326> <sendData_334> <sendData_342> <sendData_350> <sendData_358> <sendData_366> <sendData_374> <sendData_382> <sendData_390> <sendData_398> <sendData_406> <sendData_414> <sendData_422> <sendData_430> <sendData_438> <sendData_446> <sendData_454> <sendData_462> <sendData_470> <sendData_478>
-   <sendData_486> <sendData_494> <sendData_502> <sendData_510> <sendData_518> <sendData_526> <sendData_534> <sendData_542> <sendData_550> <sendData_558> <sendData_566> <sendData_574> <sendData_582> <sendData_590> <sendData_598> <sendData_606> <sendData_614> <sendData_622> <sendData_630> <sendData_638> <sendData_646> <sendData_654> <sendData_662> <sendData_670> <sendData_678> <sendData_686> <sendData_694> <sendData_702> <sendData_710> <sendData_718> <sendData_726> <sendData_734> <sendData_742> <sendData_750> <sendData_758> <sendData_766> <sendData_774> <sendData_782> <sendData_790> <sendData_798> <sendData_806> <sendData_814> <sendData_822> <sendData_830> <sendData_838> <sendData_846> <sendData_854> <sendData_862> <sendData_870> <sendData_878> <sendData_886> <sendData_894> <sendData_902> <sendData_910> <sendData_918> <sendData_926> <sendData_934> <sendData_942> <sendData_950> <sendData_958> <sendData_966> <sendData_974> <sendData_982> <sendData_990> <sendData_998> <sendData_1006> <sendData_1014>
-   <sendData_1022> <sendData_1030> <sendData_1038> <sendData_1046> <sendData_1054> <sendData_1062> <sendData_1070> <sendData_1078> <sendData_1086> <sendData_1094> <sendData_1102> <sendData_1110> <sendData_1118> <sendData_1126> <sendData_1134> <sendData_1142> <sendData_1150> <sendData_1158> <sendData_1166> <sendData_1174> <sendData_1182> <sendData_1190> <sendData_1198> <sendData_1206> <sendData_1214> <sendData_1222> <sendData_1230> <sendData_1238> <sendData_1246> <sendData_1254> <sendData_1262> <sendData_1270> <sendData_1278> <sendData_1286> <sendData_1294> <sendData_1302> <sendData_1310> <sendData_1318> <sendData_1326> <sendData_1334> <sendData_1342> <sendData_1350> <sendData_1358> <sendData_1366> <sendData_1374> <sendData_1382> <sendData_1390> <sendData_1398> <sendData_1406> <sendData_1414> <sendData_1422> <sendData_1430> <sendData_1438> <sendData_1446> <sendData_1454> <sendData_1462> <sendData_1470> <sendData_1478> <sendData_1486> <sendData_1494> <sendData_1502> <sendData_1510> <sendData_1518>
-   <sendData_1526> <sendData_1534> <sendData_1542> <sendData_1550> <sendData_1558> <sendData_1566> <sendData_1574> <sendData_1582> <sendData_1590> <sendData_1598> <sendData_1606> <sendData_1614> <sendData_1622> <sendData_1630> <sendData_1638> <sendData_1646> <sendData_1654> <sendData_1662> <sendData_1670> <sendData_1678> <sendData_1686> <sendData_1694> <sendData_1702> <sendData_1710> <sendData_1718> <sendData_1726> <sendData_1734> <sendData_1742> <sendData_1750> <sendData_1758> 
-INFO:Xst:2261 - The FF/Latch <sendData_1> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_9> <sendData_17> <sendData_25> <sendData_33> <sendData_41> <sendData_49> <sendData_57> <sendData_65> <sendData_73> <sendData_81> <sendData_89> <sendData_97> <sendData_105> <sendData_113> <sendData_121> <sendData_129> <sendData_137> <sendData_145> <sendData_153> <sendData_161> <sendData_169> <sendData_177> <sendData_185> <sendData_193> <sendData_201> <sendData_209> <sendData_217> <sendData_225> <sendData_233> <sendData_241> <sendData_249> <sendData_257> <sendData_265> <sendData_273> <sendData_281> <sendData_289> <sendData_297> <sendData_305> <sendData_313> <sendData_321> <sendData_329> <sendData_337> <sendData_345> <sendData_353> <sendData_361> <sendData_369> <sendData_377> <sendData_385> <sendData_393> <sendData_401> <sendData_409> <sendData_417> <sendData_425> <sendData_433> <sendData_441> <sendData_449> <sendData_457> <sendData_465> <sendData_473>
-   <sendData_481> <sendData_489> <sendData_497> <sendData_505> <sendData_513> <sendData_521> <sendData_529> <sendData_537> <sendData_545> <sendData_553> <sendData_561> <sendData_569> <sendData_577> <sendData_585> <sendData_593> <sendData_601> <sendData_609> <sendData_617> <sendData_625> <sendData_633> <sendData_641> <sendData_649> <sendData_657> <sendData_665> <sendData_673> <sendData_681> <sendData_689> <sendData_697> <sendData_705> <sendData_713> <sendData_721> <sendData_729> <sendData_737> <sendData_745> <sendData_753> <sendData_761> <sendData_769> <sendData_777> <sendData_785> <sendData_793> <sendData_801> <sendData_809> <sendData_817> <sendData_825> <sendData_833> <sendData_841> <sendData_849> <sendData_857> <sendData_865> <sendData_873> <sendData_881> <sendData_889> <sendData_897> <sendData_905> <sendData_913> <sendData_921> <sendData_929> <sendData_937> <sendData_945> <sendData_953> <sendData_961> <sendData_969> <sendData_977> <sendData_985> <sendData_993> <sendData_1001> <sendData_1009>
-   <sendData_1017> <sendData_1025> <sendData_1033> <sendData_1041> <sendData_1049> <sendData_1057> <sendData_1065> <sendData_1073> <sendData_1081> <sendData_1089> <sendData_1097> <sendData_1105> <sendData_1113> <sendData_1121> <sendData_1129> <sendData_1137> <sendData_1145> <sendData_1153> <sendData_1161> <sendData_1169> <sendData_1177> <sendData_1185> <sendData_1193> <sendData_1201> <sendData_1209> <sendData_1217> <sendData_1225> <sendData_1233> <sendData_1241> <sendData_1249> <sendData_1257> <sendData_1265> <sendData_1273> <sendData_1281> <sendData_1289> <sendData_1297> <sendData_1305> <sendData_1313> <sendData_1321> <sendData_1329> <sendData_1337> <sendData_1345> <sendData_1353> <sendData_1361> <sendData_1369> <sendData_1377> <sendData_1385> <sendData_1393> <sendData_1401> <sendData_1409> <sendData_1417> <sendData_1425> <sendData_1433> <sendData_1441> <sendData_1449> <sendData_1457> <sendData_1465> <sendData_1473> <sendData_1481> <sendData_1489> <sendData_1497> <sendData_1505> <sendData_1513>
-   <sendData_1521> <sendData_1529> <sendData_1537> <sendData_1545> <sendData_1553> <sendData_1561> <sendData_1569> <sendData_1577> <sendData_1585> <sendData_1593> <sendData_1601> <sendData_1609> <sendData_1617> <sendData_1625> <sendData_1633> <sendData_1641> <sendData_1649> <sendData_1657> <sendData_1665> <sendData_1673> <sendData_1681> <sendData_1689> <sendData_1697> <sendData_1705> <sendData_1713> <sendData_1721> <sendData_1729> <sendData_1737> <sendData_1745> <sendData_1753> 
-INFO:Xst:2261 - The FF/Latch <sendData_5> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_13> <sendData_21> <sendData_29> <sendData_37> <sendData_45> <sendData_53> <sendData_61> <sendData_69> <sendData_77> <sendData_85> <sendData_93> <sendData_101> <sendData_109> <sendData_117> <sendData_125> <sendData_133> <sendData_141> <sendData_149> <sendData_157> <sendData_165> <sendData_173> <sendData_181> <sendData_189> <sendData_197> <sendData_205> <sendData_213> <sendData_221> <sendData_229> <sendData_237> <sendData_245> <sendData_253> <sendData_261> <sendData_269> <sendData_277> <sendData_285> <sendData_293> <sendData_301> <sendData_309> <sendData_317> <sendData_325> <sendData_333> <sendData_341> <sendData_349> <sendData_357> <sendData_365> <sendData_373> <sendData_381> <sendData_389> <sendData_397> <sendData_405> <sendData_413> <sendData_421> <sendData_429> <sendData_437> <sendData_445> <sendData_453> <sendData_461> <sendData_469> <sendData_477>
-   <sendData_485> <sendData_493> <sendData_501> <sendData_509> <sendData_517> <sendData_525> <sendData_533> <sendData_541> <sendData_549> <sendData_557> <sendData_565> <sendData_573> <sendData_581> <sendData_589> <sendData_597> <sendData_605> <sendData_613> <sendData_621> <sendData_629> <sendData_637> <sendData_645> <sendData_653> <sendData_661> <sendData_669> <sendData_677> <sendData_685> <sendData_693> <sendData_701> <sendData_709> <sendData_717> <sendData_725> <sendData_733> <sendData_741> <sendData_749> <sendData_757> <sendData_765> <sendData_773> <sendData_781> <sendData_789> <sendData_797> <sendData_805> <sendData_813> <sendData_821> <sendData_829> <sendData_837> <sendData_845> <sendData_853> <sendData_861> <sendData_869> <sendData_877> <sendData_885> <sendData_893> <sendData_901> <sendData_909> <sendData_917> <sendData_925> <sendData_933> <sendData_941> <sendData_949> <sendData_957> <sendData_965> <sendData_973> <sendData_981> <sendData_989> <sendData_997> <sendData_1005> <sendData_1013>
-   <sendData_1021> <sendData_1029> <sendData_1037> <sendData_1045> <sendData_1053> <sendData_1061> <sendData_1069> <sendData_1077> <sendData_1085> <sendData_1093> <sendData_1101> <sendData_1109> <sendData_1117> <sendData_1125> <sendData_1133> <sendData_1141> <sendData_1149> <sendData_1157> <sendData_1165> <sendData_1173> <sendData_1181> <sendData_1189> <sendData_1197> <sendData_1205> <sendData_1213> <sendData_1221> <sendData_1229> <sendData_1237> <sendData_1245> <sendData_1253> <sendData_1261> <sendData_1269> <sendData_1277> <sendData_1285> <sendData_1293> <sendData_1301> <sendData_1309> <sendData_1317> <sendData_1325> <sendData_1333> <sendData_1341> <sendData_1349> <sendData_1357> <sendData_1365> <sendData_1373> <sendData_1381> <sendData_1389> <sendData_1397> <sendData_1405> <sendData_1413> <sendData_1421> <sendData_1429> <sendData_1437> <sendData_1445> <sendData_1453> <sendData_1461> <sendData_1469> <sendData_1477> <sendData_1485> <sendData_1493> <sendData_1501> <sendData_1509> <sendData_1517>
-   <sendData_1525> <sendData_1533> <sendData_1541> <sendData_1549> <sendData_1557> <sendData_1565> <sendData_1573> <sendData_1581> <sendData_1589> <sendData_1597> <sendData_1605> <sendData_1613> <sendData_1621> <sendData_1629> <sendData_1637> <sendData_1645> <sendData_1653> <sendData_1661> <sendData_1669> <sendData_1677> <sendData_1685> <sendData_1693> <sendData_1701> <sendData_1709> <sendData_1717> <sendData_1725> <sendData_1733> <sendData_1741> <sendData_1749> <sendData_1757> 
-INFO:Xst:2261 - The FF/Latch <sendData_0> in Unit <debuggerrx_unit> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_8> <sendData_16> <sendData_24> <sendData_32> <sendData_40> <sendData_48> <sendData_56> <sendData_64> <sendData_72> <sendData_80> <sendData_88> <sendData_96> <sendData_104> <sendData_112> <sendData_120> <sendData_128> <sendData_136> <sendData_144> <sendData_152> <sendData_160> <sendData_168> <sendData_176> <sendData_184> <sendData_192> <sendData_200> <sendData_208> <sendData_216> <sendData_224> <sendData_232> <sendData_240> <sendData_248> <sendData_256> <sendData_264> <sendData_272> <sendData_280> <sendData_288> <sendData_296> <sendData_304> <sendData_312> <sendData_320> <sendData_328> <sendData_336> <sendData_344> <sendData_352> <sendData_360> <sendData_368> <sendData_376> <sendData_384> <sendData_392> <sendData_400> <sendData_408> <sendData_416> <sendData_424> <sendData_432> <sendData_440> <sendData_448> <sendData_456> <sendData_464> <sendData_472>
-   <sendData_480> <sendData_488> <sendData_496> <sendData_504> <sendData_512> <sendData_520> <sendData_528> <sendData_536> <sendData_544> <sendData_552> <sendData_560> <sendData_568> <sendData_576> <sendData_584> <sendData_592> <sendData_600> <sendData_608> <sendData_616> <sendData_624> <sendData_632> <sendData_640> <sendData_648> <sendData_656> <sendData_664> <sendData_672> <sendData_680> <sendData_688> <sendData_696> <sendData_704> <sendData_712> <sendData_720> <sendData_728> <sendData_736> <sendData_744> <sendData_752> <sendData_760> <sendData_768> <sendData_776> <sendData_784> <sendData_792> <sendData_800> <sendData_808> <sendData_816> <sendData_824> <sendData_832> <sendData_840> <sendData_848> <sendData_856> <sendData_864> <sendData_872> <sendData_880> <sendData_888> <sendData_896> <sendData_904> <sendData_912> <sendData_920> <sendData_928> <sendData_936> <sendData_944> <sendData_952> <sendData_960> <sendData_968> <sendData_976> <sendData_984> <sendData_992> <sendData_1000> <sendData_1008>
-   <sendData_1016> <sendData_1024> <sendData_1032> <sendData_1040> <sendData_1048> <sendData_1056> <sendData_1064> <sendData_1072> <sendData_1080> <sendData_1088> <sendData_1096> <sendData_1104> <sendData_1112> <sendData_1120> <sendData_1128> <sendData_1136> <sendData_1144> <sendData_1152> <sendData_1160> <sendData_1168> <sendData_1176> <sendData_1184> <sendData_1192> <sendData_1200> <sendData_1208> <sendData_1216> <sendData_1224> <sendData_1232> <sendData_1240> <sendData_1248> <sendData_1256> <sendData_1264> <sendData_1272> <sendData_1280> <sendData_1288> <sendData_1296> <sendData_1304> <sendData_1312> <sendData_1320> <sendData_1328> <sendData_1336> <sendData_1344> <sendData_1352> <sendData_1360> <sendData_1368> <sendData_1376> <sendData_1384> <sendData_1392> <sendData_1400> <sendData_1408> <sendData_1416> <sendData_1424> <sendData_1432> <sendData_1440> <sendData_1448> <sendData_1456> <sendData_1464> <sendData_1472> <sendData_1480> <sendData_1488> <sendData_1496> <sendData_1504> <sendData_1512>
-   <sendData_1520> <sendData_1528> <sendData_1536> <sendData_1544> <sendData_1552> <sendData_1560> <sendData_1568> <sendData_1576> <sendData_1584> <sendData_1592> <sendData_1600> <sendData_1608> <sendData_1616> <sendData_1624> <sendData_1632> <sendData_1640> <sendData_1648> <sendData_1656> <sendData_1664> <sendData_1672> <sendData_1680> <sendData_1688> <sendData_1696> <sendData_1704> <sendData_1712> <sendData_1720> <sendData_1728> <sendData_1736> <sendData_1744> <sendData_1752> 
 
 Synthesizing (advanced) Unit <Baud_Rate>.
 The following registers are absorbed into counter <cuenta>: 1 register on signal <cuenta>.
@@ -409,16 +394,16 @@ Unit <Tx> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 19
+# Adders/Subtractors                                   : 21
  11-bit subtractor                                     : 15
  4-bit adder                                           : 2
- 8-bit adder                                           : 1
+ 8-bit adder                                           : 3
  9-bit adder                                           : 1
 # Counters                                             : 3
  3-bit up counter                                      : 2
  9-bit up counter                                      : 1
-# Registers                                            : 1817
- Flip-Flops                                            : 1817
+# Registers                                            : 1818
+ Flip-Flops                                            : 1818
 # Comparators                                          : 1
  11-bit comparator greater                             : 1
 # Multiplexers                                         : 45
@@ -429,45 +414,13 @@ Macro Statistics
  4-bit 2-to-1 multiplexer                              : 12
  4-bit 4-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 1
-# FSMs                                                 : 3
+# FSMs                                                 : 4
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <sendData_4> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_12> <sendData_20> <sendData_28> <sendData_36> <sendData_44> <sendData_52> <sendData_60> <sendData_68> <sendData_76> <sendData_84> <sendData_92> <sendData_100> <sendData_108> <sendData_116> <sendData_124> <sendData_132> <sendData_140> <sendData_148> <sendData_156> <sendData_164> <sendData_172> <sendData_180> <sendData_188> <sendData_196> <sendData_204> <sendData_212> <sendData_220> <sendData_228> <sendData_236> <sendData_244> <sendData_252> <sendData_260> <sendData_268> <sendData_276> <sendData_284> <sendData_292> <sendData_300> <sendData_308> <sendData_316> <sendData_324> <sendData_332> <sendData_340> <sendData_348> <sendData_356> <sendData_364> <sendData_372> <sendData_380> <sendData_388> <sendData_396> <sendData_404> <sendData_412> <sendData_420> <sendData_428> <sendData_436> <sendData_444> <sendData_452> <sendData_460> <sendData_468> <sendData_476> <sendData_484>
-   <sendData_492> <sendData_500> <sendData_508> <sendData_516> <sendData_524> <sendData_532> <sendData_540> <sendData_548> <sendData_556> <sendData_564> <sendData_572> <sendData_580> <sendData_588> <sendData_596> <sendData_604> <sendData_612> <sendData_620> <sendData_628> <sendData_636> <sendData_644> <sendData_652> <sendData_660> <sendData_668> <sendData_676> <sendData_684> <sendData_692> <sendData_700> <sendData_708> <sendData_716> <sendData_724> <sendData_732> <sendData_740> <sendData_748> <sendData_756> <sendData_764> <sendData_772> <sendData_780> <sendData_788> <sendData_796> <sendData_804> <sendData_812> <sendData_820> <sendData_828> <sendData_836> <sendData_844> <sendData_852> <sendData_860> <sendData_868> <sendData_876> <sendData_884> <sendData_892> <sendData_900> <sendData_908> <sendData_916> <sendData_924> <sendData_932> <sendData_940> <sendData_948> <sendData_956> <sendData_964> <sendData_972> <sendData_980> <sendData_988> <sendData_996> <sendData_1004> <sendData_1012> <sendData_1020>
-   <sendData_1028> <sendData_1036> <sendData_1044> <sendData_1052> <sendData_1060> <sendData_1068> <sendData_1076> <sendData_1084> <sendData_1092> <sendData_1100> <sendData_1108> <sendData_1116> <sendData_1124> <sendData_1132> <sendData_1140> <sendData_1148> <sendData_1156> <sendData_1164> <sendData_1172> <sendData_1180> <sendData_1188> <sendData_1196> <sendData_1204> <sendData_1212> <sendData_1220> <sendData_1228> <sendData_1236> <sendData_1244> <sendData_1252> <sendData_1260> <sendData_1268> <sendData_1276> <sendData_1284> <sendData_1292> <sendData_1300> <sendData_1308> <sendData_1316> <sendData_1324> <sendData_1332> <sendData_1340> <sendData_1348> <sendData_1356> <sendData_1364> <sendData_1372> <sendData_1380> <sendData_1388> <sendData_1396> <sendData_1404> <sendData_1412> <sendData_1420> <sendData_1428> <sendData_1436> <sendData_1444> <sendData_1452> <sendData_1460> <sendData_1468> <sendData_1476> <sendData_1484> <sendData_1492> <sendData_1500> <sendData_1508> <sendData_1516> <sendData_1524>
-   <sendData_1532> <sendData_1540> <sendData_1548> <sendData_1556> <sendData_1564> <sendData_1572> <sendData_1580> <sendData_1588> <sendData_1596> <sendData_1604> <sendData_1612> <sendData_1620> <sendData_1628> <sendData_1636> <sendData_1644> <sendData_1652> <sendData_1660> <sendData_1668> <sendData_1676> <sendData_1684> <sendData_1692> <sendData_1700> <sendData_1708> <sendData_1716> <sendData_1724> <sendData_1732> <sendData_1740> <sendData_1748> <sendData_1756> 
-INFO:Xst:2261 - The FF/Latch <sendData_3> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_11> <sendData_19> <sendData_27> <sendData_35> <sendData_43> <sendData_51> <sendData_59> <sendData_67> <sendData_75> <sendData_83> <sendData_91> <sendData_99> <sendData_107> <sendData_115> <sendData_123> <sendData_131> <sendData_139> <sendData_147> <sendData_155> <sendData_163> <sendData_171> <sendData_179> <sendData_187> <sendData_195> <sendData_203> <sendData_211> <sendData_219> <sendData_227> <sendData_235> <sendData_243> <sendData_251> <sendData_259> <sendData_267> <sendData_275> <sendData_283> <sendData_291> <sendData_299> <sendData_307> <sendData_315> <sendData_323> <sendData_331> <sendData_339> <sendData_347> <sendData_355> <sendData_363> <sendData_371> <sendData_379> <sendData_387> <sendData_395> <sendData_403> <sendData_411> <sendData_419> <sendData_427> <sendData_435> <sendData_443> <sendData_451> <sendData_459> <sendData_467> <sendData_475> <sendData_483>
-   <sendData_491> <sendData_499> <sendData_507> <sendData_515> <sendData_523> <sendData_531> <sendData_539> <sendData_547> <sendData_555> <sendData_563> <sendData_571> <sendData_579> <sendData_587> <sendData_595> <sendData_603> <sendData_611> <sendData_619> <sendData_627> <sendData_635> <sendData_643> <sendData_651> <sendData_659> <sendData_667> <sendData_675> <sendData_683> <sendData_691> <sendData_699> <sendData_707> <sendData_715> <sendData_723> <sendData_731> <sendData_739> <sendData_747> <sendData_755> <sendData_763> <sendData_771> <sendData_779> <sendData_787> <sendData_795> <sendData_803> <sendData_811> <sendData_819> <sendData_827> <sendData_835> <sendData_843> <sendData_851> <sendData_859> <sendData_867> <sendData_875> <sendData_883> <sendData_891> <sendData_899> <sendData_907> <sendData_915> <sendData_923> <sendData_931> <sendData_939> <sendData_947> <sendData_955> <sendData_963> <sendData_971> <sendData_979> <sendData_987> <sendData_995> <sendData_1003> <sendData_1011> <sendData_1019>
-   <sendData_1027> <sendData_1035> <sendData_1043> <sendData_1051> <sendData_1059> <sendData_1067> <sendData_1075> <sendData_1083> <sendData_1091> <sendData_1099> <sendData_1107> <sendData_1115> <sendData_1123> <sendData_1131> <sendData_1139> <sendData_1147> <sendData_1155> <sendData_1163> <sendData_1171> <sendData_1179> <sendData_1187> <sendData_1195> <sendData_1203> <sendData_1211> <sendData_1219> <sendData_1227> <sendData_1235> <sendData_1243> <sendData_1251> <sendData_1259> <sendData_1267> <sendData_1275> <sendData_1283> <sendData_1291> <sendData_1299> <sendData_1307> <sendData_1315> <sendData_1323> <sendData_1331> <sendData_1339> <sendData_1347> <sendData_1355> <sendData_1363> <sendData_1371> <sendData_1379> <sendData_1387> <sendData_1395> <sendData_1403> <sendData_1411> <sendData_1419> <sendData_1427> <sendData_1435> <sendData_1443> <sendData_1451> <sendData_1459> <sendData_1467> <sendData_1475> <sendData_1483> <sendData_1491> <sendData_1499> <sendData_1507> <sendData_1515> <sendData_1523>
-   <sendData_1531> <sendData_1539> <sendData_1547> <sendData_1555> <sendData_1563> <sendData_1571> <sendData_1579> <sendData_1587> <sendData_1595> <sendData_1603> <sendData_1611> <sendData_1619> <sendData_1627> <sendData_1635> <sendData_1643> <sendData_1651> <sendData_1659> <sendData_1667> <sendData_1675> <sendData_1683> <sendData_1691> <sendData_1699> <sendData_1707> <sendData_1715> <sendData_1723> <sendData_1731> <sendData_1739> <sendData_1747> <sendData_1755> 
-INFO:Xst:2261 - The FF/Latch <sendData_7> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_15> <sendData_23> <sendData_31> <sendData_39> <sendData_47> <sendData_55> <sendData_63> <sendData_71> <sendData_79> <sendData_87> <sendData_95> <sendData_103> <sendData_111> <sendData_119> <sendData_127> <sendData_135> <sendData_143> <sendData_151> <sendData_159> <sendData_167> <sendData_175> <sendData_183> <sendData_191> <sendData_199> <sendData_207> <sendData_215> <sendData_223> <sendData_231> <sendData_239> <sendData_247> <sendData_255> <sendData_263> <sendData_271> <sendData_279> <sendData_287> <sendData_295> <sendData_303> <sendData_311> <sendData_319> <sendData_327> <sendData_335> <sendData_343> <sendData_351> <sendData_359> <sendData_367> <sendData_375> <sendData_383> <sendData_391> <sendData_399> <sendData_407> <sendData_415> <sendData_423> <sendData_431> <sendData_439> <sendData_447> <sendData_455> <sendData_463> <sendData_471> <sendData_479> <sendData_487>
-   <sendData_495> <sendData_503> <sendData_511> <sendData_519> <sendData_527> <sendData_535> <sendData_543> <sendData_551> <sendData_559> <sendData_567> <sendData_575> <sendData_583> <sendData_591> <sendData_599> <sendData_607> <sendData_615> <sendData_623> <sendData_631> <sendData_639> <sendData_647> <sendData_655> <sendData_663> <sendData_671> <sendData_679> <sendData_687> <sendData_695> <sendData_703> <sendData_711> <sendData_719> <sendData_727> <sendData_735> <sendData_743> <sendData_751> <sendData_759> <sendData_767> <sendData_775> <sendData_783> <sendData_791> <sendData_799> <sendData_807> <sendData_815> <sendData_823> <sendData_831> <sendData_839> <sendData_847> <sendData_855> <sendData_863> <sendData_871> <sendData_879> <sendData_887> <sendData_895> <sendData_903> <sendData_911> <sendData_919> <sendData_927> <sendData_935> <sendData_943> <sendData_951> <sendData_959> <sendData_967> <sendData_975> <sendData_983> <sendData_991> <sendData_999> <sendData_1007> <sendData_1015> <sendData_1023>
-   <sendData_1031> <sendData_1039> <sendData_1047> <sendData_1055> <sendData_1063> <sendData_1071> <sendData_1079> <sendData_1087> <sendData_1095> <sendData_1103> <sendData_1111> <sendData_1119> <sendData_1127> <sendData_1135> <sendData_1143> <sendData_1151> <sendData_1159> <sendData_1167> <sendData_1175> <sendData_1183> <sendData_1191> <sendData_1199> <sendData_1207> <sendData_1215> <sendData_1223> <sendData_1231> <sendData_1239> <sendData_1247> <sendData_1255> <sendData_1263> <sendData_1271> <sendData_1279> <sendData_1287> <sendData_1295> <sendData_1303> <sendData_1311> <sendData_1319> <sendData_1327> <sendData_1335> <sendData_1343> <sendData_1351> <sendData_1359> <sendData_1367> <sendData_1375> <sendData_1383> <sendData_1391> <sendData_1399> <sendData_1407> <sendData_1415> <sendData_1423> <sendData_1431> <sendData_1439> <sendData_1447> <sendData_1455> <sendData_1463> <sendData_1471> <sendData_1479> <sendData_1487> <sendData_1495> <sendData_1503> <sendData_1511> <sendData_1519> <sendData_1527>
-   <sendData_1535> <sendData_1543> <sendData_1551> <sendData_1559> <sendData_1567> <sendData_1575> <sendData_1583> <sendData_1591> <sendData_1599> <sendData_1607> <sendData_1615> <sendData_1623> <sendData_1631> <sendData_1639> <sendData_1647> <sendData_1655> <sendData_1663> <sendData_1671> <sendData_1679> <sendData_1687> <sendData_1695> <sendData_1703> <sendData_1711> <sendData_1719> <sendData_1727> <sendData_1735> <sendData_1743> <sendData_1751> <sendData_1759> 
-INFO:Xst:2261 - The FF/Latch <sendData_2> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_10> <sendData_18> <sendData_26> <sendData_34> <sendData_42> <sendData_50> <sendData_58> <sendData_66> <sendData_74> <sendData_82> <sendData_90> <sendData_98> <sendData_106> <sendData_114> <sendData_122> <sendData_130> <sendData_138> <sendData_146> <sendData_154> <sendData_162> <sendData_170> <sendData_178> <sendData_186> <sendData_194> <sendData_202> <sendData_210> <sendData_218> <sendData_226> <sendData_234> <sendData_242> <sendData_250> <sendData_258> <sendData_266> <sendData_274> <sendData_282> <sendData_290> <sendData_298> <sendData_306> <sendData_314> <sendData_322> <sendData_330> <sendData_338> <sendData_346> <sendData_354> <sendData_362> <sendData_370> <sendData_378> <sendData_386> <sendData_394> <sendData_402> <sendData_410> <sendData_418> <sendData_426> <sendData_434> <sendData_442> <sendData_450> <sendData_458> <sendData_466> <sendData_474> <sendData_482>
-   <sendData_490> <sendData_498> <sendData_506> <sendData_514> <sendData_522> <sendData_530> <sendData_538> <sendData_546> <sendData_554> <sendData_562> <sendData_570> <sendData_578> <sendData_586> <sendData_594> <sendData_602> <sendData_610> <sendData_618> <sendData_626> <sendData_634> <sendData_642> <sendData_650> <sendData_658> <sendData_666> <sendData_674> <sendData_682> <sendData_690> <sendData_698> <sendData_706> <sendData_714> <sendData_722> <sendData_730> <sendData_738> <sendData_746> <sendData_754> <sendData_762> <sendData_770> <sendData_778> <sendData_786> <sendData_794> <sendData_802> <sendData_810> <sendData_818> <sendData_826> <sendData_834> <sendData_842> <sendData_850> <sendData_858> <sendData_866> <sendData_874> <sendData_882> <sendData_890> <sendData_898> <sendData_906> <sendData_914> <sendData_922> <sendData_930> <sendData_938> <sendData_946> <sendData_954> <sendData_962> <sendData_970> <sendData_978> <sendData_986> <sendData_994> <sendData_1002> <sendData_1010> <sendData_1018>
-   <sendData_1026> <sendData_1034> <sendData_1042> <sendData_1050> <sendData_1058> <sendData_1066> <sendData_1074> <sendData_1082> <sendData_1090> <sendData_1098> <sendData_1106> <sendData_1114> <sendData_1122> <sendData_1130> <sendData_1138> <sendData_1146> <sendData_1154> <sendData_1162> <sendData_1170> <sendData_1178> <sendData_1186> <sendData_1194> <sendData_1202> <sendData_1210> <sendData_1218> <sendData_1226> <sendData_1234> <sendData_1242> <sendData_1250> <sendData_1258> <sendData_1266> <sendData_1274> <sendData_1282> <sendData_1290> <sendData_1298> <sendData_1306> <sendData_1314> <sendData_1322> <sendData_1330> <sendData_1338> <sendData_1346> <sendData_1354> <sendData_1362> <sendData_1370> <sendData_1378> <sendData_1386> <sendData_1394> <sendData_1402> <sendData_1410> <sendData_1418> <sendData_1426> <sendData_1434> <sendData_1442> <sendData_1450> <sendData_1458> <sendData_1466> <sendData_1474> <sendData_1482> <sendData_1490> <sendData_1498> <sendData_1506> <sendData_1514> <sendData_1522>
-   <sendData_1530> <sendData_1538> <sendData_1546> <sendData_1554> <sendData_1562> <sendData_1570> <sendData_1578> <sendData_1586> <sendData_1594> <sendData_1602> <sendData_1610> <sendData_1618> <sendData_1626> <sendData_1634> <sendData_1642> <sendData_1650> <sendData_1658> <sendData_1666> <sendData_1674> <sendData_1682> <sendData_1690> <sendData_1698> <sendData_1706> <sendData_1714> <sendData_1722> <sendData_1730> <sendData_1738> <sendData_1746> <sendData_1754> 
-INFO:Xst:2261 - The FF/Latch <sendData_6> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_14> <sendData_22> <sendData_30> <sendData_38> <sendData_46> <sendData_54> <sendData_62> <sendData_70> <sendData_78> <sendData_86> <sendData_94> <sendData_102> <sendData_110> <sendData_118> <sendData_126> <sendData_134> <sendData_142> <sendData_150> <sendData_158> <sendData_166> <sendData_174> <sendData_182> <sendData_190> <sendData_198> <sendData_206> <sendData_214> <sendData_222> <sendData_230> <sendData_238> <sendData_246> <sendData_254> <sendData_262> <sendData_270> <sendData_278> <sendData_286> <sendData_294> <sendData_302> <sendData_310> <sendData_318> <sendData_326> <sendData_334> <sendData_342> <sendData_350> <sendData_358> <sendData_366> <sendData_374> <sendData_382> <sendData_390> <sendData_398> <sendData_406> <sendData_414> <sendData_422> <sendData_430> <sendData_438> <sendData_446> <sendData_454> <sendData_462> <sendData_470> <sendData_478> <sendData_486>
-   <sendData_494> <sendData_502> <sendData_510> <sendData_518> <sendData_526> <sendData_534> <sendData_542> <sendData_550> <sendData_558> <sendData_566> <sendData_574> <sendData_582> <sendData_590> <sendData_598> <sendData_606> <sendData_614> <sendData_622> <sendData_630> <sendData_638> <sendData_646> <sendData_654> <sendData_662> <sendData_670> <sendData_678> <sendData_686> <sendData_694> <sendData_702> <sendData_710> <sendData_718> <sendData_726> <sendData_734> <sendData_742> <sendData_750> <sendData_758> <sendData_766> <sendData_774> <sendData_782> <sendData_790> <sendData_798> <sendData_806> <sendData_814> <sendData_822> <sendData_830> <sendData_838> <sendData_846> <sendData_854> <sendData_862> <sendData_870> <sendData_878> <sendData_886> <sendData_894> <sendData_902> <sendData_910> <sendData_918> <sendData_926> <sendData_934> <sendData_942> <sendData_950> <sendData_958> <sendData_966> <sendData_974> <sendData_982> <sendData_990> <sendData_998> <sendData_1006> <sendData_1014> <sendData_1022>
-   <sendData_1030> <sendData_1038> <sendData_1046> <sendData_1054> <sendData_1062> <sendData_1070> <sendData_1078> <sendData_1086> <sendData_1094> <sendData_1102> <sendData_1110> <sendData_1118> <sendData_1126> <sendData_1134> <sendData_1142> <sendData_1150> <sendData_1158> <sendData_1166> <sendData_1174> <sendData_1182> <sendData_1190> <sendData_1198> <sendData_1206> <sendData_1214> <sendData_1222> <sendData_1230> <sendData_1238> <sendData_1246> <sendData_1254> <sendData_1262> <sendData_1270> <sendData_1278> <sendData_1286> <sendData_1294> <sendData_1302> <sendData_1310> <sendData_1318> <sendData_1326> <sendData_1334> <sendData_1342> <sendData_1350> <sendData_1358> <sendData_1366> <sendData_1374> <sendData_1382> <sendData_1390> <sendData_1398> <sendData_1406> <sendData_1414> <sendData_1422> <sendData_1430> <sendData_1438> <sendData_1446> <sendData_1454> <sendData_1462> <sendData_1470> <sendData_1478> <sendData_1486> <sendData_1494> <sendData_1502> <sendData_1510> <sendData_1518> <sendData_1526>
-   <sendData_1534> <sendData_1542> <sendData_1550> <sendData_1558> <sendData_1566> <sendData_1574> <sendData_1582> <sendData_1590> <sendData_1598> <sendData_1606> <sendData_1614> <sendData_1622> <sendData_1630> <sendData_1638> <sendData_1646> <sendData_1654> <sendData_1662> <sendData_1670> <sendData_1678> <sendData_1686> <sendData_1694> <sendData_1702> <sendData_1710> <sendData_1718> <sendData_1726> <sendData_1734> <sendData_1742> <sendData_1750> <sendData_1758> 
-INFO:Xst:2261 - The FF/Latch <sendData_1> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_9> <sendData_17> <sendData_25> <sendData_33> <sendData_41> <sendData_49> <sendData_57> <sendData_65> <sendData_73> <sendData_81> <sendData_89> <sendData_97> <sendData_105> <sendData_113> <sendData_121> <sendData_129> <sendData_137> <sendData_145> <sendData_153> <sendData_161> <sendData_169> <sendData_177> <sendData_185> <sendData_193> <sendData_201> <sendData_209> <sendData_217> <sendData_225> <sendData_233> <sendData_241> <sendData_249> <sendData_257> <sendData_265> <sendData_273> <sendData_281> <sendData_289> <sendData_297> <sendData_305> <sendData_313> <sendData_321> <sendData_329> <sendData_337> <sendData_345> <sendData_353> <sendData_361> <sendData_369> <sendData_377> <sendData_385> <sendData_393> <sendData_401> <sendData_409> <sendData_417> <sendData_425> <sendData_433> <sendData_441> <sendData_449> <sendData_457> <sendData_465> <sendData_473> <sendData_481>
-   <sendData_489> <sendData_497> <sendData_505> <sendData_513> <sendData_521> <sendData_529> <sendData_537> <sendData_545> <sendData_553> <sendData_561> <sendData_569> <sendData_577> <sendData_585> <sendData_593> <sendData_601> <sendData_609> <sendData_617> <sendData_625> <sendData_633> <sendData_641> <sendData_649> <sendData_657> <sendData_665> <sendData_673> <sendData_681> <sendData_689> <sendData_697> <sendData_705> <sendData_713> <sendData_721> <sendData_729> <sendData_737> <sendData_745> <sendData_753> <sendData_761> <sendData_769> <sendData_777> <sendData_785> <sendData_793> <sendData_801> <sendData_809> <sendData_817> <sendData_825> <sendData_833> <sendData_841> <sendData_849> <sendData_857> <sendData_865> <sendData_873> <sendData_881> <sendData_889> <sendData_897> <sendData_905> <sendData_913> <sendData_921> <sendData_929> <sendData_937> <sendData_945> <sendData_953> <sendData_961> <sendData_969> <sendData_977> <sendData_985> <sendData_993> <sendData_1001> <sendData_1009> <sendData_1017>
-   <sendData_1025> <sendData_1033> <sendData_1041> <sendData_1049> <sendData_1057> <sendData_1065> <sendData_1073> <sendData_1081> <sendData_1089> <sendData_1097> <sendData_1105> <sendData_1113> <sendData_1121> <sendData_1129> <sendData_1137> <sendData_1145> <sendData_1153> <sendData_1161> <sendData_1169> <sendData_1177> <sendData_1185> <sendData_1193> <sendData_1201> <sendData_1209> <sendData_1217> <sendData_1225> <sendData_1233> <sendData_1241> <sendData_1249> <sendData_1257> <sendData_1265> <sendData_1273> <sendData_1281> <sendData_1289> <sendData_1297> <sendData_1305> <sendData_1313> <sendData_1321> <sendData_1329> <sendData_1337> <sendData_1345> <sendData_1353> <sendData_1361> <sendData_1369> <sendData_1377> <sendData_1385> <sendData_1393> <sendData_1401> <sendData_1409> <sendData_1417> <sendData_1425> <sendData_1433> <sendData_1441> <sendData_1449> <sendData_1457> <sendData_1465> <sendData_1473> <sendData_1481> <sendData_1489> <sendData_1497> <sendData_1505> <sendData_1513> <sendData_1521>
-   <sendData_1529> <sendData_1537> <sendData_1545> <sendData_1553> <sendData_1561> <sendData_1569> <sendData_1577> <sendData_1585> <sendData_1593> <sendData_1601> <sendData_1609> <sendData_1617> <sendData_1625> <sendData_1633> <sendData_1641> <sendData_1649> <sendData_1657> <sendData_1665> <sendData_1673> <sendData_1681> <sendData_1689> <sendData_1697> <sendData_1705> <sendData_1713> <sendData_1721> <sendData_1729> <sendData_1737> <sendData_1745> <sendData_1753> 
-INFO:Xst:2261 - The FF/Latch <sendData_5> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_13> <sendData_21> <sendData_29> <sendData_37> <sendData_45> <sendData_53> <sendData_61> <sendData_69> <sendData_77> <sendData_85> <sendData_93> <sendData_101> <sendData_109> <sendData_117> <sendData_125> <sendData_133> <sendData_141> <sendData_149> <sendData_157> <sendData_165> <sendData_173> <sendData_181> <sendData_189> <sendData_197> <sendData_205> <sendData_213> <sendData_221> <sendData_229> <sendData_237> <sendData_245> <sendData_253> <sendData_261> <sendData_269> <sendData_277> <sendData_285> <sendData_293> <sendData_301> <sendData_309> <sendData_317> <sendData_325> <sendData_333> <sendData_341> <sendData_349> <sendData_357> <sendData_365> <sendData_373> <sendData_381> <sendData_389> <sendData_397> <sendData_405> <sendData_413> <sendData_421> <sendData_429> <sendData_437> <sendData_445> <sendData_453> <sendData_461> <sendData_469> <sendData_477> <sendData_485>
-   <sendData_493> <sendData_501> <sendData_509> <sendData_517> <sendData_525> <sendData_533> <sendData_541> <sendData_549> <sendData_557> <sendData_565> <sendData_573> <sendData_581> <sendData_589> <sendData_597> <sendData_605> <sendData_613> <sendData_621> <sendData_629> <sendData_637> <sendData_645> <sendData_653> <sendData_661> <sendData_669> <sendData_677> <sendData_685> <sendData_693> <sendData_701> <sendData_709> <sendData_717> <sendData_725> <sendData_733> <sendData_741> <sendData_749> <sendData_757> <sendData_765> <sendData_773> <sendData_781> <sendData_789> <sendData_797> <sendData_805> <sendData_813> <sendData_821> <sendData_829> <sendData_837> <sendData_845> <sendData_853> <sendData_861> <sendData_869> <sendData_877> <sendData_885> <sendData_893> <sendData_901> <sendData_909> <sendData_917> <sendData_925> <sendData_933> <sendData_941> <sendData_949> <sendData_957> <sendData_965> <sendData_973> <sendData_981> <sendData_989> <sendData_997> <sendData_1005> <sendData_1013> <sendData_1021>
-   <sendData_1029> <sendData_1037> <sendData_1045> <sendData_1053> <sendData_1061> <sendData_1069> <sendData_1077> <sendData_1085> <sendData_1093> <sendData_1101> <sendData_1109> <sendData_1117> <sendData_1125> <sendData_1133> <sendData_1141> <sendData_1149> <sendData_1157> <sendData_1165> <sendData_1173> <sendData_1181> <sendData_1189> <sendData_1197> <sendData_1205> <sendData_1213> <sendData_1221> <sendData_1229> <sendData_1237> <sendData_1245> <sendData_1253> <sendData_1261> <sendData_1269> <sendData_1277> <sendData_1285> <sendData_1293> <sendData_1301> <sendData_1309> <sendData_1317> <sendData_1325> <sendData_1333> <sendData_1341> <sendData_1349> <sendData_1357> <sendData_1365> <sendData_1373> <sendData_1381> <sendData_1389> <sendData_1397> <sendData_1405> <sendData_1413> <sendData_1421> <sendData_1429> <sendData_1437> <sendData_1445> <sendData_1453> <sendData_1461> <sendData_1469> <sendData_1477> <sendData_1485> <sendData_1493> <sendData_1501> <sendData_1509> <sendData_1517> <sendData_1525>
-   <sendData_1533> <sendData_1541> <sendData_1549> <sendData_1557> <sendData_1565> <sendData_1573> <sendData_1581> <sendData_1589> <sendData_1597> <sendData_1605> <sendData_1613> <sendData_1621> <sendData_1629> <sendData_1637> <sendData_1645> <sendData_1653> <sendData_1661> <sendData_1669> <sendData_1677> <sendData_1685> <sendData_1693> <sendData_1701> <sendData_1709> <sendData_1717> <sendData_1725> <sendData_1733> <sendData_1741> <sendData_1749> <sendData_1757> 
-INFO:Xst:2261 - The FF/Latch <sendData_0> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_8> <sendData_16> <sendData_24> <sendData_32> <sendData_40> <sendData_48> <sendData_56> <sendData_64> <sendData_72> <sendData_80> <sendData_88> <sendData_96> <sendData_104> <sendData_112> <sendData_120> <sendData_128> <sendData_136> <sendData_144> <sendData_152> <sendData_160> <sendData_168> <sendData_176> <sendData_184> <sendData_192> <sendData_200> <sendData_208> <sendData_216> <sendData_224> <sendData_232> <sendData_240> <sendData_248> <sendData_256> <sendData_264> <sendData_272> <sendData_280> <sendData_288> <sendData_296> <sendData_304> <sendData_312> <sendData_320> <sendData_328> <sendData_336> <sendData_344> <sendData_352> <sendData_360> <sendData_368> <sendData_376> <sendData_384> <sendData_392> <sendData_400> <sendData_408> <sendData_416> <sendData_424> <sendData_432> <sendData_440> <sendData_448> <sendData_456> <sendData_464> <sendData_472> <sendData_480>
-   <sendData_488> <sendData_496> <sendData_504> <sendData_512> <sendData_520> <sendData_528> <sendData_536> <sendData_544> <sendData_552> <sendData_560> <sendData_568> <sendData_576> <sendData_584> <sendData_592> <sendData_600> <sendData_608> <sendData_616> <sendData_624> <sendData_632> <sendData_640> <sendData_648> <sendData_656> <sendData_664> <sendData_672> <sendData_680> <sendData_688> <sendData_696> <sendData_704> <sendData_712> <sendData_720> <sendData_728> <sendData_736> <sendData_744> <sendData_752> <sendData_760> <sendData_768> <sendData_776> <sendData_784> <sendData_792> <sendData_800> <sendData_808> <sendData_816> <sendData_824> <sendData_832> <sendData_840> <sendData_848> <sendData_856> <sendData_864> <sendData_872> <sendData_880> <sendData_888> <sendData_896> <sendData_904> <sendData_912> <sendData_920> <sendData_928> <sendData_936> <sendData_944> <sendData_952> <sendData_960> <sendData_968> <sendData_976> <sendData_984> <sendData_992> <sendData_1000> <sendData_1008> <sendData_1016>
-   <sendData_1024> <sendData_1032> <sendData_1040> <sendData_1048> <sendData_1056> <sendData_1064> <sendData_1072> <sendData_1080> <sendData_1088> <sendData_1096> <sendData_1104> <sendData_1112> <sendData_1120> <sendData_1128> <sendData_1136> <sendData_1144> <sendData_1152> <sendData_1160> <sendData_1168> <sendData_1176> <sendData_1184> <sendData_1192> <sendData_1200> <sendData_1208> <sendData_1216> <sendData_1224> <sendData_1232> <sendData_1240> <sendData_1248> <sendData_1256> <sendData_1264> <sendData_1272> <sendData_1280> <sendData_1288> <sendData_1296> <sendData_1304> <sendData_1312> <sendData_1320> <sendData_1328> <sendData_1336> <sendData_1344> <sendData_1352> <sendData_1360> <sendData_1368> <sendData_1376> <sendData_1384> <sendData_1392> <sendData_1400> <sendData_1408> <sendData_1416> <sendData_1424> <sendData_1432> <sendData_1440> <sendData_1448> <sendData_1456> <sendData_1464> <sendData_1472> <sendData_1480> <sendData_1488> <sendData_1496> <sendData_1504> <sendData_1512> <sendData_1520>
-   <sendData_1528> <sendData_1536> <sendData_1544> <sendData_1552> <sendData_1560> <sendData_1568> <sendData_1576> <sendData_1584> <sendData_1592> <sendData_1600> <sendData_1608> <sendData_1616> <sendData_1624> <sendData_1632> <sendData_1640> <sendData_1648> <sendData_1656> <sendData_1664> <sendData_1672> <sendData_1680> <sendData_1688> <sendData_1696> <sendData_1704> <sendData_1712> <sendData_1720> <sendData_1728> <sendData_1736> <sendData_1744> <sendData_1752> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <UART_Unit/Rx_unit/FSM_0> on signal <state_reg[1:2]> with gray encoding.
 -------------------
@@ -489,7 +442,19 @@ Optimizing FSM <UART_Unit/Tx_unit/FSM_1> on signal <state_reg[1:2]> with gray en
  11    | 10
 -------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <debuggertx_unit/FSM_2> on signal <state_reg[1:2]> with user encoding.
+Optimizing FSM <debuggerrx_unit/FSM_2> on signal <current_state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 101   | 101
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 001   | 001
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <debuggertx_unit/FSM_3> on signal <state_reg_tx[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -500,6 +465,39 @@ Optimizing FSM <debuggertx_unit/FSM_2> on signal <state_reg[1:2]> with user enco
 WARNING:Xst:1710 - FF/Latch <aux_reg_0> (without init value) has a constant value of 1 in block <DebuggerTx>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <aux_reg_1> (without init value) has a constant value of 1 in block <DebuggerTx>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <aux_reg_2> (without init value) has a constant value of 1 in block <DebuggerTx>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <sendData_6> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_14> <sendData_22> <sendData_30> <sendData_38> <sendData_46> <sendData_54> <sendData_62> <sendData_70> <sendData_78> <sendData_86> <sendData_94> <sendData_102> <sendData_110> <sendData_118> <sendData_126> <sendData_134> <sendData_142> <sendData_150> <sendData_158> <sendData_166> <sendData_174> <sendData_182> <sendData_190> <sendData_198> <sendData_206> <sendData_214> <sendData_222> <sendData_230> <sendData_238> <sendData_246> <sendData_254> <sendData_262> <sendData_270> <sendData_278> <sendData_286> <sendData_294> <sendData_302> <sendData_310> <sendData_318> <sendData_326> <sendData_334> <sendData_342> <sendData_350> <sendData_358> <sendData_366> <sendData_374> <sendData_382> <sendData_390> <sendData_398> <sendData_406> <sendData_414> <sendData_422> <sendData_430> <sendData_438> <sendData_446> <sendData_454> <sendData_462> <sendData_470> <sendData_478> <sendData_486>
+   <sendData_494> <sendData_502> <sendData_510> <sendData_518> <sendData_526> <sendData_534> <sendData_542> <sendData_550> <sendData_558> <sendData_566> <sendData_574> <sendData_582> <sendData_590> <sendData_598> <sendData_606> <sendData_614> <sendData_622> <sendData_630> <sendData_638> <sendData_646> <sendData_654> <sendData_662> <sendData_670> <sendData_678> <sendData_686> <sendData_694> <sendData_702> <sendData_710> <sendData_718> <sendData_726> <sendData_734> <sendData_742> <sendData_750> <sendData_758> <sendData_766> <sendData_774> <sendData_782> <sendData_790> <sendData_798> <sendData_806> <sendData_814> <sendData_822> <sendData_830> <sendData_838> <sendData_846> <sendData_854> <sendData_862> <sendData_870> <sendData_878> <sendData_886> <sendData_894> <sendData_902> <sendData_910> <sendData_918> <sendData_926> <sendData_934> <sendData_942> <sendData_950> <sendData_958> <sendData_966> <sendData_974> <sendData_982> <sendData_990> <sendData_998> <sendData_1006> <sendData_1014> <sendData_1022>
+   <sendData_1030> <sendData_1038> <sendData_1046> <sendData_1054> <sendData_1062> <sendData_1070> <sendData_1078> <sendData_1086> <sendData_1094> <sendData_1102> <sendData_1110> <sendData_1118> <sendData_1126> <sendData_1134> <sendData_1142> <sendData_1150> <sendData_1158> <sendData_1166> <sendData_1174> <sendData_1182> <sendData_1190> <sendData_1198> <sendData_1206> <sendData_1214> <sendData_1222> <sendData_1230> <sendData_1238> <sendData_1246> <sendData_1254> <sendData_1262> <sendData_1270> <sendData_1278> <sendData_1286> <sendData_1294> <sendData_1302> <sendData_1310> <sendData_1318> <sendData_1326> <sendData_1334> <sendData_1342> <sendData_1350> <sendData_1358> <sendData_1366> <sendData_1374> <sendData_1382> <sendData_1390> <sendData_1398> <sendData_1406> <sendData_1414> <sendData_1422> <sendData_1430> <sendData_1438> <sendData_1446> <sendData_1454> <sendData_1462> <sendData_1470> <sendData_1478> <sendData_1486> <sendData_1494> <sendData_1502> <sendData_1510> <sendData_1518> <sendData_1526>
+   <sendData_1534> <sendData_1542> <sendData_1550> <sendData_1558> <sendData_1566> <sendData_1574> <sendData_1582> <sendData_1590> <sendData_1598> <sendData_1606> <sendData_1614> <sendData_1622> <sendData_1630> <sendData_1638> <sendData_1646> <sendData_1654> <sendData_1662> <sendData_1670> <sendData_1678> <sendData_1686> <sendData_1694> <sendData_1702> <sendData_1710> <sendData_1718> <sendData_1726> <sendData_1734> <sendData_1742> <sendData_1750> <sendData_1758> 
+INFO:Xst:2261 - The FF/Latch <sendData_1> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_9> <sendData_17> <sendData_25> <sendData_33> <sendData_41> <sendData_49> <sendData_57> <sendData_65> <sendData_73> <sendData_81> <sendData_89> <sendData_97> <sendData_105> <sendData_113> <sendData_121> <sendData_129> <sendData_137> <sendData_145> <sendData_153> <sendData_161> <sendData_169> <sendData_177> <sendData_185> <sendData_193> <sendData_201> <sendData_209> <sendData_217> <sendData_225> <sendData_233> <sendData_241> <sendData_249> <sendData_257> <sendData_265> <sendData_273> <sendData_281> <sendData_289> <sendData_297> <sendData_305> <sendData_313> <sendData_321> <sendData_329> <sendData_337> <sendData_345> <sendData_353> <sendData_361> <sendData_369> <sendData_377> <sendData_385> <sendData_393> <sendData_401> <sendData_409> <sendData_417> <sendData_425> <sendData_433> <sendData_441> <sendData_449> <sendData_457> <sendData_465> <sendData_473> <sendData_481>
+   <sendData_489> <sendData_497> <sendData_505> <sendData_513> <sendData_521> <sendData_529> <sendData_537> <sendData_545> <sendData_553> <sendData_561> <sendData_569> <sendData_577> <sendData_585> <sendData_593> <sendData_601> <sendData_609> <sendData_617> <sendData_625> <sendData_633> <sendData_641> <sendData_649> <sendData_657> <sendData_665> <sendData_673> <sendData_681> <sendData_689> <sendData_697> <sendData_705> <sendData_713> <sendData_721> <sendData_729> <sendData_737> <sendData_745> <sendData_753> <sendData_761> <sendData_769> <sendData_777> <sendData_785> <sendData_793> <sendData_801> <sendData_809> <sendData_817> <sendData_825> <sendData_833> <sendData_841> <sendData_849> <sendData_857> <sendData_865> <sendData_873> <sendData_881> <sendData_889> <sendData_897> <sendData_905> <sendData_913> <sendData_921> <sendData_929> <sendData_937> <sendData_945> <sendData_953> <sendData_961> <sendData_969> <sendData_977> <sendData_985> <sendData_993> <sendData_1001> <sendData_1009> <sendData_1017>
+   <sendData_1025> <sendData_1033> <sendData_1041> <sendData_1049> <sendData_1057> <sendData_1065> <sendData_1073> <sendData_1081> <sendData_1089> <sendData_1097> <sendData_1105> <sendData_1113> <sendData_1121> <sendData_1129> <sendData_1137> <sendData_1145> <sendData_1153> <sendData_1161> <sendData_1169> <sendData_1177> <sendData_1185> <sendData_1193> <sendData_1201> <sendData_1209> <sendData_1217> <sendData_1225> <sendData_1233> <sendData_1241> <sendData_1249> <sendData_1257> <sendData_1265> <sendData_1273> <sendData_1281> <sendData_1289> <sendData_1297> <sendData_1305> <sendData_1313> <sendData_1321> <sendData_1329> <sendData_1337> <sendData_1345> <sendData_1353> <sendData_1361> <sendData_1369> <sendData_1377> <sendData_1385> <sendData_1393> <sendData_1401> <sendData_1409> <sendData_1417> <sendData_1425> <sendData_1433> <sendData_1441> <sendData_1449> <sendData_1457> <sendData_1465> <sendData_1473> <sendData_1481> <sendData_1489> <sendData_1497> <sendData_1505> <sendData_1513> <sendData_1521>
+   <sendData_1529> <sendData_1537> <sendData_1545> <sendData_1553> <sendData_1561> <sendData_1569> <sendData_1577> <sendData_1585> <sendData_1593> <sendData_1601> <sendData_1609> <sendData_1617> <sendData_1625> <sendData_1633> <sendData_1641> <sendData_1649> <sendData_1657> <sendData_1665> <sendData_1673> <sendData_1681> <sendData_1689> <sendData_1697> <sendData_1705> <sendData_1713> <sendData_1721> <sendData_1729> <sendData_1737> <sendData_1745> <sendData_1753> 
+INFO:Xst:2261 - The FF/Latch <sendData_5> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_13> <sendData_21> <sendData_29> <sendData_37> <sendData_45> <sendData_53> <sendData_61> <sendData_69> <sendData_77> <sendData_85> <sendData_93> <sendData_101> <sendData_109> <sendData_117> <sendData_125> <sendData_133> <sendData_141> <sendData_149> <sendData_157> <sendData_165> <sendData_173> <sendData_181> <sendData_189> <sendData_197> <sendData_205> <sendData_213> <sendData_221> <sendData_229> <sendData_237> <sendData_245> <sendData_253> <sendData_261> <sendData_269> <sendData_277> <sendData_285> <sendData_293> <sendData_301> <sendData_309> <sendData_317> <sendData_325> <sendData_333> <sendData_341> <sendData_349> <sendData_357> <sendData_365> <sendData_373> <sendData_381> <sendData_389> <sendData_397> <sendData_405> <sendData_413> <sendData_421> <sendData_429> <sendData_437> <sendData_445> <sendData_453> <sendData_461> <sendData_469> <sendData_477> <sendData_485>
+   <sendData_493> <sendData_501> <sendData_509> <sendData_517> <sendData_525> <sendData_533> <sendData_541> <sendData_549> <sendData_557> <sendData_565> <sendData_573> <sendData_581> <sendData_589> <sendData_597> <sendData_605> <sendData_613> <sendData_621> <sendData_629> <sendData_637> <sendData_645> <sendData_653> <sendData_661> <sendData_669> <sendData_677> <sendData_685> <sendData_693> <sendData_701> <sendData_709> <sendData_717> <sendData_725> <sendData_733> <sendData_741> <sendData_749> <sendData_757> <sendData_765> <sendData_773> <sendData_781> <sendData_789> <sendData_797> <sendData_805> <sendData_813> <sendData_821> <sendData_829> <sendData_837> <sendData_845> <sendData_853> <sendData_861> <sendData_869> <sendData_877> <sendData_885> <sendData_893> <sendData_901> <sendData_909> <sendData_917> <sendData_925> <sendData_933> <sendData_941> <sendData_949> <sendData_957> <sendData_965> <sendData_973> <sendData_981> <sendData_989> <sendData_997> <sendData_1005> <sendData_1013> <sendData_1021>
+   <sendData_1029> <sendData_1037> <sendData_1045> <sendData_1053> <sendData_1061> <sendData_1069> <sendData_1077> <sendData_1085> <sendData_1093> <sendData_1101> <sendData_1109> <sendData_1117> <sendData_1125> <sendData_1133> <sendData_1141> <sendData_1149> <sendData_1157> <sendData_1165> <sendData_1173> <sendData_1181> <sendData_1189> <sendData_1197> <sendData_1205> <sendData_1213> <sendData_1221> <sendData_1229> <sendData_1237> <sendData_1245> <sendData_1253> <sendData_1261> <sendData_1269> <sendData_1277> <sendData_1285> <sendData_1293> <sendData_1301> <sendData_1309> <sendData_1317> <sendData_1325> <sendData_1333> <sendData_1341> <sendData_1349> <sendData_1357> <sendData_1365> <sendData_1373> <sendData_1381> <sendData_1389> <sendData_1397> <sendData_1405> <sendData_1413> <sendData_1421> <sendData_1429> <sendData_1437> <sendData_1445> <sendData_1453> <sendData_1461> <sendData_1469> <sendData_1477> <sendData_1485> <sendData_1493> <sendData_1501> <sendData_1509> <sendData_1517> <sendData_1525>
+   <sendData_1533> <sendData_1541> <sendData_1549> <sendData_1557> <sendData_1565> <sendData_1573> <sendData_1581> <sendData_1589> <sendData_1597> <sendData_1605> <sendData_1613> <sendData_1621> <sendData_1629> <sendData_1637> <sendData_1645> <sendData_1653> <sendData_1661> <sendData_1669> <sendData_1677> <sendData_1685> <sendData_1693> <sendData_1701> <sendData_1709> <sendData_1717> <sendData_1725> <sendData_1733> <sendData_1741> <sendData_1749> <sendData_1757> 
+INFO:Xst:2261 - The FF/Latch <sendData_0> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_8> <sendData_16> <sendData_24> <sendData_32> <sendData_40> <sendData_48> <sendData_56> <sendData_64> <sendData_72> <sendData_80> <sendData_88> <sendData_96> <sendData_104> <sendData_112> <sendData_120> <sendData_128> <sendData_136> <sendData_144> <sendData_152> <sendData_160> <sendData_168> <sendData_176> <sendData_184> <sendData_192> <sendData_200> <sendData_208> <sendData_216> <sendData_224> <sendData_232> <sendData_240> <sendData_248> <sendData_256> <sendData_264> <sendData_272> <sendData_280> <sendData_288> <sendData_296> <sendData_304> <sendData_312> <sendData_320> <sendData_328> <sendData_336> <sendData_344> <sendData_352> <sendData_360> <sendData_368> <sendData_376> <sendData_384> <sendData_392> <sendData_400> <sendData_408> <sendData_416> <sendData_424> <sendData_432> <sendData_440> <sendData_448> <sendData_456> <sendData_464> <sendData_472> <sendData_480>
+   <sendData_488> <sendData_496> <sendData_504> <sendData_512> <sendData_520> <sendData_528> <sendData_536> <sendData_544> <sendData_552> <sendData_560> <sendData_568> <sendData_576> <sendData_584> <sendData_592> <sendData_600> <sendData_608> <sendData_616> <sendData_624> <sendData_632> <sendData_640> <sendData_648> <sendData_656> <sendData_664> <sendData_672> <sendData_680> <sendData_688> <sendData_696> <sendData_704> <sendData_712> <sendData_720> <sendData_728> <sendData_736> <sendData_744> <sendData_752> <sendData_760> <sendData_768> <sendData_776> <sendData_784> <sendData_792> <sendData_800> <sendData_808> <sendData_816> <sendData_824> <sendData_832> <sendData_840> <sendData_848> <sendData_856> <sendData_864> <sendData_872> <sendData_880> <sendData_888> <sendData_896> <sendData_904> <sendData_912> <sendData_920> <sendData_928> <sendData_936> <sendData_944> <sendData_952> <sendData_960> <sendData_968> <sendData_976> <sendData_984> <sendData_992> <sendData_1000> <sendData_1008> <sendData_1016>
+   <sendData_1024> <sendData_1032> <sendData_1040> <sendData_1048> <sendData_1056> <sendData_1064> <sendData_1072> <sendData_1080> <sendData_1088> <sendData_1096> <sendData_1104> <sendData_1112> <sendData_1120> <sendData_1128> <sendData_1136> <sendData_1144> <sendData_1152> <sendData_1160> <sendData_1168> <sendData_1176> <sendData_1184> <sendData_1192> <sendData_1200> <sendData_1208> <sendData_1216> <sendData_1224> <sendData_1232> <sendData_1240> <sendData_1248> <sendData_1256> <sendData_1264> <sendData_1272> <sendData_1280> <sendData_1288> <sendData_1296> <sendData_1304> <sendData_1312> <sendData_1320> <sendData_1328> <sendData_1336> <sendData_1344> <sendData_1352> <sendData_1360> <sendData_1368> <sendData_1376> <sendData_1384> <sendData_1392> <sendData_1400> <sendData_1408> <sendData_1416> <sendData_1424> <sendData_1432> <sendData_1440> <sendData_1448> <sendData_1456> <sendData_1464> <sendData_1472> <sendData_1480> <sendData_1488> <sendData_1496> <sendData_1504> <sendData_1512> <sendData_1520>
+   <sendData_1528> <sendData_1536> <sendData_1544> <sendData_1552> <sendData_1560> <sendData_1568> <sendData_1576> <sendData_1584> <sendData_1592> <sendData_1600> <sendData_1608> <sendData_1616> <sendData_1624> <sendData_1632> <sendData_1640> <sendData_1648> <sendData_1656> <sendData_1664> <sendData_1672> <sendData_1680> <sendData_1688> <sendData_1696> <sendData_1704> <sendData_1712> <sendData_1720> <sendData_1728> <sendData_1736> <sendData_1744> <sendData_1752> 
+INFO:Xst:2261 - The FF/Latch <sendSignal> in Unit <DebuggerRx> is equivalent to the following FF/Latch, which will be removed : <rd_uart> 
+INFO:Xst:2261 - The FF/Latch <sendData_4> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_12> <sendData_20> <sendData_28> <sendData_36> <sendData_44> <sendData_52> <sendData_60> <sendData_68> <sendData_76> <sendData_84> <sendData_92> <sendData_100> <sendData_108> <sendData_116> <sendData_124> <sendData_132> <sendData_140> <sendData_148> <sendData_156> <sendData_164> <sendData_172> <sendData_180> <sendData_188> <sendData_196> <sendData_204> <sendData_212> <sendData_220> <sendData_228> <sendData_236> <sendData_244> <sendData_252> <sendData_260> <sendData_268> <sendData_276> <sendData_284> <sendData_292> <sendData_300> <sendData_308> <sendData_316> <sendData_324> <sendData_332> <sendData_340> <sendData_348> <sendData_356> <sendData_364> <sendData_372> <sendData_380> <sendData_388> <sendData_396> <sendData_404> <sendData_412> <sendData_420> <sendData_428> <sendData_436> <sendData_444> <sendData_452> <sendData_460> <sendData_468> <sendData_476> <sendData_484>
+   <sendData_492> <sendData_500> <sendData_508> <sendData_516> <sendData_524> <sendData_532> <sendData_540> <sendData_548> <sendData_556> <sendData_564> <sendData_572> <sendData_580> <sendData_588> <sendData_596> <sendData_604> <sendData_612> <sendData_620> <sendData_628> <sendData_636> <sendData_644> <sendData_652> <sendData_660> <sendData_668> <sendData_676> <sendData_684> <sendData_692> <sendData_700> <sendData_708> <sendData_716> <sendData_724> <sendData_732> <sendData_740> <sendData_748> <sendData_756> <sendData_764> <sendData_772> <sendData_780> <sendData_788> <sendData_796> <sendData_804> <sendData_812> <sendData_820> <sendData_828> <sendData_836> <sendData_844> <sendData_852> <sendData_860> <sendData_868> <sendData_876> <sendData_884> <sendData_892> <sendData_900> <sendData_908> <sendData_916> <sendData_924> <sendData_932> <sendData_940> <sendData_948> <sendData_956> <sendData_964> <sendData_972> <sendData_980> <sendData_988> <sendData_996> <sendData_1004> <sendData_1012> <sendData_1020>
+   <sendData_1028> <sendData_1036> <sendData_1044> <sendData_1052> <sendData_1060> <sendData_1068> <sendData_1076> <sendData_1084> <sendData_1092> <sendData_1100> <sendData_1108> <sendData_1116> <sendData_1124> <sendData_1132> <sendData_1140> <sendData_1148> <sendData_1156> <sendData_1164> <sendData_1172> <sendData_1180> <sendData_1188> <sendData_1196> <sendData_1204> <sendData_1212> <sendData_1220> <sendData_1228> <sendData_1236> <sendData_1244> <sendData_1252> <sendData_1260> <sendData_1268> <sendData_1276> <sendData_1284> <sendData_1292> <sendData_1300> <sendData_1308> <sendData_1316> <sendData_1324> <sendData_1332> <sendData_1340> <sendData_1348> <sendData_1356> <sendData_1364> <sendData_1372> <sendData_1380> <sendData_1388> <sendData_1396> <sendData_1404> <sendData_1412> <sendData_1420> <sendData_1428> <sendData_1436> <sendData_1444> <sendData_1452> <sendData_1460> <sendData_1468> <sendData_1476> <sendData_1484> <sendData_1492> <sendData_1500> <sendData_1508> <sendData_1516> <sendData_1524>
+   <sendData_1532> <sendData_1540> <sendData_1548> <sendData_1556> <sendData_1564> <sendData_1572> <sendData_1580> <sendData_1588> <sendData_1596> <sendData_1604> <sendData_1612> <sendData_1620> <sendData_1628> <sendData_1636> <sendData_1644> <sendData_1652> <sendData_1660> <sendData_1668> <sendData_1676> <sendData_1684> <sendData_1692> <sendData_1700> <sendData_1708> <sendData_1716> <sendData_1724> <sendData_1732> <sendData_1740> <sendData_1748> <sendData_1756> 
+INFO:Xst:2261 - The FF/Latch <sendData_7> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_15> <sendData_23> <sendData_31> <sendData_39> <sendData_47> <sendData_55> <sendData_63> <sendData_71> <sendData_79> <sendData_87> <sendData_95> <sendData_103> <sendData_111> <sendData_119> <sendData_127> <sendData_135> <sendData_143> <sendData_151> <sendData_159> <sendData_167> <sendData_175> <sendData_183> <sendData_191> <sendData_199> <sendData_207> <sendData_215> <sendData_223> <sendData_231> <sendData_239> <sendData_247> <sendData_255> <sendData_263> <sendData_271> <sendData_279> <sendData_287> <sendData_295> <sendData_303> <sendData_311> <sendData_319> <sendData_327> <sendData_335> <sendData_343> <sendData_351> <sendData_359> <sendData_367> <sendData_375> <sendData_383> <sendData_391> <sendData_399> <sendData_407> <sendData_415> <sendData_423> <sendData_431> <sendData_439> <sendData_447> <sendData_455> <sendData_463> <sendData_471> <sendData_479> <sendData_487>
+   <sendData_495> <sendData_503> <sendData_511> <sendData_519> <sendData_527> <sendData_535> <sendData_543> <sendData_551> <sendData_559> <sendData_567> <sendData_575> <sendData_583> <sendData_591> <sendData_599> <sendData_607> <sendData_615> <sendData_623> <sendData_631> <sendData_639> <sendData_647> <sendData_655> <sendData_663> <sendData_671> <sendData_679> <sendData_687> <sendData_695> <sendData_703> <sendData_711> <sendData_719> <sendData_727> <sendData_735> <sendData_743> <sendData_751> <sendData_759> <sendData_767> <sendData_775> <sendData_783> <sendData_791> <sendData_799> <sendData_807> <sendData_815> <sendData_823> <sendData_831> <sendData_839> <sendData_847> <sendData_855> <sendData_863> <sendData_871> <sendData_879> <sendData_887> <sendData_895> <sendData_903> <sendData_911> <sendData_919> <sendData_927> <sendData_935> <sendData_943> <sendData_951> <sendData_959> <sendData_967> <sendData_975> <sendData_983> <sendData_991> <sendData_999> <sendData_1007> <sendData_1015> <sendData_1023>
+   <sendData_1031> <sendData_1039> <sendData_1047> <sendData_1055> <sendData_1063> <sendData_1071> <sendData_1079> <sendData_1087> <sendData_1095> <sendData_1103> <sendData_1111> <sendData_1119> <sendData_1127> <sendData_1135> <sendData_1143> <sendData_1151> <sendData_1159> <sendData_1167> <sendData_1175> <sendData_1183> <sendData_1191> <sendData_1199> <sendData_1207> <sendData_1215> <sendData_1223> <sendData_1231> <sendData_1239> <sendData_1247> <sendData_1255> <sendData_1263> <sendData_1271> <sendData_1279> <sendData_1287> <sendData_1295> <sendData_1303> <sendData_1311> <sendData_1319> <sendData_1327> <sendData_1335> <sendData_1343> <sendData_1351> <sendData_1359> <sendData_1367> <sendData_1375> <sendData_1383> <sendData_1391> <sendData_1399> <sendData_1407> <sendData_1415> <sendData_1423> <sendData_1431> <sendData_1439> <sendData_1447> <sendData_1455> <sendData_1463> <sendData_1471> <sendData_1479> <sendData_1487> <sendData_1495> <sendData_1503> <sendData_1511> <sendData_1519> <sendData_1527>
+   <sendData_1535> <sendData_1543> <sendData_1551> <sendData_1559> <sendData_1567> <sendData_1575> <sendData_1583> <sendData_1591> <sendData_1599> <sendData_1607> <sendData_1615> <sendData_1623> <sendData_1631> <sendData_1639> <sendData_1647> <sendData_1655> <sendData_1663> <sendData_1671> <sendData_1679> <sendData_1687> <sendData_1695> <sendData_1703> <sendData_1711> <sendData_1719> <sendData_1727> <sendData_1735> <sendData_1743> <sendData_1751> <sendData_1759> 
+INFO:Xst:2261 - The FF/Latch <sendData_3> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_11> <sendData_19> <sendData_27> <sendData_35> <sendData_43> <sendData_51> <sendData_59> <sendData_67> <sendData_75> <sendData_83> <sendData_91> <sendData_99> <sendData_107> <sendData_115> <sendData_123> <sendData_131> <sendData_139> <sendData_147> <sendData_155> <sendData_163> <sendData_171> <sendData_179> <sendData_187> <sendData_195> <sendData_203> <sendData_211> <sendData_219> <sendData_227> <sendData_235> <sendData_243> <sendData_251> <sendData_259> <sendData_267> <sendData_275> <sendData_283> <sendData_291> <sendData_299> <sendData_307> <sendData_315> <sendData_323> <sendData_331> <sendData_339> <sendData_347> <sendData_355> <sendData_363> <sendData_371> <sendData_379> <sendData_387> <sendData_395> <sendData_403> <sendData_411> <sendData_419> <sendData_427> <sendData_435> <sendData_443> <sendData_451> <sendData_459> <sendData_467> <sendData_475> <sendData_483>
+   <sendData_491> <sendData_499> <sendData_507> <sendData_515> <sendData_523> <sendData_531> <sendData_539> <sendData_547> <sendData_555> <sendData_563> <sendData_571> <sendData_579> <sendData_587> <sendData_595> <sendData_603> <sendData_611> <sendData_619> <sendData_627> <sendData_635> <sendData_643> <sendData_651> <sendData_659> <sendData_667> <sendData_675> <sendData_683> <sendData_691> <sendData_699> <sendData_707> <sendData_715> <sendData_723> <sendData_731> <sendData_739> <sendData_747> <sendData_755> <sendData_763> <sendData_771> <sendData_779> <sendData_787> <sendData_795> <sendData_803> <sendData_811> <sendData_819> <sendData_827> <sendData_835> <sendData_843> <sendData_851> <sendData_859> <sendData_867> <sendData_875> <sendData_883> <sendData_891> <sendData_899> <sendData_907> <sendData_915> <sendData_923> <sendData_931> <sendData_939> <sendData_947> <sendData_955> <sendData_963> <sendData_971> <sendData_979> <sendData_987> <sendData_995> <sendData_1003> <sendData_1011> <sendData_1019>
+   <sendData_1027> <sendData_1035> <sendData_1043> <sendData_1051> <sendData_1059> <sendData_1067> <sendData_1075> <sendData_1083> <sendData_1091> <sendData_1099> <sendData_1107> <sendData_1115> <sendData_1123> <sendData_1131> <sendData_1139> <sendData_1147> <sendData_1155> <sendData_1163> <sendData_1171> <sendData_1179> <sendData_1187> <sendData_1195> <sendData_1203> <sendData_1211> <sendData_1219> <sendData_1227> <sendData_1235> <sendData_1243> <sendData_1251> <sendData_1259> <sendData_1267> <sendData_1275> <sendData_1283> <sendData_1291> <sendData_1299> <sendData_1307> <sendData_1315> <sendData_1323> <sendData_1331> <sendData_1339> <sendData_1347> <sendData_1355> <sendData_1363> <sendData_1371> <sendData_1379> <sendData_1387> <sendData_1395> <sendData_1403> <sendData_1411> <sendData_1419> <sendData_1427> <sendData_1435> <sendData_1443> <sendData_1451> <sendData_1459> <sendData_1467> <sendData_1475> <sendData_1483> <sendData_1491> <sendData_1499> <sendData_1507> <sendData_1515> <sendData_1523>
+   <sendData_1531> <sendData_1539> <sendData_1547> <sendData_1555> <sendData_1563> <sendData_1571> <sendData_1579> <sendData_1587> <sendData_1595> <sendData_1603> <sendData_1611> <sendData_1619> <sendData_1627> <sendData_1635> <sendData_1643> <sendData_1651> <sendData_1659> <sendData_1667> <sendData_1675> <sendData_1683> <sendData_1691> <sendData_1699> <sendData_1707> <sendData_1715> <sendData_1723> <sendData_1731> <sendData_1739> <sendData_1747> <sendData_1755> 
+INFO:Xst:2261 - The FF/Latch <sendData_2> in Unit <DebuggerRx> is equivalent to the following 219 FFs/Latches, which will be removed : <sendData_10> <sendData_18> <sendData_26> <sendData_34> <sendData_42> <sendData_50> <sendData_58> <sendData_66> <sendData_74> <sendData_82> <sendData_90> <sendData_98> <sendData_106> <sendData_114> <sendData_122> <sendData_130> <sendData_138> <sendData_146> <sendData_154> <sendData_162> <sendData_170> <sendData_178> <sendData_186> <sendData_194> <sendData_202> <sendData_210> <sendData_218> <sendData_226> <sendData_234> <sendData_242> <sendData_250> <sendData_258> <sendData_266> <sendData_274> <sendData_282> <sendData_290> <sendData_298> <sendData_306> <sendData_314> <sendData_322> <sendData_330> <sendData_338> <sendData_346> <sendData_354> <sendData_362> <sendData_370> <sendData_378> <sendData_386> <sendData_394> <sendData_402> <sendData_410> <sendData_418> <sendData_426> <sendData_434> <sendData_442> <sendData_450> <sendData_458> <sendData_466> <sendData_474> <sendData_482>
+   <sendData_490> <sendData_498> <sendData_506> <sendData_514> <sendData_522> <sendData_530> <sendData_538> <sendData_546> <sendData_554> <sendData_562> <sendData_570> <sendData_578> <sendData_586> <sendData_594> <sendData_602> <sendData_610> <sendData_618> <sendData_626> <sendData_634> <sendData_642> <sendData_650> <sendData_658> <sendData_666> <sendData_674> <sendData_682> <sendData_690> <sendData_698> <sendData_706> <sendData_714> <sendData_722> <sendData_730> <sendData_738> <sendData_746> <sendData_754> <sendData_762> <sendData_770> <sendData_778> <sendData_786> <sendData_794> <sendData_802> <sendData_810> <sendData_818> <sendData_826> <sendData_834> <sendData_842> <sendData_850> <sendData_858> <sendData_866> <sendData_874> <sendData_882> <sendData_890> <sendData_898> <sendData_906> <sendData_914> <sendData_922> <sendData_930> <sendData_938> <sendData_946> <sendData_954> <sendData_962> <sendData_970> <sendData_978> <sendData_986> <sendData_994> <sendData_1002> <sendData_1010> <sendData_1018>
+   <sendData_1026> <sendData_1034> <sendData_1042> <sendData_1050> <sendData_1058> <sendData_1066> <sendData_1074> <sendData_1082> <sendData_1090> <sendData_1098> <sendData_1106> <sendData_1114> <sendData_1122> <sendData_1130> <sendData_1138> <sendData_1146> <sendData_1154> <sendData_1162> <sendData_1170> <sendData_1178> <sendData_1186> <sendData_1194> <sendData_1202> <sendData_1210> <sendData_1218> <sendData_1226> <sendData_1234> <sendData_1242> <sendData_1250> <sendData_1258> <sendData_1266> <sendData_1274> <sendData_1282> <sendData_1290> <sendData_1298> <sendData_1306> <sendData_1314> <sendData_1322> <sendData_1330> <sendData_1338> <sendData_1346> <sendData_1354> <sendData_1362> <sendData_1370> <sendData_1378> <sendData_1386> <sendData_1394> <sendData_1402> <sendData_1410> <sendData_1418> <sendData_1426> <sendData_1434> <sendData_1442> <sendData_1450> <sendData_1458> <sendData_1466> <sendData_1474> <sendData_1482> <sendData_1490> <sendData_1498> <sendData_1506> <sendData_1514> <sendData_1522>
+   <sendData_1530> <sendData_1538> <sendData_1546> <sendData_1554> <sendData_1562> <sendData_1570> <sendData_1578> <sendData_1586> <sendData_1594> <sendData_1602> <sendData_1610> <sendData_1618> <sendData_1626> <sendData_1634> <sendData_1642> <sendData_1650> <sendData_1658> <sendData_1666> <sendData_1674> <sendData_1682> <sendData_1690> <sendData_1698> <sendData_1706> <sendData_1714> <sendData_1722> <sendData_1730> <sendData_1738> <sendData_1746> <sendData_1754> 
 
 Optimizing unit <FF_Buf_Interface> ...
 
@@ -516,7 +514,6 @@ Optimizing unit <DebuggerTx> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block Top, actual ratio is 2.
-FlipFlop UART_Unit/Baud_Rate_unit/tick has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -524,8 +521,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 84
- Flip-Flops                                            : 84
+# Registers                                            : 86
+ Flip-Flops                                            : 86
 
 =========================================================================
 
@@ -548,34 +545,37 @@ Top Level Output File Name         : Top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 126
+# BELS                             : 129
 #      GND                         : 1
-#      INV                         : 2
+#      INV                         : 1
 #      LUT1                        : 8
-#      LUT2                        : 14
-#      LUT3                        : 23
-#      LUT4                        : 13
-#      LUT5                        : 19
-#      LUT6                        : 24
+#      LUT2                        : 20
+#      LUT3                        : 24
+#      LUT4                        : 17
+#      LUT5                        : 13
+#      LUT6                        : 25
 #      MUXCY                       : 8
-#      MUXF7                       : 4
+#      MUXF7                       : 2
 #      VCC                         : 1
 #      XORCY                       : 9
-# FlipFlops/Latches                : 92
-#      FD                          : 2
+# FlipFlops/Latches                : 94
+#      FD                          : 1
+#      FD_1                        : 1
 #      FDC                         : 1
 #      FDCE                        : 2
 #      FDP                         : 2
 #      FDPE                        : 6
-#      FDR                         : 24
-#      FDRE                        : 46
+#      FDR                         : 23
+#      FDR_1                       : 3
+#      FDRE                        : 38
+#      FDRE_1                      : 8
 #      FDS                         : 1
 #      LD                          : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 4
+# IO Buffers                       : 9
 #      IBUF                        : 2
-#      OBUF                        : 2
+#      OBUF                        : 7
 
 Device utilization summary:
 ---------------------------
@@ -584,20 +584,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              92  out of  18224     0%  
- Number of Slice LUTs:                  103  out of   9112     1%  
-    Number used as Logic:               103  out of   9112     1%  
+ Number of Slice Registers:              94  out of  18224     0%  
+ Number of Slice LUTs:                  108  out of   9112     1%  
+    Number used as Logic:               108  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    118
-   Number with an unused Flip Flop:      26  out of    118    22%  
-   Number with an unused LUT:            15  out of    118    12%  
-   Number of fully used LUT-FF pairs:    77  out of    118    65%  
+ Number of LUT Flip Flop pairs used:    131
+   Number with an unused Flip Flop:      37  out of    131    28%  
+   Number with an unused LUT:            23  out of    131    17%  
+   Number of fully used LUT-FF pairs:    71  out of    131    54%  
    Number of unique control sets:        13
 
 IO Utilization: 
- Number of IOs:                           5
- Number of bonded IOBs:                   5  out of    232     2%  
+ Number of IOs:                          10
+ Number of bonded IOBs:                  10  out of    232     4%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -620,12 +620,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-Clock Signal                                                                                           | Clock buffer(FF name)            | Load  |
--------------------------------------------------------------------------------------------------------+----------------------------------+-------+
-clock                                                                                                  | BUFGP                            | 84    |
-debuggertx_unit/state_reg[1]_PWR_11_o_Mux_51_o(debuggertx_unit/Mmux_state_reg[1]_PWR_11_o_Mux_51_o11:O)| NONE(*)(debuggertx_unit/w_data_0)| 8     |
--------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+-------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+Clock Signal                                                                                                 | Clock buffer(FF name)            | Load  |
+-------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
+clock                                                                                                        | BUFGP                            | 86    |
+debuggertx_unit/state_reg_tx[1]_PWR_11_o_Mux_50_o(debuggertx_unit/Mmux_state_reg_tx[1]_PWR_11_o_Mux_50_o11:O)| NONE(*)(debuggertx_unit/w_data_0)| 8     |
+-------------------------------------------------------------------------------------------------------------+----------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -639,9 +639,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.807ns (Maximum Frequency: 262.684MHz)
-   Minimum input arrival time before clock: 3.351ns
-   Maximum output required time after clock: 3.597ns
+   Minimum period: 5.513ns (Maximum Frequency: 181.383MHz)
+   Minimum input arrival time before clock: 3.610ns
+   Maximum output required time after clock: 3.999ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -650,64 +650,65 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock'
-  Clock period: 3.807ns (frequency: 262.684MHz)
-  Total number of paths / destination ports: 764 / 138
+  Clock period: 5.513ns (frequency: 181.383MHz)
+  Total number of paths / destination ports: 841 / 140
 -------------------------------------------------------------------------
-Delay:               3.807ns (Levels of Logic = 2)
-  Source:            UART_Unit/Tx_unit/s_reg_2 (FF)
-  Destination:       UART_Unit/Tx_unit/b_reg_7 (FF)
+Delay:               2.757ns (Levels of Logic = 2)
+  Source:            UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_6 (FF)
+  Destination:       debuggerrx_unit/sendData_7 (FF)
   Source Clock:      clock rising
-  Destination Clock: clock rising
+  Destination Clock: clock falling
 
-  Data Path: UART_Unit/Tx_unit/s_reg_2 to UART_Unit/Tx_unit/b_reg_7
+  Data Path: UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_6 to debuggerrx_unit/sendData_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.447   0.943  UART_Unit/Tx_unit/s_reg_2 (UART_Unit/Tx_unit/s_reg_2)
-     LUT4:I1->O           11   0.205   0.883  UART_Unit/Tx_unit/GND_6_o_GND_6_o_equal_35_o<3>1 (UART_Unit/Tx_unit/GND_6_o_GND_6_o_equal_35_o)
-     LUT5:I4->O            8   0.205   0.802  UART_Unit/Tx_unit/_n0136_inv1 (UART_Unit/Tx_unit/_n0136_inv)
-     FDRE:CE                   0.322          UART_Unit/Tx_unit/b_reg_0
+     FDRE:C->Q             6   0.447   0.973  UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_6 (UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_6)
+     LUT3:I0->O            1   0.205   0.827  debuggerrx_unit/current_state[2]_sendData[1759]_wide_mux_11_OUT<0>3 (debuggerrx_unit/current_state[2]_sendData[1759]_wide_mux_11_OUT<0>2)
+     LUT5:I1->O            1   0.203   0.000  debuggerrx_unit/current_state[2]_sendData[1759]_wide_mux_11_OUT<0>4 (debuggerrx_unit/current_state[2]_sendData[1759]_wide_mux_11_OUT<1759>)
+     FDRE_1:D                  0.102          debuggerrx_unit/sendData_7
     ----------------------------------------
-    Total                      3.807ns (1.179ns logic, 2.628ns route)
-                                       (31.0% logic, 69.0% route)
+    Total                      2.757ns (0.957ns logic, 1.800ns route)
+                                       (34.7% logic, 65.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 79 / 79
+  Total number of paths / destination ports: 82 / 82
 -------------------------------------------------------------------------
-Offset:              3.351ns (Levels of Logic = 1)
+Offset:              3.610ns (Levels of Logic = 2)
   Source:            reset (PAD)
-  Destination:       UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_7 (FF)
-  Destination Clock: clock rising
+  Destination:       debuggerrx_unit/current_state_FSM_FFd1 (FF)
+  Destination Clock: clock falling
 
-  Data Path: reset to UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_7
+  Data Path: reset to debuggerrx_unit/current_state_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            73   1.222   1.699  reset_IBUF (reset_IBUF)
-     FDRE:R                    0.430          UART_Unit/FF_Buf_Interface_Rx_unit/buf_reg_0
+     IBUF:I->O            76   1.222   2.083  reset_IBUF (reset_IBUF)
+     LUT6:I0->O            1   0.203   0.000  debuggerrx_unit/current_state_FSM_FFd1_rstpot (debuggerrx_unit/current_state_FSM_FFd1_rstpot)
+     FD_1:D                    0.102          debuggerrx_unit/current_state_FSM_FFd1
     ----------------------------------------
-    Total                      3.351ns (1.652ns logic, 1.699ns route)
-                                       (49.3% logic, 50.7% route)
+    Total                      3.610ns (1.527ns logic, 2.083ns route)
+                                       (42.3% logic, 57.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
-  Total number of paths / destination ports: 2 / 2
+  Total number of paths / destination ports: 7 / 7
 -------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 1)
-  Source:            UART_Unit/Tx_unit/tx_reg (FF)
-  Destination:       tx (PAD)
-  Source Clock:      clock rising
+Offset:              3.999ns (Levels of Logic = 1)
+  Source:            debuggerrx_unit/current_state_FSM_FFd1 (FF)
+  Destination:       current_state<2> (PAD)
+  Source Clock:      clock falling
 
-  Data Path: UART_Unit/Tx_unit/tx_reg to tx
+  Data Path: debuggerrx_unit/current_state_FSM_FFd1 to current_state<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDS:C->Q              1   0.447   0.579  UART_Unit/Tx_unit/tx_reg (UART_Unit/Tx_unit/tx_reg)
-     OBUF:I->O                 2.571          tx_OBUF (tx)
+     FD_1:C->Q            15   0.447   0.981  debuggerrx_unit/current_state_FSM_FFd1 (debuggerrx_unit/current_state_FSM_FFd1)
+     OBUF:I->O                 2.571          current_state_2_OBUF (current_state<2>)
     ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      3.999ns (3.018ns logic, 0.981ns route)
+                                       (75.5% logic, 24.5% route)
 
 =========================================================================
 
@@ -715,33 +716,33 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock clock
-----------------------------------------------+---------+---------+---------+---------+
-                                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-----------------------------------------------+---------+---------+---------+---------+
-clock                                         |    3.807|         |         |         |
-debuggertx_unit/state_reg[1]_PWR_11_o_Mux_51_o|         |    1.179|         |         |
-----------------------------------------------+---------+---------+---------+---------+
+-------------------------------------------------+---------+---------+---------+---------+
+                                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------+---------+---------+---------+---------+
+clock                                            |    4.249|    1.767|    3.848|         |
+debuggertx_unit/state_reg_tx[1]_PWR_11_o_Mux_50_o|         |    1.179|         |         |
+-------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock debuggertx_unit/state_reg[1]_PWR_11_o_Mux_51_o
+Clock to Setup on destination clock debuggertx_unit/state_reg_tx[1]_PWR_11_o_Mux_50_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock          |         |         |    1.622|         |
+clock          |         |         |    1.671|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 72.00 secs
-Total CPU time to Xst completion: 72.34 secs
+Total REAL time to Xst completion: 117.00 secs
+Total CPU time to Xst completion: 117.91 secs
  
 --> 
 
-Total memory usage is 365332 kilobytes
+Total memory usage is 368084 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)
-Number of infos    :   17 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 

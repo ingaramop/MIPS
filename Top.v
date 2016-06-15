@@ -23,7 +23,9 @@ module Top(
 	input reset,
 	input rx,
 	output tx,
-	output dataSent
+	output dataSent,
+	output [2:0] current_state,
+	output [1:0] state_reg_tx
     );
 // Declaracion de señales
 wire rx_ready, rd_uart, tx_done, sendSignal, tx_busy;
@@ -52,9 +54,11 @@ DebuggerRx debuggerrx_unit (
 	 .reset(reset),	
     .r_data(rx_buf_out), 
     .rx_ready(rx_ready),
+	 .dataSent(dataSent),
     .sendSignal(sendSignal), 
     .rd_uart(rd_uart), 
-    .sendData(sendData)
+    .sendData(sendData),
+	 .current_state(current_state)
     );
 
 // Instantiate the module
@@ -66,7 +70,8 @@ DebuggerTx debuggertx_unit (
     .tx_busy(tx_busy), 
     .wr_uart(tx_done), 
     .dataSent(dataSent), 
-    .w_data(t_data)
+    .w_data(t_data),
+	 .state_reg_tx(state_reg_tx)
     );
 	 
 endmodule

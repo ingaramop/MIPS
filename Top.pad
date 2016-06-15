@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Jun 14 19:41:02 2016
+Wed Jun 15 12:05:20 2016
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -122,7 +122,7 @@ F10||IOBS|IO_L40N_0|UNUSED||0|||||||||
 F11||IOBM|IO_L42P_0|UNUSED||0|||||||||
 F12||IOBM|IO_L51P_0|UNUSED||0|||||||||
 F13||IOBM|IO_L63P_SCP7_0|UNUSED||0|||||||||
-F14|dataSent|IOB|IO_L30P_A21_M1RESET_1|OUTPUT|LVCMOS25*|1|12|SLOW||||UNLOCATED|NO|NONE|
+F14||IOBM|IO_L30P_A21_M1RESET_1|UNUSED||1|||||||||
 F15||IOBM|IO_L1P_A25_1|UNUSED||1|||||||||
 F16||IOBS|IO_L1N_A24_VREF_1|UNUSED||1|||||||||
 F17||IOBM|IO_L35P_A11_M1A7_1|UNUSED||1|||||||||
@@ -227,7 +227,7 @@ M7|||VCCINT||||||||1.2||||
 M8||IOBM|IO_L40P_2|UNUSED||2|||||||||
 M9|||VCCAUX||||||||2.5||||
 M10||IOBM|IO_L22P_2|UNUSED||2|||||||||
-M11||IOBM|IO_L15P_2|UNUSED||2|||||||||
+M11|state_reg_tx<1>|IOB|IO_L15P_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
 M12|||VCCINT||||||||1.2||||
 M13||IOBS|IO_L61N_1|UNUSED||1|||||||||
 M14||IOBM|IO_L53P_1|UNUSED||1|||||||||
@@ -261,7 +261,7 @@ P5|||VCCAUX||||||||2.5||||
 P6||IOBS|IO_L64N_D9_2|UNUSED||2|||||||||
 P7||IOBS|IO_L47N_2|UNUSED||2|||||||||
 P8||IOBS|IO_L44N_2|UNUSED||2|||||||||
-P9|||VCCO_2|||2|||||any******||||
+P9|||VCCO_2|||2|||||2.50||||
 P10|||VCCAUX||||||||2.5||||
 P11||IOBS|IO_L20N_2|UNUSED||2|||||||||
 P12||IOBS|IO_L13N_D10_2|UNUSED||2|||||||||
@@ -276,13 +276,13 @@ R2|||VCCO_3|||3|||||any******||||
 R3||IOBM|IO_L62P_D5_2|UNUSED||2|||||||||
 R4|||GND||||||||||||
 R5||IOBM|IO_L48P_D7_2|UNUSED||2|||||||||
-R6|||VCCO_2|||2|||||any******||||
+R6|||VCCO_2|||2|||||2.50||||
 R7||IOBM|IO_L46P_2|UNUSED||2|||||||||
 R8||IOBM|IO_L31P_GCLK31_D14_2|UNUSED||2|||||||||
 R9|||GND||||||||||||
 R10||IOBM|IO_L29P_GCLK3_2|UNUSED||2|||||||||
 R11||IOBM|IO_L16P_2|UNUSED||2|||||||||
-R12|||VCCO_2|||2|||||any******||||
+R12|||VCCO_2|||2|||||2.50||||
 R13||IOBM|IO_L3P_D0_DIN_MISO_MISO1_2|UNUSED||2|||||||||
 R14|||GND||||||||||||
 R15||IOBM|IO_L1P_CCLK_2|UNUSED||2|||||||||
@@ -299,7 +299,7 @@ T7||IOBS|IO_L46N_2|UNUSED||2|||||||||
 T8||IOBS|IO_L31N_GCLK30_D15_2|UNUSED||2|||||||||
 T9||IOBM|IO_L32P_GCLK29_2|UNUSED||2|||||||||
 T10||IOBS|IO_L29N_GCLK2_2|UNUSED||2|||||||||
-T11||IOBS|IO_L16N_VREF_2|UNUSED||2|||||||||
+T11|dataSent|IOB|IO_L16N_VREF_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
 T12||IOBM|IO_L19P_2|UNUSED||2|||||||||
 T13||IOBS|IO_L3N_MOSI_CSI_B_MISO0_2|UNUSED||2|||||||||
 T14||IOBM|IO_L12P_D1_MISO2_2|UNUSED||2|||||||||
@@ -310,19 +310,19 @@ T18||IOBS|IO_L51N_M1DQ13_1|UNUSED||1|||||||||
 U1||IOBS|IO_L32N_M3DQ15_3|UNUSED||3|||||||||
 U2||IOBM|IO_L32P_M3DQ14_3|UNUSED||3|||||||||
 U3||IOBM|IO_L65P_INIT_B_2|UNUSED||2|||||||||
-U4|||VCCO_2|||2|||||any******||||
+U4|||VCCO_2|||2|||||2.50||||
 U5||IOBM|IO_L49P_D3_2|UNUSED||2|||||||||
 U6|||GND||||||||||||
 U7||IOBM|IO_L43P_2|UNUSED||2|||||||||
 U8||IOBM|IO_L41P_2|UNUSED||2|||||||||
-U9|||VCCO_2|||2|||||any******||||
+U9|||VCCO_2|||2|||||2.50||||
 U10||IOBM|IO_L30P_GCLK1_D13_2|UNUSED||2|||||||||
 U11||IOBM|IO_L23P_2|UNUSED||2|||||||||
 U12|||GND||||||||||||
 U13||IOBM|IO_L14P_D11_2|UNUSED||2|||||||||
-U14|||VCCO_2|||2|||||any******||||
-U15||IOBM|IO_L5P_2|UNUSED||2|||||||||
-U16||IOBM|IO_L2P_CMPCLK_2|UNUSED||2|||||||||
+U14|||VCCO_2|||2|||||2.50||||
+U15|current_state<2>|IOB|IO_L5P_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
+U16|current_state<0>|IOB|IO_L2P_CMPCLK_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
 U17||IOBM|IO_L52P_M1DQ14_1|UNUSED||1|||||||||
 U18||IOBS|IO_L52N_M1DQ15_1|UNUSED||1|||||||||
 V1|||GND||||||||||||
@@ -339,8 +339,8 @@ V11||IOBS|IO_L23N_2|UNUSED||2|||||||||
 V12||IOBS|IO_L19N_2|UNUSED||2|||||||||
 V13||IOBS|IO_L14N_D12_2|UNUSED||2|||||||||
 V14||IOBS|IO_L12N_D2_MISO3_2|UNUSED||2|||||||||
-V15||IOBS|IO_L5N_2|UNUSED||2|||||||||
-V16||IOBS|IO_L2N_CMPMOSI_2|UNUSED||2|||||||||
+V15|state_reg_tx<0>|IOB|IO_L5N_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
+V16|current_state<1>|IOB|IO_L2N_CMPMOSI_2|OUTPUT|LVCMOS25*|2|12|SLOW||||LOCATED|NO|NONE|
 V17|||DONE_2||||||||||||
 V18|||GND||||||||||||
 
