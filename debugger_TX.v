@@ -5,7 +5,7 @@ module DebuggerTx(
 		input clk, 
 		input reset,
 		input sendSignal,
-		input [1759:0] sendData,
+		input [1719:0] sendData,
 		input tx_busy,
 		output reg wr_uart,
 		output reg dataSent,
@@ -13,7 +13,7 @@ module DebuggerTx(
 		output reg [1:0] state_reg_tx
     );
 
-localparam frameSize = 1760;
+localparam frameSize = 1720;
 	 
 localparam [1:0]
 		idle 			= 2'b01,
@@ -104,7 +104,7 @@ always @(*)
 								state_next		= ( aux_reg < 8 ) ?  closing : sending;
 								contBytes		= contBytes +1'b1;
 							end
-						else
+						else 
 							begin
 								dataSent_next	= 1'b0;
 								wr_uart			= 1'b0; 					//Habilito la escritura en el IC del Tx de la UART
