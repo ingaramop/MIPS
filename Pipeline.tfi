@@ -1,0 +1,47 @@
+
+
+
+// Instantiate the module
+Pipeline instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .PCSrc_MEMIF(PCSrc_MEMIF), 
+    .PCJump(PCJump), 
+    .instruction(instruction), 
+    .PC_IFID(PC_IFID), 
+    .regWrite_WBID(regWrite_WBID), 
+    .writeRegister_WBID(writeRegister_WBID), 
+    .writeData_WBID(writeData_WBID), 
+    .Registers(Registers), 
+    .RegDst_IDEX(RegDst_IDEX), 
+    .ALUOp_IDEX(ALUOp_IDEX), 
+    .ALUSrc_IDEX(ALUSrc_IDEX), 
+    .Branch_IDEX(Branch_IDEX), 
+    .MemRead_IDEX(MemRead_IDEX), 
+    .MemWrite_IDEX(MemWrite_IDEX), 
+    .MemToReg_IDEX(MemToReg_IDEX), 
+    .RegWrite_IDEX(RegWrite_IDEX), 
+    .PC_IDEX(PC_IDEX), 
+    .regA_IDEX(regA_IDEX), 
+    .regB_IDEX(regB_IDEX), 
+    .signExtend(signExtend), 
+    .rt(rt), 
+    .rd(rd), 
+    .Branch_EXMEM(Branch_EXMEM), 
+    .MemRead_EXMEM(MemRead_EXMEM), 
+    .MemWrite_EXMEM(MemWrite_EXMEM), 
+    .MemToReg_EXMEM(MemToReg_EXMEM), 
+    .RegWrite_EXMEM(RegWrite_EXMEM), 
+    .CurrentPC_EXMEM(CurrentPC_EXMEM), 
+    .zero(zero), 
+    .ALUResult_EXMEM(ALUResult_EXMEM), 
+    .regB_EXMEM(regB_EXMEM), 
+    .wr_EXMEM(wr_EXMEM), 
+    .Memorias(Memorias), 
+    .MemToReg_MEMWB(MemToReg_MEMWB), 
+    .readData_MEMWB(readData_MEMWB), 
+    .ALUResult_MEMWB(ALUResult_MEMWB), 
+    .CurrentPC_MEMWB(CurrentPC_MEMWB)
+    );
+
+

@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj UART -o E:/UARTTincho/Pipeline.tfi -lib work E:/UARTTincho//Pipeline.v -module Pipeline -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

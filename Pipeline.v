@@ -69,6 +69,7 @@ module Pipeline(
 		output [9:0] CurrentPC_MEMWB//#33
     );
 
+wire [4:0] writeRegister_MEMWB;
 
 InstructionFetch IF (
     .clk(clk),  

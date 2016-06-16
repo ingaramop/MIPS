@@ -23,22 +23,24 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module DebuggerRxPipeTest;
-////////// INPUTS DebuggerRx ////////////
-	reg globalClk;//OUT: Clock FPGA - IN: DebuggerTx, DebuggerRx
-	reg global_reset;//OUT: Reset button FPGA - IN: DebuggerTx, DebuggerRx
-	reg [1:0] r_data; //OUT: uart - IN: DebuggerRx
-	reg txUARTFull; ////OUT: uart - IN: DebuggerTx
-	reg rx_empty;//OUT: uart - IN: DebuggerRx
-	reg data_sent;
 
-////////// OUTPUTS DebuggerRx ////////////
-	wire rd_uart; //OUT: DebuggerRx - IN: uart
+	reg clock;//OUT: Clock FPGA - IN: DebuggerTx, DebuggerRx
+	reg reset;//OUT: Reset button FPGA - IN: DebuggerTx, DebuggerRx
+	///////OUTPUTS UART////////
+	reg rx_ready;
+	reg [7:0] rx_buf_out;	
+	///////OUTPUTS DEBUGGER TX///////////
+	reg dataSent;
+	
+	///////OUTPUTS DEBUGGER RX///////////
+	wire rd_uart, sendSignal;
 	wire pipelineReset; //OUT: DebuggerRx - IN: Pipeline, EndDetector
 	wire pipelineClk; //OUT: DebuggerRx - IN: Pipeline, EndDetector
-	wire send_data; //OUT: DebuggerRx - IN: DebuggerTx
-	
-////////// OUTPUTS EndDetector ////////////	
+
+	////////// OUTPUTS EndDetector ////////////	
 	wire program_finished; //OUT: EndDetector - IN: DebuggerRx
+	
+
 	
 ////////// OUTPUTS Pipeline ////////////	
 	//inputs if	 
@@ -78,21 +80,22 @@ module DebuggerRxPipeTest;
 	wire MemToReg_MEMWB;//#31
 	wire [31:0] readData_MEMWB;//#34
 	wire [31:0] ALUResult_MEMWB;//#35
-	wire [4:0] writeRegister_MEMWB;
 	wire [9:0] CurrentPC_MEMWB;//#33
 
-	// Instantiate the Unit Under Test (UUT)
-DebuggerRx debuggerRx (
-    .clk(globalClk), 
-    .r_data(r_data), 
-    .rx_empty(rx_empty), 
-    .global_reset(global_reset), 
-    .program_finished(program_finished), 
-    .data_sent(data_sent), 
+
+
+DebuggerRx debuggerrx_unit (
+    .clock(clock),
+	 .reset(reset),	
+    .r_data(rx_buf_out), 
+    .rx_ready(rx_ready),
+	 .dataSent(dataSent),
+	 .program_finished(program_finished),
+    .sendSignal(sendSignal), 
     .rd_uart(rd_uart), 
-    .pipeline_reset(pipelineReset), 
-    .pipeline_clk(pipelineClk),
-	 .send_data(send_data)
+	 .current_state(current_state),
+	 .pipelineClk(pipelineClk),
+	 .pipelineReset(pipelineReset)
     );
 	 
 EndProgramDetector endDetector (
@@ -141,53 +144,84 @@ Pipeline pipeline (
     .MemToReg_MEMWB(MemToReg_MEMWB), 
     .readData_MEMWB(readData_MEMWB), 
     .ALUResult_MEMWB(ALUResult_MEMWB), 
-    .writeRegister_MEMWB(writeRegister_MEMWB), 
     .CurrentPC_MEMWB(CurrentPC_MEMWB)
     );
 
+
+	
+
 	initial begin
 		// Initialize Inputs
-	globalClk = 0;
-	global_reset = 0;
-	r_data = 0; 
-	rx_empty = 1;
-	data_sent =0;
-		forever #50 globalClk = ~globalClk;
+	clock = 0;
+	reset = 0;
+	rx_buf_out = 0; 
+	rx_ready = 0;
+	dataSent =0;
+		forever #50 clock = ~clock;
 
-		forever #50 globalClk = ~globalClk;
+		forever #50 clock = ~clock;
 	end
       
 	initial begin
 	////HARDWARE RESET///////
 	#125
-	global_reset = 1;
+	reset = 1;
 	#125
 	// bajo la bandera de reset
-	global_reset = 0;
+	reset = 0;
 	#100
 	////ONE STEP///////
-	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b01;//one step
+	rx_ready =1;//aviso que llegó un mensaje
+	rx_buf_out = 8'b00110001;//one step
 	#100;
-	rx_empty = 1;
+	rx_ready = 0;
 	#500
-	data_sent=1;
+	dataSent=1;
 	#200
-	data_sent =0;
+	dataSent =0;
+	#500
+		////ONE STEP///////
+	rx_ready =1;//aviso que llegó un mensaje
+	rx_buf_out = 8'b00110001;//one step
+	#100;
+	rx_ready = 0;
+	#500
+	dataSent=1;
+	#200
+	dataSent =0;
+			////ONE STEP///////
+	rx_ready =1;//aviso que llegó un mensaje
+	rx_buf_out = 8'b00110001;//one step
+	#100;
+	rx_ready = 0;
+	#500
+	dataSent=1;
+	#200
+	dataSent =0;
 	////SOFTWARE RESET///////
-	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b11;//reset
+	rx_ready =1;//aviso que llegó un mensaje
+	rx_buf_out = 8'b00110011;//reset
 	#100;
-	rx_empty = 1;
+	rx_ready = 0;
 	#500
-	data_sent=1;
+	dataSent=1;
 	#200
-	data_sent =0;
-	////RUN ALL - EJECUCION CONTINUA///////
-	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b10;//run all
-	#100
-	rx_empty = 1;
+	dataSent =0;
+		////ONE STEP///////
+	rx_ready =1;//aviso que llegó un mensaje
+	rx_buf_out = 8'b00110001;//one step
+	#100;
+	rx_ready = 0;
+	#500
+	dataSent=1;
+	#200
+	dataSent =0;
+
+//	////RUN ALL - EJECUCION CONTINUA///////
+//	rx_ready =0;//aviso que llegó un mensaje
+//	rx_buf_out = 8'b00110010;//run all
+//	#100
+//	rx_ready = 1;
 
 
 	end

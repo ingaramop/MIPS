@@ -22,11 +22,17 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="UART.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="DebuggerRx.tfi"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DebuggerRxPipeTest_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="DebuggerRxPipeTest_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="DebuggerRxPipeTest_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DebuggerTx.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DebuggerTx.stx"/>
     <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="DebuggerTx.tfi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="DebuggerTx.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DebuggerTx_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="EndProgramDetector.tfi"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="Pipeline.tfi"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Test.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Test.stx"/>
     <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="Test.tfi"/>
@@ -84,7 +90,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="top.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="top.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="top.drc" xil_pn:subbranch="FPGAConfiguration"/>
@@ -97,67 +102,111 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1464808893" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1464808893">
+    <transform xil_pn:end_ts="1466080458" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1465162258" xil_pn:in_ck="969929745688879051" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1465162258">
+    <transform xil_pn:end_ts="1466080458" xil_pn:in_ck="-129902857410352309" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="BancoRegTest.v"/>
+      <outfile xil_pn:name="Baud_Rate.v"/>
+      <outfile xil_pn:name="DebuggerRx.v"/>
+      <outfile xil_pn:name="DebuggerRxPipeTest.v"/>
+      <outfile xil_pn:name="EX.v"/>
+      <outfile xil_pn:name="EndProgramDetector.v"/>
+      <outfile xil_pn:name="ExecuteTest.v"/>
+      <outfile xil_pn:name="FF_Buf_Interface.v"/>
+      <outfile xil_pn:name="IFTest.v"/>
+      <outfile xil_pn:name="InstructionDecode.v"/>
+      <outfile xil_pn:name="InstructionFetch.v"/>
+      <outfile xil_pn:name="MUX2to1.v"/>
+      <outfile xil_pn:name="Memoria.v"/>
+      <outfile xil_pn:name="Mux.v"/>
+      <outfile xil_pn:name="Mux5Bit.v"/>
+      <outfile xil_pn:name="Pipeline.v"/>
+      <outfile xil_pn:name="Rx.v"/>
+      <outfile xil_pn:name="Test1.v"/>
+      <outfile xil_pn:name="Top.v"/>
+      <outfile xil_pn:name="Tx.v"/>
+      <outfile xil_pn:name="UART.v"/>
+      <outfile xil_pn:name="UC.v"/>
+      <outfile xil_pn:name="UCTest.v"/>
+      <outfile xil_pn:name="addPc.v"/>
+      <outfile xil_pn:name="alu.v"/>
+      <outfile xil_pn:name="aluControl.v"/>
+      <outfile xil_pn:name="alu_adder.v"/>
+      <outfile xil_pn:name="bancoDeRegistros.v"/>
+      <outfile xil_pn:name="debugger_TX.v"/>
+      <outfile xil_pn:name="signExtend.v"/>
+      <outfile xil_pn:name="stage_mem.v"/>
+      <outfile xil_pn:name="stage_wb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1465162258" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3926831772666505223" xil_pn:start_ts="1465162258">
+    <transform xil_pn:end_ts="1466080458" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8285985941462736044" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1465162258" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3332334180448103877" xil_pn:start_ts="1465162258">
+    <transform xil_pn:end_ts="1466080458" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="2916932364642411282" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1464808893" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4991591913869282729" xil_pn:start_ts="1464808893">
+    <transform xil_pn:end_ts="1466080458" xil_pn:in_ck="-7186897609605411755" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4991591913869282729" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
+      <outfile xil_pn:name="ipcore_dir/ROM.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/ROM.v"/>
     </transform>
-    <transform xil_pn:end_ts="1465162258" xil_pn:in_ck="969929745688879051" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1465162258">
+    <transform xil_pn:end_ts="1466080458" xil_pn:in_ck="-6129587497754483252" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="BancoRegTest.v"/>
+      <outfile xil_pn:name="Baud_Rate.v"/>
+      <outfile xil_pn:name="DebuggerRx.v"/>
+      <outfile xil_pn:name="DebuggerRxPipeTest.v"/>
+      <outfile xil_pn:name="EX.v"/>
+      <outfile xil_pn:name="EndProgramDetector.v"/>
+      <outfile xil_pn:name="ExecuteTest.v"/>
+      <outfile xil_pn:name="FF_Buf_Interface.v"/>
+      <outfile xil_pn:name="IFTest.v"/>
+      <outfile xil_pn:name="InstructionDecode.v"/>
+      <outfile xil_pn:name="InstructionFetch.v"/>
+      <outfile xil_pn:name="MUX2to1.v"/>
+      <outfile xil_pn:name="Memoria.v"/>
+      <outfile xil_pn:name="Mux.v"/>
+      <outfile xil_pn:name="Mux5Bit.v"/>
+      <outfile xil_pn:name="Pipeline.v"/>
+      <outfile xil_pn:name="Rx.v"/>
+      <outfile xil_pn:name="Test1.v"/>
+      <outfile xil_pn:name="Top.v"/>
+      <outfile xil_pn:name="Tx.v"/>
+      <outfile xil_pn:name="UART.v"/>
+      <outfile xil_pn:name="UC.v"/>
+      <outfile xil_pn:name="UCTest.v"/>
+      <outfile xil_pn:name="addPc.v"/>
+      <outfile xil_pn:name="alu.v"/>
+      <outfile xil_pn:name="aluControl.v"/>
+      <outfile xil_pn:name="alu_adder.v"/>
+      <outfile xil_pn:name="bancoDeRegistros.v"/>
+      <outfile xil_pn:name="debugger_TX.v"/>
+      <outfile xil_pn:name="ipcore_dir/ROM.v"/>
+      <outfile xil_pn:name="signExtend.v"/>
+      <outfile xil_pn:name="stage_mem.v"/>
+      <outfile xil_pn:name="stage_wb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1465162267" xil_pn:in_ck="969929745688879051" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5120747825168348787" xil_pn:start_ts="1465162258">
+    <transform xil_pn:end_ts="1466080463" xil_pn:in_ck="-6129587497754483252" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-2652395653828866041" xil_pn:start_ts="1466080458">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="DebuggerRxPipeTest_beh.prj"/>
+      <outfile xil_pn:name="DebuggerRxPipeTest_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1465162268" xil_pn:in_ck="-2594597505296428033" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2942373298409314563" xil_pn:start_ts="1465162267">
+    <transform xil_pn:end_ts="1466080463" xil_pn:in_ck="-7413414135182680789" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1263184033057569935" xil_pn:start_ts="1466080463">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="DebuggerRxPipeTest_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
     </transform>
     <transform xil_pn:end_ts="1464293826" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1464293826">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -189,20 +238,16 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1466010982" xil_pn:in_ck="-8325737550332003736" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1628295958265553338" xil_pn:start_ts="1466010884">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1466039975" xil_pn:in_ck="-8325737550332003736" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-1628295958265553338" xil_pn:start_ts="1466039940">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top.lso"/>
       <outfile xil_pn:name="Top.ngc"/>
       <outfile xil_pn:name="Top.ngr"/>
       <outfile xil_pn:name="Top.prj"/>
-      <outfile xil_pn:name="Top.stx"/>
       <outfile xil_pn:name="Top.syr"/>
       <outfile xil_pn:name="Top.xst"/>
-      <outfile xil_pn:name="Top_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
@@ -212,7 +257,7 @@
       <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1466010991" xil_pn:in_ck="6558905067046412443" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-1288096377539586792" xil_pn:start_ts="1466010982">
-      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Top.bld"/>
       <outfile xil_pn:name="Top.ngd"/>
@@ -223,6 +268,7 @@
     <transform xil_pn:end_ts="1466011118" xil_pn:in_ck="-338308567699624647" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1463976855095865663" xil_pn:start_ts="1466010991">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top.pcf"/>
@@ -238,6 +284,7 @@
     <transform xil_pn:end_ts="1466011278" xil_pn:in_ck="779068913548435762" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1178055513630676559" xil_pn:start_ts="1466011118">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Top.ncd"/>
       <outfile xil_pn:name="Top.pad"/>
       <outfile xil_pn:name="Top.par"/>
@@ -253,6 +300,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="top.bgn"/>
@@ -266,17 +316,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1466018740" xil_pn:in_ck="154288899584" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1466018737">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
     <transform xil_pn:end_ts="1464302994" xil_pn:in_ck="154288899584" xil_pn:name="TRAN_genImpactFile" xil_pn:prop_ck="-7047989797201823252" xil_pn:start_ts="1464302992">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
@@ -284,12 +337,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1466011278" xil_pn:in_ck="-338314193334097611" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1466011270">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="Top.twr"/>
       <outfile xil_pn:name="Top.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

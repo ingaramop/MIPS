@@ -77,6 +77,8 @@ else
 					end
 					GOTO_SOFTWARE_RESET: begin
 						current_state <= SOFTWARE_RESET;
+						pipeline_clk_enable <= 1;
+						pipelineReset <=1;
 					end
 					default begin
 						current_state <= UNKNOWN_COMMAND;
@@ -102,6 +104,8 @@ else
 			//sendData[1759:0]<={220{r_data+2'b11}};
 			current_state <= SENDING;
 			rd_uart<=1;
+			pipeline_clk_enable <= 0;
+			pipelineReset <=0;
 		end
 		UNKNOWN_COMMAND: begin
 			//sendData[1759:0]<={220{8'b00001000}};	//Replicamos la info recibida 220 veces

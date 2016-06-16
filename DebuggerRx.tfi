@@ -1,0 +1,19 @@
+
+
+
+// Instantiate the module
+DebuggerRx instance_name (
+    .clock(clock), 
+    .reset(reset), 
+    .r_data(r_data), 
+    .rx_ready(rx_ready), 
+    .dataSent(dataSent), 
+    .program_finished(program_finished), 
+    .sendSignal(sendSignal), 
+    .rd_uart(rd_uart), 
+    .current_state(current_state), 
+    .pipelineClk(pipelineClk), 
+    .pipelineReset(pipelineReset)
+    );
+
+

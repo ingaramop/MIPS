@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/UARTTincho/DebuggerRxPipeTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="DebuggerRxPipeTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="48" />
+   <wvobject fp_name="/DebuggerRxPipeTest/PC_IFID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PC_IFID[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IFID[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/instruction_IFID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction_IFID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_IFID[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/PC_IDEX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PC_IDEX[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IDEX[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/regA_IDEX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regA_IDEX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regA_IDEX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/regB_IDEX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regB_IDEX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regB_IDEX[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/Registers" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Registers[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">Registers[1023:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/signExtend" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">signExtend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">signExtend[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/rt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemToReg_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemToReg_IDEX</obj_property>
+      <obj_property name="ObjectShortName">MemToReg_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/RegWrite_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegWrite_IDEX</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/Branch_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Branch_IDEX</obj_property>
+      <obj_property name="ObjectShortName">Branch_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemRead_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemRead_IDEX</obj_property>
+      <obj_property name="ObjectShortName">MemRead_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemWrite_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemWrite_IDEX</obj_property>
+      <obj_property name="ObjectShortName">MemWrite_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/RegDst_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegDst_IDEX</obj_property>
+      <obj_property name="ObjectShortName">RegDst_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/ALUOp_IDEX" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUOp_IDEX[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOp_IDEX[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/ALUSrc_IDEX" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUSrc_IDEX</obj_property>
+      <obj_property name="ObjectShortName">ALUSrc_IDEX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/CurrentPC_EXMEM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CurrentPC_EXMEM[9:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrentPC_EXMEM[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/PCJump" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PCJump[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PCJump[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/ALUResult_EXMEM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUResult_EXMEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult_EXMEM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/zero" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/regB_EXMEM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regB_EXMEM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regB_EXMEM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/wr_EXMEM" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_EXMEM[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_EXMEM[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/Branch_EXMEM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">Branch_EXMEM</obj_property>
+      <obj_property name="ObjectShortName">Branch_EXMEM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemRead_EXMEM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemRead_EXMEM</obj_property>
+      <obj_property name="ObjectShortName">MemRead_EXMEM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemWrite_EXMEM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemWrite_EXMEM</obj_property>
+      <obj_property name="ObjectShortName">MemWrite_EXMEM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemToReg_EXMEM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemToReg_EXMEM</obj_property>
+      <obj_property name="ObjectShortName">MemToReg_EXMEM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/RegWrite_EXMEM" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegWrite_EXMEM</obj_property>
+      <obj_property name="ObjectShortName">RegWrite_EXMEM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/CurrentPC_MEMWB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">CurrentPC_MEMWB[9:0]</obj_property>
+      <obj_property name="ObjectShortName">CurrentPC_MEMWB[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/readData_MEMWB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">readData_MEMWB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData_MEMWB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/ALUResult_MEMWB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUResult_MEMWB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUResult_MEMWB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/Memorias" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Memorias[319:0]</obj_property>
+      <obj_property name="ObjectShortName">Memorias[319:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/MemToReg_MEMWB" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemToReg_MEMWB</obj_property>
+      <obj_property name="ObjectShortName">MemToReg_MEMWB</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/PCSrc_MEMIF" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">PCSrc_MEMIF</obj_property>
+      <obj_property name="ObjectShortName">PCSrc_MEMIF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/writeData_WBID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeData_WBID[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writeData_WBID[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/writeRegister_WBID" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeRegister_WBID[4:0]</obj_property>
+      <obj_property name="ObjectShortName">writeRegister_WBID[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/regWrite_WBID" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regWrite_WBID</obj_property>
+      <obj_property name="ObjectShortName">regWrite_WBID</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/current_state" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/rx_ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_ready</obj_property>
+      <obj_property name="ObjectShortName">rx_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/rx_buf_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_buf_out[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_buf_out[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/dataSent" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dataSent</obj_property>
+      <obj_property name="ObjectShortName">dataSent</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/rd_uart" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_uart</obj_property>
+      <obj_property name="ObjectShortName">rd_uart</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/sendSignal" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sendSignal</obj_property>
+      <obj_property name="ObjectShortName">sendSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/pipelineReset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pipelineReset</obj_property>
+      <obj_property name="ObjectShortName">pipelineReset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/pipelineClk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pipelineClk</obj_property>
+      <obj_property name="ObjectShortName">pipelineClk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DebuggerRxPipeTest/program_finished" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">program_finished</obj_property>
+      <obj_property name="ObjectShortName">program_finished</obj_property>
+   </wvobject>
+</wave_config>

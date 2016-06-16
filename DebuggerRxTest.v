@@ -72,7 +72,7 @@ module DebuggerRxTest;
 	#100
 	////RUN ALL - EJECUCION CONTINUA///////
 	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b10;//run all
+	r_data = 8'b10;//run all
 	#100
 	rx_empty = 1;
 	#500
@@ -84,7 +84,7 @@ module DebuggerRxTest;
 	data_sent =0;
 	////SOFTWARE RESET///////
 	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b11;//reset
+	r_data = 8'b11;//reset
 	#100;
 	rx_empty = 1;
 	#500
@@ -93,7 +93,7 @@ module DebuggerRxTest;
 	data_sent =0;
 	////ONE STEP///////
 	rx_empty =0;//aviso que llegó un mensaje
-	r_data = 2'b01;//one step
+	r_data = 8'b01;//one step
 	#100;
 	rx_empty = 1;
 	#500
