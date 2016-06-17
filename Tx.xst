@@ -1,5 +1,0 @@
-set -tmpdir "C:/Users/Marta/Documents/Facultad Mauro/Arquitectura/Practico/Lab/UART/xst/projnav.tmp"
-set -xsthdpdir "C:/Users/Marta/Documents/Facultad Mauro/Arquitectura/Practico/Lab/UART/xst"
-elaborate
--ifn Tx.prj
--ifmt mixed

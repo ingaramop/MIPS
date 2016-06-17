@@ -1,8 +1,0 @@
-verilog work "Tx.v"
-verilog work "Test.v"
-verilog work "Rx.v"
-verilog work "FF_Buf_Interface.v"
-verilog work "Baud_Rate.v"
-verilog work "Top.v"
-verilog work "Prueba.v"
-verilog work "C:/Xilinx/14.6/ISE_DS/ISE//verilog/src/glbl.v"
