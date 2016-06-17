@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-06-15T20:16:49</DateModified>
+  <DateModified>2016-06-17T12:08:20</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>2016-06-13T15:12:28</SummaryTimeStamp>
-  <SavedFilePath>E:/UARTTincho/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/UARTTincho\</ImplementationReportsDirectory>
+  <SavedFilePath>E:/MIPS/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>E:/MIPS\</ImplementationReportsDirectory>
   <DateInitialized>2013-10-30T18:39:02</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

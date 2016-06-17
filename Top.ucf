@@ -4,13 +4,26 @@ NET "clock" LOC = V10;
 NET "reset" LOC = C9;
 NET "rx" LOC = N17;
 NET "tx" LOC = N18;
-NET "dataSent" LOC = T11;
-NET "current_state[2]" LOC = U15;
-NET "current_state[1]" LOC = V16;
-NET "current_state[0]" LOC = U16;
-NET "state_reg_tx[1]" LOC = M11;
-NET "state_reg_tx[0]" LOC = V15;
 
+#NET "dataSent" LOC = T11;
+#
+#NET "current_state[2]" LOC = U15;
+#NET "current_state[1]" LOC = V16;
+#NET "current_state[0]" LOC = U16;
+#
+#NET "state_reg_tx[1]" LOC = M11;
+#NET "state_reg_tx[0]" LOC = V15;
+
+
+// conexiones para imprimir el PC del pipe
+NET "PC_IFID[7]" LOC = T11;
+NET "PC_IFID[6]" LOC = R11;
+NET "PC_IFID[5]" LOC = N11;
+NET "PC_IFID[4]" LOC = M11;
+NET "PC_IFID[3]" LOC = V15;
+NET "PC_IFID[2]" LOC = U15;
+NET "PC_IFID[1]" LOC = V16;
+NET "PC_IFID[0]" LOC = U16;
 
 
 # PlanAhead Generated physical constraints 

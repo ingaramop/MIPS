@@ -36,9 +36,9 @@ Setup/Hold to clock clock
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-reset       |    4.670(R)|      SLOW  |   -0.419(R)|      SLOW  |clock_IBUF_BUFG   |   0.000|
-            |    5.163(F)|      SLOW  |   -2.399(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
-rx          |    2.051(R)|      SLOW  |   -0.886(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+reset       |    5.179(R)|      SLOW  |   -1.589(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+            |    4.777(F)|      SLOW  |   -2.260(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
+rx          |    2.112(R)|      SLOW  |   -1.010(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock clock to Pad
@@ -46,13 +46,23 @@ Clock clock to Pad
                 |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination     |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ----------------+-----------------+------------+-----------------+------------+------------------+--------+
-current_state<0>|         8.769(F)|      SLOW  |         4.746(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
-current_state<1>|         8.848(F)|      SLOW  |         4.821(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
-current_state<2>|         8.556(F)|      SLOW  |         4.609(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
-dataSent        |         8.480(R)|      SLOW  |         4.508(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
-state_reg_tx<0> |         9.705(R)|      SLOW  |         5.343(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
-state_reg_tx<1> |         9.099(R)|      SLOW  |         4.913(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
-tx              |         9.466(R)|      SLOW  |         5.181(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+PC_IFID<0>      |        13.879(F)|      SLOW  |         8.076(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<1>      |        13.624(F)|      SLOW  |         7.931(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<2>      |        13.682(F)|      SLOW  |         7.976(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<3>      |        13.703(F)|      SLOW  |         8.000(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<4>      |        13.559(F)|      SLOW  |         7.843(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<5>      |        13.965(F)|      SLOW  |         8.099(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<6>      |        13.769(F)|      SLOW  |         7.997(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<7>      |        13.761(F)|      SLOW  |         7.983(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<8>      |        13.560(F)|      SLOW  |         7.831(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+PC_IFID<9>      |        13.715(F)|      SLOW  |         7.943(F)|      FAST  |pipelineClk_BUFG  |   0.000|
+current_state<0>|         8.521(F)|      SLOW  |         4.595(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
+current_state<1>|         8.920(F)|      SLOW  |         4.868(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
+current_state<2>|         8.900(F)|      SLOW  |         4.827(F)|      FAST  |clock_IBUF_BUFG   |   0.000|
+dataSent        |         8.111(R)|      SLOW  |         4.310(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+state_reg_tx<0> |         8.169(R)|      SLOW  |         4.296(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+state_reg_tx<1> |         8.005(R)|      SLOW  |         4.237(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
+tx              |         7.708(R)|      SLOW  |         4.072(R)|      FAST  |clock_IBUF_BUFG   |   0.000|
 ----------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clock
@@ -60,18 +70,18 @@ Clock to Setup on destination clock clock
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock          |    4.110|    3.090|    8.027|    6.465|
+clock          |    4.769|    3.529|    8.464|    7.276|
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Jun 15 14:21:17 2016 
+Analysis completed Fri Jun 17 12:20:24 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 258 MB
+Peak Memory Usage: 289 MB
 
 
 

@@ -24,6 +24,7 @@ module Top(
 	input rx,
 	output tx,
 	output dataSent,
+						output wire [9:0] PC_IFID,//#1
 	output [2:0] current_state,
 	output [1:0] state_reg_tx
     );
@@ -50,7 +51,7 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 	wire PCSrc_MEMIF;//#29
 	wire [9:0] PCJump;//#24
 	wire [31:0] instruction_IFID;//#2
-	wire [9:0] PC_IFID;//#1
+//	wire [9:0] PC_IFID;//#1
 	wire regWrite_WBID;//#32
 	wire [4:0] writeRegister_WBID;//#36
 	wire [31:0] writeData_WBID;//#37
