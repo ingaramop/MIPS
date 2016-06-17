@@ -13,7 +13,8 @@
 *.msd
 *.msk
 *.ncd
-*.ngc
+Top.ngc
+Baud_Rate.ngc
 *.ngd
 *.ngr
 *.pad
