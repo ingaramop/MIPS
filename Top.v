@@ -26,8 +26,15 @@ module Top(
 	output dataSent,
 						output wire [9:0] PC_IFID,//#1
 	output [2:0] current_state,
-	output [1:0] state_reg_tx
+	output [1:0] state_reg_tx,
+	output reg [3:0] pipe_clk_counter
     );
+	 
+always @(negedge pipelineClk)begin
+	if (pipelineReset) pipe_clk_counter =0;
+	else pipe_clk_counter = pipe_clk_counter + 1'b1;
+end	 
+	 
 // Declaracion de señales
 
 ///////OUTPUTS UART////////

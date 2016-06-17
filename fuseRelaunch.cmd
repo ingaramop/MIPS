@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "E:/UARTTincho/DebuggerRxPipeTest_isim_beh.exe" -prj "E:/UARTTincho/DebuggerRxPipeTest_beh.prj" "work.DebuggerRxPipeTest" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "E:/MIPS/DebuggerRxPipeTest_isim_beh.exe" -prj "E:/MIPS/DebuggerRxPipeTest_beh.prj" "work.DebuggerRxPipeTest" "work.glbl" 

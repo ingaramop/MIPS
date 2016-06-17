@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/UARTTincho/alu_adder.v";
+static const char *ng0 = "E:/MIPS/alu_adder.v";
 
 
 

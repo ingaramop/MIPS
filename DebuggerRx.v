@@ -46,7 +46,7 @@ reg pipeline_clk_enable;
 
 assign pipelineClk = clock & pipeline_clk_enable; //El clk q va a la pipe solo se habilita cuando el flag_clk_enable está arriba
 												
-always@(negedge clock)begin
+always@(posedge clock)begin
 if(reset) begin
 	current_state <= INITIALIZING;
 end
