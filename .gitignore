@@ -15,6 +15,7 @@
 *.ncd
 *.xmsgs
 *.cmd
+*.wdb
 Top.ngc
 Baud_Rate.ngc
 *.ngd
