@@ -16,15 +16,15 @@ NET "tx" LOC = N18;
 
 
 // conexiones para imprimir el PC del pipe
-NET "pipe_clk_counter[3]" LOC = T11;
-NET "pipe_clk_counter[2]" LOC = R11;
-NET "pipe_clk_counter[1]" LOC = N11;
-NET "pipe_clk_counter[0]" LOC = M11;
+#NET "pipe_clk_counter[3]" LOC = T11;
+#NET "pipe_clk_counter[2]" LOC = R11;
+#NET "pipe_clk_counter[1]" LOC = N11;
+#NET "pipe_clk_counter[0]" LOC = M11;
 
-#NET "PC_IFID[7]" LOC = T11;
-#NET "PC_IFID[6]" LOC = R11;
-#NET "PC_IFID[5]" LOC = N11;
-#NET "PC_IFID[4]" LOC = M11;
+NET "testigo" LOC = T11;
+NET "PC_IFID[6]" LOC = R11;
+NET "PC_IFID[5]" LOC = N11;
+NET "PC_IFID[4]" LOC = M11;
 NET "PC_IFID[3]" LOC = V15;
 NET "PC_IFID[2]" LOC = U15;
 NET "PC_IFID[1]" LOC = V16;

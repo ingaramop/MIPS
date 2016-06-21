@@ -27,13 +27,10 @@ module Top(
 						output wire [9:0] PC_IFID,//#1
 	output [2:0] current_state,
 	output [1:0] state_reg_tx,
-	output reg [3:0] pipe_clk_counter
+	output reg [3:0] pipe_clk_counter,
+	output testigo
     );
-	 
-always @(negedge pipelineClk)begin
-	if (pipelineReset) pipe_clk_counter =0;
-	else pipe_clk_counter = pipe_clk_counter + 1'b1;
-end	 
+ 
 	 
 // Declaracion de señales
 
@@ -95,6 +92,8 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 
 
 
+
+assign testigo = (readData_MEMWB == 105);
 
 
 // Instantiate the module

@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"E:/MIPS/DebuggerRxPipeTest.v" Line 96: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">current_state</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="189" delta="unknown" >"E:/MIPS/DebuggerRxPipeTest.v" Line 101: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">current_state</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
 </msg>
 
 </messages>

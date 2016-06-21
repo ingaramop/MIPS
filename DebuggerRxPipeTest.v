@@ -83,6 +83,11 @@ module DebuggerRxPipeTest;
 	wire [9:0] CurrentPC_MEMWB;//#33
 
 
+		reg [4:0] pipe_clk_counter;
+always @(negedge pipelineClk)begin
+	if (pipelineReset) pipe_clk_counter =0;
+	else pipe_clk_counter = pipe_clk_counter + 1'b1;
+end	
 
 DebuggerRx debuggerrx_unit (
     .clock(clock),
@@ -164,12 +169,11 @@ Pipeline pipeline (
       
 	initial begin
 	////HARDWARE RESET///////
-	#125
 	reset = 1;
-	#125
+	#200
 	// bajo la bandera de reset
 	reset = 0;
-	#100
+	#500
 	////ONE STEP///////
 	rx_ready =1;//aviso que llegó un mensaje
 	rx_buf_out = 8'b00110001;//one step
@@ -207,22 +211,11 @@ Pipeline pipeline (
 	dataSent=1;
 	#200
 	dataSent =0;
-		////ONE STEP///////
+	////RUN ALL///////
 	rx_ready =1;//aviso que llegó un mensaje
-	rx_buf_out = 8'b00110001;//one step
+	rx_buf_out = 8'b00110010;//run all
 	#100;
 	rx_ready = 0;
-	#500
-	dataSent=1;
-	#200
-	dataSent =0;
-
-//	////RUN ALL - EJECUCION CONTINUA///////
-//	rx_ready =0;//aviso que llegó un mensaje
-//	rx_buf_out = 8'b00110010;//run all
-//	#100
-//	rx_ready = 1;
-
 
 	end
 endmodule

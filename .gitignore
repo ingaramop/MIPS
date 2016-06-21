@@ -13,6 +13,8 @@
 *.msd
 *.msk
 *.ncd
+*.xmsgs
+*.cmd
 Top.ngc
 Baud_Rate.ngc
 *.ngd
@@ -65,6 +67,7 @@ webtalk.log
 webtalk_pn.xml
 
 # generated folders
+isim/
 iseconfig/
 xlnx_auto_0_xdb/
 xst/

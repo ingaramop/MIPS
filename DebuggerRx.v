@@ -74,6 +74,7 @@ else
 					end
 					GOTO_RUN_ALL: begin
 						current_state <= RUN_ALL;
+						if (~program_finished)pipeline_clk_enable <= 1;
 					end
 					GOTO_SOFTWARE_RESET: begin
 						current_state <= SOFTWARE_RESET;
@@ -96,8 +97,11 @@ else
 		RUN_ALL: begin
 			//sendData[1759:0]<={220{8'b11111111}};	//Replicamos la info recibida 220 veces
 			//sendData[1759:0]<={220{r_data+2'b10}};
-			current_state <= SENDING;
 			rd_uart<=1;
+			if (program_finished)begin
+				pipeline_clk_enable <= 0;
+				current_state <= SENDING;
+			end
 		end
 		SOFTWARE_RESET: begin
 			//sendData[1759:0]<={220{8'b11001100}};	//Replicamos la info recibida 220 veces
