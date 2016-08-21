@@ -1,0 +1,27 @@
+
+
+
+// Instantiate the module
+muxUCHazard instance_name (
+    .A(A), 
+    .B(B), 
+    .C(C), 
+    .D(D), 
+    .E(E), 
+    .F(F), 
+    .G(G), 
+    .H(H), 
+    .I(I), 
+    .sel(sel), 
+    .outA(outA), 
+    .outB(outB), 
+    .outC(outC), 
+    .outD(outD), 
+    .outE(outE), 
+    .outF(outF), 
+    .outG(outG), 
+    .outH(outH), 
+    .outI(outI)
+    );
+
+

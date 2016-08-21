@@ -1,0 +1,16 @@
+
+
+
+// Instantiate the module
+Forwarding_Unit instance_name (
+    .rt(rt), 
+    .rd(rd), 
+    .wr_EXMEM(wr_EXMEM), 
+    .wrOut(wrOut), 
+    .RegWrite_EXMEM(RegWrite_EXMEM), 
+    .RegWrite_WBID(RegWrite_WBID), 
+    .FowardingA(FowardingA), 
+    .FowardingB(FowardingB)
+    );
+
+

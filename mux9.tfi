@@ -1,0 +1,25 @@
+
+
+
+// Instantiate the module
+mux9 instance_name (
+    .inHazard(inHazard), 
+    .inRegDst(inRegDst), 
+    .inALUOp(inALUOp), 
+    .inALUSrc(inALUSrc), 
+    .inBranch(inBranch), 
+    .inMemRead(inMemRead), 
+    .inMemWrite(inMemWrite), 
+    .inMemToReg(inMemToReg), 
+    .inRegWrite(inRegWrite), 
+    .outRegDst(outRegDst), 
+    .outALUOp(outALUOp), 
+    .outALUSrc(outALUSrc), 
+    .outBranch(outBranch), 
+    .outMemRead(outMemRead), 
+    .outMemWrite(outMemWrite), 
+    .outMemToReg(outMemToReg), 
+    .outRegWrite(outRegWrite)
+    );
+
+

@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+UC instance_name (
+    .Opcode(Opcode), 
+    .RegDst(RegDst), 
+    .ALUOp(ALUOp), 
+    .ALUSrc(ALUSrc), 
+    .Branch(Branch), 
+    .MemRead(MemRead), 
+    .MemWrite(MemWrite), 
+    .MemToReg(MemToReg), 
+    .RegWrite(RegWrite)
+    );
+
+

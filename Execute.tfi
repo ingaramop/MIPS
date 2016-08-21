@@ -1,0 +1,40 @@
+
+
+
+// Instantiate the module
+Execute instance_name (
+    .clock(clock), 
+    .reset(reset), 
+    .PCSrc(PCSrc), 
+    .inBranch(inBranch), 
+    .inMemRead(inMemRead), 
+    .inMemWrite(inMemWrite), 
+    .inMemToReg(inMemToReg), 
+    .inRegWrite(inRegWrite), 
+    .inPC(inPC), 
+    .inData1(inData1), 
+    .inData2(inData2), 
+    .signExtend(signExtend), 
+    .rt(rt), 
+    .rd(rd), 
+    .aluOp(aluOp), 
+    .aluSrc(aluSrc), 
+    .inRegDst(inRegDst), 
+    .inForwardingA(inForwardingA), 
+    .inForwardingB(inForwardingB), 
+    .outmux_WBEXE(outmux_WBEXE), 
+    .aluResult_MEMEXE(aluResult_MEMEXE), 
+    .outPC(outPC), 
+    .zero(zero), 
+    .aluResult(aluResult), 
+    .outData2(outData2), 
+    .wr(wr), 
+    .outBranch(outBranch), 
+    .outMemRead(outMemRead), 
+    .outMemWrite(outMemWrite), 
+    .outMemToReg(outMemToReg), 
+    .outRegWrite(outRegWrite), 
+    .outCurrentPC(outCurrentPC)
+    );
+
+

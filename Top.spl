@@ -1,0 +1,16 @@
+[Inputs]
+clock
+reset
+rx
+[Outputs]
+tx
+dataSent
+testigo
+=PC_IFID[9:0]=
+=current_state[2:0]=
+=state_reg_tx[1:0]=
+=pipe_clk_counter[3:0]=
+[BiDir]
+[ATTRIBUTES]
+VeriModel Top
+

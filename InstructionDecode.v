@@ -8,6 +8,8 @@ module InstructionDecode(
 		input [4:0]writeRegister,
 		input [31:0]writeData,
 		input reset,
+		input inHazard, //Agregado
+		input PCSrc, //Agregado
 		//Control Unit
 		output reg [1:0]ALUOpOut,
 		output reg RegDstOut,
@@ -24,11 +26,15 @@ module InstructionDecode(
 		output reg [31:0] signExtendOut,
 		//IntructionDecode
 		output reg [9:0] PcCountOut,
+		output reg [4:0] rs, //Instruction [25:21]
 		output reg [4:0] rt, //Instruction [20:16]
 		output reg [4:0] rd,  //Instruction [15:11]
 		output wire [1023:0] registers
+//		output wire jump
     );
-	 
+initial regA = 0;
+initial regB = 0;
+		//Cables entrada Mux 9
 		wire  [1:0]ALUOpWire;
 		wire  RegDstWire;
 		wire  ALUSrcWire;
@@ -37,6 +43,15 @@ module InstructionDecode(
 		wire  MemWriteWire;
 		wire  MemToRegWire;
 		wire  RegWriteWire;
+		//Cables salida Mux 9
+		wire  [1:0]ALUOpWireOut;
+		wire  RegDstWireOut;
+		wire  ALUSrcWireOut;
+		wire  BranchWireOut;
+		wire  MemReadWireOut;
+		wire  MemWriteWireOut;
+		wire  MemToRegWireOut;
+		wire  RegWriteWireOut;
 		//Banco de Registros
 		wire  [31:0] regAWire;
 		wire  [31:0] regBWire;
@@ -53,7 +68,27 @@ UC UC_instance(
 			.MemWrite(MemWriteWire),
 			.MemToReg(MemToRegWire),
 			.RegWrite(RegWriteWire)
+//			.jump(jump)
 			);
+mux9 mux9bits (
+    .inHazard(inHazard), 
+    .inRegDst(RegDstWire), 
+    .inALUOp(ALUOpWire), 
+    .inALUSrc(ALUSrcWire), 
+    .inBranch(BranchWire), 
+    .inMemRead(MemReadWire), 
+    .inMemWrite(MemWriteWire), 
+    .inMemToReg(MemToRegWire), 
+    .inRegWrite(RegWriteWire), 
+    .outRegDst(RegDstWireOut), 
+    .outALUOp(ALUOpWireOut), 
+    .outALUSrc(ALUSrcWireOut), 
+    .outBranch(BranchWireOut), 
+    .outMemRead(MemReadWireOut), 
+    .outMemWrite(MemWriteWireOut), 
+    .outMemToReg(MemToRegWireOut), 
+    .outRegWrite(RegWriteWireOut)
+    );
 
 bancoDeRegistros banco_instance(
 			.we(regWrite),
@@ -75,7 +110,7 @@ signExtend signExtend_instance(
 			
 always @(negedge clk) 
 begin
-	if (reset) begin
+	if (reset | PCSrc) begin
 		ALUOpOut <= 0;
 		RegDstOut <= 0;
 		ALUSrcOut <= 0;
@@ -87,22 +122,24 @@ begin
 		regA <= 0;
 		regB <= 0;
 		signExtendOut <= 0;
+		rs <= 0;
 		rt <= 0;
 		rd <= 0;
 		PcCountOut <= 0;
 	end
 	else begin
-		ALUOpOut <= ALUOpWire;
-		RegDstOut <= RegDstWire;
-		ALUSrcOut <= ALUSrcWire;
-		BranchOut <= BranchWire;
-		MemReadOut <= MemReadWire;
-		MemWriteOut <= MemWriteWire;
-		MemToRegOut <= MemToRegWire;
-		RegWriteOut <= RegWriteWire;
+		ALUOpOut <= ALUOpWireOut;
+		RegDstOut <= RegDstWireOut;
+		ALUSrcOut <= ALUSrcWireOut;
+		BranchOut <= BranchWireOut;
+		MemReadOut <= MemReadWireOut;
+		MemWriteOut <= MemWriteWireOut;
+		MemToRegOut <= MemToRegWireOut;
+		RegWriteOut <= RegWriteWireOut;
 		regA <= regAWire;
 		regB <= regBWire;
 		signExtendOut <= signExtendWire;
+		rs <= Instruction [25:21];
 		rt <= Instruction [20:16];
 		rd <= Instruction [15:11];
 		PcCountOut <= PCCount;

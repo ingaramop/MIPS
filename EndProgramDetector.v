@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    12:54:37 05/15/2016 
-// Design Name: 
-// Module Name:    EndProgramDetector 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-
 
 //Este modulo observa las instrucciones que lee la etapa instruction fetch,
 //y en base a eso, levanta una bandera cuando el programa ha finalizado.

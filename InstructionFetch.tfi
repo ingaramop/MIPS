@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+InstructionFetch instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .PCJump(PCJump), 
+    .jumpAdd(jumpAdd), 
+    .PCSrc(PCSrc), 
+    .writeIFID(writeIFID), 
+    .jump(jump), 
+    .Instruction(Instruction), 
+    .PCNextReg(PCNextReg)
+    );
+
+

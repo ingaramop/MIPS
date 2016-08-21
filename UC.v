@@ -13,13 +13,14 @@ module UC(
 	//Write-back
 	output reg MemToReg,
 	output reg RegWrite
+//	output reg jump
     );
 	 
 	 //[RegDst|ALUSrc|MemToReg|RegWrite|MemRead|MemWrite|Branch|ALUOp1|ALUOp0]	 
 
 	always @ (*)
 	begin
-	
+//		jump = 0;
 		case(Opcode)
 		//R-format instruction
 			'b000000: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'b100100010;		
@@ -60,14 +61,18 @@ module UC(
 		//Branch Equal (BEQ)
 			'b000100: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'b000000101;
 		
-/*		//NO IMPLEMENTADO AÚN
+	//NO IMPLEMENTADO AN
 		//Branch Not Equal (BNE)
-			'b000101: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'bzzzzzzzzz;
+//			'b000101: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'bzzzzzzzzz;
 		//Jump (J)
-			'b000010: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'bzzzzzzzzz;
+//			'b000010:
+//				begin
+//					{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'b000000001;
+//					jump = 1;
+//				end
 		//Jump and Link (JAL)
-			'b000011: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'bzzzzzzzzz;
-			*/
+//			'b000011: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'bzzzzzzzzz;
+			
 		//default
 			default: 	{RegDst, ALUSrc, MemToReg, RegWrite, MemRead, MemWrite, Branch, ALUOp}  = 9'b000000000;
 		endcase	

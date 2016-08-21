@@ -3,6 +3,10 @@
 
 // Instantiate the module
 Pipeline instance_name (
+
+
+
+
     .clk(clk), 
     .reset(reset), 
     .PCSrc_MEMIF(PCSrc_MEMIF), 
@@ -27,6 +31,7 @@ Pipeline instance_name (
     .signExtend(signExtend), 
     .rt(rt), 
     .rd(rd), 
+    .rs(rs), 
     .Branch_EXMEM(Branch_EXMEM), 
     .MemRead_EXMEM(MemRead_EXMEM), 
     .MemWrite_EXMEM(MemWrite_EXMEM), 

@@ -4,13 +4,13 @@ module stage_mem( input  clk,
 						input  regWriteIn,   //Bit de Uni. Ctrl pasa a stage WB
 						input  memToRegIn,	//Bit de Uni. Ctrl pasa a stage WB
 						input	 memWriteIn,	//Bit de Uni. Ctrl
-						input	 memReadIn,		//Bit de Uni. Ctrl
 						input	 branchIn,		//Bit de Uni. Ctrl
 						input  zero,			//Bit flag Zero
 						input  [31:0]aluResultIn,
 						input  [31:0]writeDataIn,	
 						input  [4:0] wrIn,//Reg pasa a stage WB
 						input  reset,
+						input  PCSrc, //Agregado
 						input  [9:0] inCurrentPC,
 						output reg regWriteOut,
 						output reg memToRegOut,

@@ -3,9 +3,16 @@
 
 // Instantiate the module
 Top instance_name (
-    .led(led), 
+    .clock(clock), 
+    .reset(reset), 
+    .rx(rx), 
+    .tx(tx), 
     .dataSent(dataSent), 
-    .analiza(analiza)
+    .PC_IFID(PC_IFID), 
+    .current_state(current_state), 
+    .state_reg_tx(state_reg_tx), 
+    .pipe_clk_counter(pipe_clk_counter), 
+    .testigo(testigo)
     );
 
 

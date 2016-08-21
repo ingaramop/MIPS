@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+stage_wb instance_name (
+    .readData(readData), 
+    .aluResult(aluResult), 
+    .memReg(memReg), 
+    .regWrite(regWrite), 
+    .wrIn(wrIn), 
+    .reset(reset), 
+    .regWrite_WBID(regWrite_WBID), 
+    .dataOut(dataOut), 
+    .wrOut(wrOut)
+    );
+
+

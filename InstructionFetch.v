@@ -2,50 +2,44 @@
 
 module InstructionFetch( 
 								input clk,
-								input [9:0]PCJump,
-								input PCSrc,
 								input reset,
-								input [9:0] PCCurrentReg,
+								input [9:0]PCJump,
+								input [9:0] jumpAdd, //Instruccion[9:0]
+								input PCSrc,
+								input writeIFID, //Seal de la Hazard que "pone en pausa" el PC si est en 0
+								input [5:0]opcjump,
 								output reg [31:0]Instruction, 
 								output reg [9:0] PCNextReg
-								);
-								
-
+								);						
 wire [9:0]muxPC;
-wire [9:0]PCRom;
-wire [9:0]PCNext;
 wire [31:0]instruction;
+wire [9:0]outmuxA;
+wire jumpWire;
 
-mux2to1 instance_mux2to1 (
-    .A(PCCurrentReg),//reemplaza a pcloop 
+mux2to1 muxA (
+    .A(PCNextReg), 
+    .B(jumpAdd), 
+    .sel(jumpWire), 
+    .out(outmuxA)
+    );
+
+mux2to1 muxB (
+    .A(outmuxA),//reemplaza a pcloop 
     .B(PCJump), 
     .sel(PCSrc), 
-    .out(muxPC)
+    .out(muxPC) //out = (sel) ? B : A;
     );
-	 
-//PC instance_PC	(
-//	.pc(muxPC), //Contador de Programa
-//	.clk(clk),
-//	.reset(reset),
-//	.outPc(PCRom)
-//    );
-
 ROM instance_ROM (	//Rom
-  .a(muxPC), // Salida del MUX que trae la instrucción a buscar en la ROM
-  .spo(instruction) // instrucción buscada en la memoria ROM
+  .a(muxPC), // Salida del MUX que trae la instruccin a buscar en la ROM
+  .spo(instruction) // instruccin buscada en la memoria ROM
 );
 
-addPc instance_addPc(.inPc(muxPC), 	//Sumador + 1 al PC
-							.outPc(PCNext)
+jumpControl jumpControl (
+    .opcode(opcjump), 
+    .jump(jumpWire)
     );
-	 
-//	initial begin
-//		// Initialize Inputs	
-//		PCNextReg <= 0;
-//	end
 
-initial PCNextReg = 0;
-	 
+
 always@(negedge clk)
 begin
 	if (reset)
@@ -53,11 +47,20 @@ begin
 		PCNextReg <= 0;
 		Instruction <= 0;
 	end
+	else if(PCSrc  )
+	begin
+		PCNextReg <= muxPC;
+		Instruction <= Instruction;
+	end
+	else if(writeIFID)
+		begin
+		PCNextReg <= muxPC + 1;
+		Instruction <= instruction;
+		end
 	else
 	begin
-		PCNextReg <= PCNext;
-		Instruction <= instruction;
-		//$display("instruction: %b, PC: %d", Instruction, PCNextReg);
-	end
+		PCNextReg <= PCNextReg;
+		Instruction <= Instruction;
+	end	
 end
 endmodule

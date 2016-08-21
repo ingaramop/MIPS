@@ -1,0 +1,10 @@
+
+
+
+// Instantiate the module
+jumpControl instance_name (
+    .opcode(opcode), 
+    .jump(jump)
+    );
+
+

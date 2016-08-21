@@ -1,0 +1,28 @@
+
+
+
+// Instantiate the module
+stage_mem instance_name (
+    .clk(clk), 
+    .regWriteIn(regWriteIn), 
+    .memToRegIn(memToRegIn), 
+    .memWriteIn(memWriteIn), 
+    .branchIn(branchIn), 
+    .zero(zero), 
+    .aluResultIn(aluResultIn), 
+    .writeDataIn(writeDataIn), 
+    .wrIn(wrIn), 
+    .reset(reset), 
+    .PCSrc(PCSrc), 
+    .inCurrentPC(inCurrentPC), 
+    .regWriteOut(regWriteOut), 
+    .memToRegOut(memToRegOut), 
+    .readDataOut(readDataOut), 
+    .aluResultOut(aluResultOut), 
+    .wrOut(wrOut), 
+    .PCSrcOut(PCSrcOut), 
+    .outCurrentPC(outCurrentPC), 
+    .memorias(memorias)
+    );
+
+

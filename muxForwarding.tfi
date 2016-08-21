@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+muxForwarding instance_name (
+    .in1(in1), 
+    .in2(in2), 
+    .in3(in3), 
+    .selector(selector), 
+    .out(out)
+    );
+
+

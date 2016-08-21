@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+addPc instance_name (
+    .inPc(inPc), 
+    .PCwrite(PCwrite), 
+    .outPc(outPc)
+    );
+
+

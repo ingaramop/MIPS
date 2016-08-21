@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Tincho/Xilinx/MIPS completo con errores/MIPS/Test_ExecuteStage2_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Test_ExecuteStage2" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/Test_ExecuteStage2/outPC" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">outPC[9:0]</obj_property>
+      <obj_property name="ObjectShortName">outPC[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PC + signExtend</obj_property>
+   </wvobject>
+   <wvobject fp_name="group37" type="group">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Test_ExecuteStage2/uut/instanciaAlu/data1" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data1[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data1[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/uut/instanciaAlu/data2" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data2[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data2[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/uut/instanciaAlu/operation" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operation[3:0]</obj_property>
+         <obj_property name="ObjectShortName">operation[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/aluResult" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">aluResult[31:0]</obj_property>
+         <obj_property name="ObjectShortName">aluResult[31:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/zero" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">zero</obj_property>
+         <obj_property name="ObjectShortName">zero</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group40" type="group">
+      <obj_property name="label">ALU_Control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Test_ExecuteStage2/aluOp" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">aluOp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aluOp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/uut/instanceAluControl/functionField" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">functionField[5:0]</obj_property>
+         <obj_property name="ObjectShortName">functionField[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Test_ExecuteStage2/uut/instanceAluControl/operation" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">operation[3:0]</obj_property>
+         <obj_property name="ObjectShortName">operation[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/outData2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outData2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">outData2[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/wr" type="array" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">wr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wr[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="label">rt vs. rd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/outCurrentPC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outCurrentPC[9:0]</obj_property>
+      <obj_property name="ObjectShortName">outCurrentPC[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inBranch" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inBranch</obj_property>
+      <obj_property name="ObjectShortName">inBranch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inMemRead" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inMemRead</obj_property>
+      <obj_property name="ObjectShortName">inMemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inMemWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inMemWrite</obj_property>
+      <obj_property name="ObjectShortName">inMemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inMemToReg" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inMemToReg</obj_property>
+      <obj_property name="ObjectShortName">inMemToReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inRegWrite</obj_property>
+      <obj_property name="ObjectShortName">inRegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inPC" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inPC[9:0]</obj_property>
+      <obj_property name="ObjectShortName">inPC[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inData1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inData1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inData1[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inData2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inData2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inData2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/signExtend" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">signExtend[31:0]</obj_property>
+      <obj_property name="ObjectShortName">signExtend[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/rt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/aluSrc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">aluSrc</obj_property>
+      <obj_property name="ObjectShortName">aluSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inRegDst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inRegDst</obj_property>
+      <obj_property name="ObjectShortName">inRegDst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inForwardingA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inForwardingA[1:0]</obj_property>
+      <obj_property name="ObjectShortName">inForwardingA[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inForwardingB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inForwardingB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">inForwardingB[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/inHazard" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">inHazard</obj_property>
+      <obj_property name="ObjectShortName">inHazard</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/outmux_WBEXE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">outmux_WBEXE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">outmux_WBEXE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Test_ExecuteStage2/aluResult_MEMEXE" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aluResult_MEMEXE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluResult_MEMEXE[31:0]</obj_property>
+   </wvobject>
+</wave_config>

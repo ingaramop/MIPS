@@ -1,30 +1,12 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    15:02:26 10/30/2013 
-// Design Name: 
-// Module Name:    Top 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 * File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module Top(
 	input clock,
 	input reset,
 	input rx,
 	output tx,
 	output dataSent,
-						output wire [9:0] PC_IFID,//#1
+	output [9:0] PC_IFID,//#1
 	output [2:0] current_state,
 	output [1:0] state_reg_tx,
 	output reg [3:0] pipe_clk_counter,
@@ -32,7 +14,7 @@ module Top(
     );
  
 	 
-// Declaracion de señales
+// Declaracion de seales
 
 ///////OUTPUTS UART////////
 wire rx_ready, tx_busy;
@@ -55,7 +37,7 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 	wire PCSrc_MEMIF;//#29
 	wire [9:0] PCJump;//#24
 	wire [31:0] instruction_IFID;//#2
-//	wire [9:0] PC_IFID;//#1
+	wire [9:0] PC_IFID;//#1
 	wire regWrite_WBID;//#32
 	wire [4:0] writeRegister_WBID;//#36
 	wire [31:0] writeData_WBID;//#37
@@ -89,12 +71,51 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 	wire [31:0] readData_MEMWB;//#34
 	wire [31:0] ALUResult_MEMWB;//#35
 	wire [9:0] CurrentPC_MEMWB;//#33
-
+	
+	wire [1695:0] BusDebugger = {
+											PC_IFID, //#1
+											instruction_IFID,//#2						
+											Registers,//#3
+											MemToReg_IDEX,//#4
+											RegWrite_IDEX,//#5
+											Branch_IDEX,//#6
+											MemRead_IDEX,//#7
+											MemWrite_IDEX,//#8	
+											RegDst_IDEX,//#9
+											ALUOp_IDEX,//#10
+											ALUSrc_IDEX,//#11
+											PC_IDEX,//#12
+											regA_IDEX,//#13
+											regB_IDEX,//#14
+											signExtend,//#15
+											rt,//#16
+											rd,//#17	
+											MemToReg_EXMEM,//#18
+											RegWrite_EXMEM,//#19	
+											Branch_EXMEM,//#20
+											MemRead_EXMEM,//#21
+											MemWrite_EXMEM,//#22
+											CurrentPC_EXMEM,//#23
+											PCJump,//#24
+											zero,//#25
+											ALUResult_EXMEM,//#26
+											regB_EXMEM,//#27
+											wr_EXMEM,//#28	
+											PCSrc_MEMIF,//#29
+//											Memorias, //#30
+											MemToReg_MEMWB,//#31	
+											regWrite_WBID,//#32	
+											CurrentPC_MEMWB,//#33	
+											readData_MEMWB,//#34
+											ALUResult_MEMWB,//#35	
+											writeRegister_WBID,//#36
+											writeData_WBID,//#37 
+											8'b00000000}; // Relleno
 
 
 
 assign testigo = (readData_MEMWB == 105);
-
+//assign PC_IFID_reg = PC_IFID;
 
 // Instantiate the module
 UART UART_Unit (
@@ -130,45 +151,7 @@ DebuggerTx debuggertx_unit (
     .clk(clock), 
     .reset(reset), 
     .sendSignal(sendSignal),	
-    .sendData({
-					PC_IFID,//#1
-					instruction_IFID,//#2
-					Registers,//#3
-					MemToReg_IDEX,//#4
-					RegWrite_IDEX,//#5
-					Branch_IDEX,//#6
-					MemRead_IDEX,//#7
-					MemWrite_IDEX,//#8	
-					RegDst_IDEX,//#9
-					ALUOp_IDEX,//#10
-					ALUSrc_IDEX,//#11
-					PC_IDEX,//#12
-					regA_IDEX,//#13
-					regB_IDEX,//#14
-					signExtend,//#15
-					rt,//#16
-					rd,//#17	
-					MemToReg_EXMEM,//#18
-					RegWrite_EXMEM,//#19	
-					Branch_EXMEM,//#20
-					MemRead_EXMEM,//#21
-					MemWrite_EXMEM,//#22
-					CurrentPC_EXMEM,//#23
-					PCJump,//#24
-					zero,//#25
-					ALUResult_EXMEM,//#26
-					regB_EXMEM,//#27
-					wr_EXMEM,//#28	
-					PCSrc_MEMIF,//#29
-					Memorias, //#30
-					MemToReg_MEMWB,//#31	
-					regWrite_WBID,//#32	
-					CurrentPC_MEMWB,//#33	
-					readData_MEMWB,//#34
-					ALUResult_MEMWB,//#35	
-					writeRegister_WBID,//#36
-					writeData_WBID//#37 	 
-	 }), 
+    .sendData(BusDebugger), 
     .tx_busy(tx_busy), 
     .wr_uart(tx_done), 
     .dataSent(dataSent), 
@@ -179,6 +162,7 @@ DebuggerTx debuggertx_unit (
 EndProgramDetector endDetector (
     .pipeClk(pipelineClk), 
     .instruction_IFID(instruction_IFID), 
+//    .instruction_IFID(BusDebugger[41:10]), //
     .reset(pipelineReset), 
     .programEnd(program_finished)
     );
@@ -224,5 +208,5 @@ Pipeline pipeline (
     .ALUResult_MEMWB(ALUResult_MEMWB), 
     .CurrentPC_MEMWB(CurrentPC_MEMWB)
     );
-	 
+
 endmodule
