@@ -55,7 +55,7 @@ module TestInstructionFetchNEW;
 		clk = 0;
 		reset = 1;
 		opcjump = 0;
-		hazardFlag = 0;
+		hazardFlag = 1;
 		branchFlag = 0;
 		branchPC = 0;
 		jumpPC = 0;

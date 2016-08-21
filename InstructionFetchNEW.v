@@ -45,9 +45,24 @@ always@(negedge clk)
 begin
 	if (reset)
 	begin
-		PC<=0;
+		PC <= 0;
 	end
-	else PC <=PC+1;
+	else if(branchFlag)
+	begin
+		PC <= PC + branchPC;
+	end
+	else if(~hazardFlag)
+		begin
+		//do nothing
+		end
+	else if(jumpFlag)
+		begin
+		PC = jumpPC;
+		end
+	else
+	begin
+		PC <= PC + 1;
+	end	
 end
 
 endmodule
