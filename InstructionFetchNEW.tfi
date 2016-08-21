@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+InstructionFetchNEW instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .opcjump(opcjump), 
+    .hazardFlag(hazardFlag), 
+    .branchFlag(branchFlag), 
+    .branchPC(branchPC), 
+    .jumpPC(jumpPC), 
+    .Instruction(Instruction), 
+    .PC(PC)
+    );
+
+

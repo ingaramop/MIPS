@@ -7,27 +7,35 @@ module IFTest;
 	reg PCSrc;
 	reg clk;
 	reg reset;
-
+	reg writeIFID;
+	reg opcjump;
+	reg jumpAdd;
 	// Outputs
 	wire [31:0] Instruction;
 	wire [9:0] PCNextReg;
 
 
-	// Instantiate the Unit Under Test (UUT)
-	InstructionFetch uut ( 
-		.PCJump(PCJump), 
-		.PCSrc(PCSrc), 
-		.clk(clk), 
-		.reset(reset),
-		.PCCurrentReg(PCNextReg),
-		.Instruction(Instruction), 
-		.PCNextReg(PCNextReg)
-	);
+
+// Instantiate the module
+InstructionFetch instance_name (
+    .clk(clk), 
+    .reset(reset), 
+    .PCJump(PCJump), 
+    .jumpAdd(jumpAdd), 
+    .PCSrc(PCSrc), 
+    .writeIFID(writeIFID), 
+    .opcjump(opcjump), 
+    .Instruction(Instruction), 
+    .PCNextReg(PCNextReg)
+    );
 
 initial begin
 	// Initialize Inputs	
 	PCJump = 0;
 	PCSrc = 0;
+	writeIFID = 1;
+	opcjump = 0;
+	jumpAdd = 0;
 	clk = 1;
 	reset = 1;
 	#40;

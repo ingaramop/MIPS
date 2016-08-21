@@ -1,0 +1,27 @@
+;ADD $s1,$s2,$s3 ;
+SUB $s1,$s2,$s3 ;
+ADDI $s1,$s2,4 ;
+ORI $s1,$s2,4;
+LW $s1,100($s2) ;
+SW $s1,100($s2);
+add $t0,$t1,$t2;	#  $t0 = $t1 + $t2;   add as signed (2's complement) integers
+		sub	$t2,$t3,$t4;	#  $t2 = $t3 Ð $t4
+		addi	$t2,$t3, 5;	#  $t2 = $t3 + 5;   "add immediate" (no sub immediate)
+		addu	$t1,$t6,$t7;	#  $t1 = $t6 + $t7;   add as unsigned integers
+		subu	$t1,$t6,$t7;	#  $t1 = $t6 + $t7;   subtract as unsigned integers
+
+
+sw $t1, 4($t0);		#  second array element set to 13
+    ;
+sw $t1, 8($t0);		#  third array element set to -7
+
+    add    $t2, $t0, $t1  ;   # N*N + 3*N
+    srl    $t1, $t0, 1;       # i/2
+    sll    $t1, $t1, 2      ; # turn i/2 into a byte offset (*4)
+
+
+    lw     $t1, 28($t1)      ;# fetch A[i/2]
+    addi   $t1, $t1, 1  ;     # A[i/2] + 1
+    sll    $t2, $t0, 2      ; # turn i into a byte offset 
+    sw     $t1, 28($t2) ;     # A[i] = ...
+beq s1 s2 16

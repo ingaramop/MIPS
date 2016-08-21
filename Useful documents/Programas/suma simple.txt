@@ -1,0 +1,5 @@
+addi	$t0,$t5, 10;	#  $t0 = $t5 + 10;   #coloco un 10 en el registro t0
+addi	$t1,$t5, 5;	#  $t1 = $t5 + 5;   #coloco un 5 en el registro t1
+addi	$t2,$t5, 50;	#  $t2 = $t5 + 50;   #coloco un 50 en el registro t2 (hago tiempo para que las primeras dos hagan el wb)
+addi	$t3,$t5, 100;	#  $t3 = $t5 + 100;   #coloco un 100 en el registro t3 (hago tiempo para que las primeras dos hagan el wb)
+ADD $t2,$t0,$t1 ; #hago la suma y la almaceno en t2

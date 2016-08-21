@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/mips/MIPS/IDTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="IDTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/IDTest/ALUOpOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUOpOut[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOpOut[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/RegDstOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegDstOut</obj_property>
+      <obj_property name="ObjectShortName">RegDstOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/ALUSrcOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ALUSrcOut</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/BranchOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">BranchOut</obj_property>
+      <obj_property name="ObjectShortName">BranchOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/MemReadOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemReadOut</obj_property>
+      <obj_property name="ObjectShortName">MemReadOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/MemWriteOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemWriteOut</obj_property>
+      <obj_property name="ObjectShortName">MemWriteOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/MemToRegOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">MemToRegOut</obj_property>
+      <obj_property name="ObjectShortName">MemToRegOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/RegWriteOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RegWriteOut</obj_property>
+      <obj_property name="ObjectShortName">RegWriteOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/regA" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regA[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/regB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regB[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/signExtendOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">signExtendOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">signExtendOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/PcCountOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PcCountOut[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PcCountOut[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/rt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/Instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/PCCount" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">PCCount[9:0]</obj_property>
+      <obj_property name="ObjectShortName">PCCount[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/regWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regWrite</obj_property>
+      <obj_property name="ObjectShortName">regWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/writeRegister" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeRegister[4:0]</obj_property>
+      <obj_property name="ObjectShortName">writeRegister[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/writeData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/IDTest/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+</wave_config>

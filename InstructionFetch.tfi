@@ -9,7 +9,7 @@ InstructionFetch instance_name (
     .jumpAdd(jumpAdd), 
     .PCSrc(PCSrc), 
     .writeIFID(writeIFID), 
-    .jump(jump), 
+    .opcjump(opcjump), 
     .Instruction(Instruction), 
     .PCNextReg(PCNextReg)
     );
