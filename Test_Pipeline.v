@@ -7,8 +7,8 @@ module Test_pipeline;
 	reg reset;
 
 	// Outputs
-	wire PCSrc_MEMIF;
-	wire [9:0] PCJump;
+	wire branchFlag;
+	wire [9:0] branchPC;
 	wire [31:0] instruction;
 	wire [9:0] PC_IFID;
 	wire regWrite_WBID;
@@ -50,8 +50,8 @@ module Test_pipeline;
 	Pipeline uut (
 		.clk(clk), 
 		.reset(reset), 
-		.PCSrc_MEMIF(PCSrc_MEMIF), 
-		.PCJump(PCJump), 
+		.branchFlag(branchFlag), 
+		.branchPC(branchPC), 
 		.instruction(instruction), 
 		.PC_IFID(PC_IFID), 
 		.regWrite_WBID(regWrite_WBID), 
@@ -95,9 +95,8 @@ module Test_pipeline;
 		forever #50 clk = ~clk;
 	end
 	initial begin
-		#100;
 		reset = 1;
-		#100;
+		#125;
 		reset = 0;
 	end
       

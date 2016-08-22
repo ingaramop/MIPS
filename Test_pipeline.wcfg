@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/User/Desktop/maxi/MIPS/MIPS/Test_pipeline_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="E:/mips/MIPS/Test_pipeline_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="Test_pipeline" />
             <top_module name="glbl" />
@@ -22,18 +22,14 @@
    <wvobject fp_name="group1420" type="group">
       <obj_property name="label">IF</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Test_pipeline/uut/IF/PCNextReg" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">PCNextReg[9:0]</obj_property>
-         <obj_property name="ObjectShortName">PCNextReg[9:0]</obj_property>
+      <wvobject fp_name="/Test_pipeline/uut/IF/PC" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">PC[9:0]</obj_property>
+         <obj_property name="ObjectShortName">PC[9:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/Test_pipeline/uut/IF/Instruction" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">Instruction[31:0]</obj_property>
          <obj_property name="ObjectShortName">Instruction[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Test_pipeline/uut/IF/PCJump" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">PCJump[9:0]</obj_property>
-         <obj_property name="ObjectShortName">PCJump[9:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group1432" type="group">
@@ -4378,10 +4374,6 @@
             <obj_property name="ElementShortName">RegWriteOut</obj_property>
             <obj_property name="ObjectShortName">RegWriteOut</obj_property>
          </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/ID/jump" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">jump</obj_property>
-            <obj_property name="ObjectShortName">jump</obj_property>
-         </wvobject>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group1490" type="group">
@@ -4474,38 +4466,6 @@
       <wvobject fp_name="group2951" type="group">
          <obj_property name="label">Control</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/Test_pipeline/uut/EX/aluOp" type="array" db_ref_id="1">
-            <obj_property name="ElementShortName">aluOp[1:0]</obj_property>
-            <obj_property name="ObjectShortName">aluOp[1:0]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/aluSrc" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">aluSrc</obj_property>
-            <obj_property name="ObjectShortName">aluSrc</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inRegDst" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inRegDst</obj_property>
-            <obj_property name="ObjectShortName">inRegDst</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inBranch" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inBranch</obj_property>
-            <obj_property name="ObjectShortName">inBranch</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inMemRead" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inMemRead</obj_property>
-            <obj_property name="ObjectShortName">inMemRead</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inMemWrite" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inMemWrite</obj_property>
-            <obj_property name="ObjectShortName">inMemWrite</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inMemToReg" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inMemToReg</obj_property>
-            <obj_property name="ObjectShortName">inMemToReg</obj_property>
-         </wvobject>
-         <wvobject fp_name="/Test_pipeline/uut/EX/inRegWrite" type="logic" db_ref_id="1">
-            <obj_property name="ElementShortName">inRegWrite</obj_property>
-            <obj_property name="ObjectShortName">inRegWrite</obj_property>
-         </wvobject>
          <wvobject fp_name="/Test_pipeline/uut/EX/outBranch" type="logic" db_ref_id="1">
             <obj_property name="ElementShortName">outBranch</obj_property>
             <obj_property name="ObjectShortName">outBranch</obj_property>

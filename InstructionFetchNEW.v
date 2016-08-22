@@ -21,19 +21,13 @@
 module InstructionFetchNEW(
 				input clk,
 				input reset,
-				input [5:0]opcjump,
+				input jumpFlag,
 				input hazardFlag,
 				input branchFlag,
 				input [9:0] branchPC,
 				input [9:0] jumpPC, //Instruccion[9:0]		
 				output wire [31:0]Instruction, 
 				output reg [9:0] PC
-    );
-wire  jumpFlag;
-
-jumpControl jumpControl (
-    .opcode(opcjump), 
-    .jump(jumpFlag)
     );
 	 
 ROM instance_ROM (	//Rom
@@ -49,7 +43,7 @@ begin
 	end
 	else if(branchFlag)
 	begin
-		PC <= PC + branchPC;
+		PC <= branchPC;
 	end
 	else if(~hazardFlag)
 		begin

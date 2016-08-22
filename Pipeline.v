@@ -4,8 +4,8 @@ module Pipeline(
 		input clk,
 		input reset,
 		//inputs if	 
-		output PCSrc_MEMIF,//#29
-		output [9:0] PCJump,//#24
+		output branchFlag,//#29
+		output [9:0] branchPC,//#24
 		//outputs if - inputs id
 		output [31:0] instruction,//#2
 		output [9:0] PC_IFID,//#1
@@ -57,22 +57,23 @@ wire [31:0] outmuxForwardingA;
 wire [31:0] outmuxForwardingB;
 wire regWrite_MEMWB;
 wire outHazard;
-wire write_IDIF;
+wire hazardFlag;
 wire jump_IDIF;
 wire [1:0] outFowardingA;
 wire [1:0] outFowardingB;
 
-InstructionFetch IF (
+
+	InstructionFetchNEW IF (
 		.clk(clk), 
 		.reset(reset), 
-		.PCJump(PCJump), 
-		.jumpAdd(instruction[9:0]), 
-		.PCSrc(PCSrc_MEMIF), 
-		.writeIFID(write_IDIF), 
-		.opcjump(instruction[31:26]),
+		.jumpFlag(jumpFlag), 
+		.hazardFlag(hazardFlag), 
+		.branchFlag(branchFlag), 
+		.branchPC(branchPC), 
+		.jumpPC(instruction[9:0]), 
 		.Instruction(instruction), 
-		.PCNextReg(PC_IFID)
-    );
+		.PC(PC_IFID)
+	);
 
 InstructionDecode ID (
 		.clk(clk), 
@@ -80,7 +81,7 @@ InstructionDecode ID (
 		.PCCount(PC_IFID),
 		.reset(reset),
 		.inHazard(outHazard),
-		.PCSrc(PCSrc_MEMIF),		
+		.PCSrc(branchFlag),		
 		.ALUOpOut(ALUOp_IDEX), 
 		.RegDstOut(RegDst_IDEX), 
 		.ALUSrcOut(ALUSrc_IDEX), 
@@ -99,14 +100,14 @@ InstructionDecode ID (
 		.regWrite(regWrite_WBID), 
 		.writeRegister(writeRegister_WBID), 
 		.writeData(writeData_WBID),
-		.registers(Registers)
-//		.jump(jump_IDIF)
+		.registers(Registers),
+		.jumpFlag(jumpFlag)
     );
 	
 Execute EX (
 		.clock(clk), 
 		.reset(reset), 
-		.PCSrc(PCSrc_MEMIF), 
+		.PCSrc(branchFlag), 
 		.inBranch(Branch_IDEX), 
 		.inMemRead(MemRead_IDEX), 
 		.inMemWrite(MemWrite_IDEX), 
@@ -125,7 +126,7 @@ Execute EX (
 		.inForwardingB(outFowardingB),  
 		.outmux_WBEXE(writeData_WBID), 
 		.aluResult_MEMEXE(ALUResult_EXMEM), 
-		.outPC(PCJump), 
+		.outPC(branchPC), 
 		.zero(zero), 
 		.aluResult(ALUResult_EXMEM), 
 		.outData2(regB_EXMEM), 
@@ -149,14 +150,14 @@ stage_mem MEM (
 		.writeDataIn(regB_EXMEM), 
 		.wrIn(wr_EXMEM), 
 		.reset(reset),
-		.PCSrc(PCSrc_MEMIF),
+		.PCSrc(branchFlag),
 		.inCurrentPC(CurrentPC_EXMEM),
 		.regWriteOut(regWrite_MEMWB), 
 		.memToRegOut(MemToReg_MEMWB), 
 		.readDataOut(readData_MEMWB), 
 		.aluResultOut(ALUResult_MEMWB), 
 		.wrOut(writeRegister_MEMWB), 
-		.PCSrcOut(PCSrc_MEMIF),
+		.PCSrcOut(branchFlag),
 		.outCurrentPC(CurrentPC_MEMWB),
 		.memorias(Memorias)
     );
@@ -192,7 +193,7 @@ Hazard_Unit Hazard (
 		.rt_IFID(instruction[20:16]), 
 		.rt_IDEX(rt),
 		.muxCtrlSignal(outHazard), 
-		.IFIDWrite(write_IDIF)
+		.IFIDWrite(hazardFlag)
     );
 	
 endmodule

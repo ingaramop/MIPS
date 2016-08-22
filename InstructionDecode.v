@@ -29,8 +29,8 @@ module InstructionDecode(
 		output reg [4:0] rs, //Instruction [25:21]
 		output reg [4:0] rt, //Instruction [20:16]
 		output reg [4:0] rd,  //Instruction [15:11]
-		output wire [1023:0] registers
-//		output wire jump
+		output wire [1023:0] registers,
+		output wire jumpFlag
     );
 initial regA = 0;
 initial regB = 0;
@@ -68,7 +68,7 @@ UC UC_instance(
 			.MemWrite(MemWriteWire),
 			.MemToReg(MemToRegWire),
 			.RegWrite(RegWriteWire)
-//			.jump(jump)
+
 			);
 mux9 mux9bits (
     .inHazard(inHazard), 
@@ -107,6 +107,11 @@ signExtend signExtend_instance(
 			.inSignExtend(Instruction[15:0]),
 			.outSignExtend(signExtendWire)
 			);
+
+jumpControl jumpControl (
+    .opcode(Instruction[31:26]), 
+    .jump(jumpFlag)
+    );
 			
 always @(negedge clk) 
 begin

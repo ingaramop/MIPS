@@ -27,7 +27,7 @@ module TestInstructionFetchNEW;
 	// Inputs
 	reg clk;
 	reg reset;
-	reg [5:0] opcjump;
+	reg jumpFlag;
 	reg hazardFlag;
 	reg branchFlag;
 	reg [9:0] branchPC;
@@ -41,7 +41,7 @@ module TestInstructionFetchNEW;
 	InstructionFetchNEW uut (
 		.clk(clk), 
 		.reset(reset), 
-		.opcjump(opcjump), 
+		.jumpFlag(jumpFlag),  
 		.hazardFlag(hazardFlag), 
 		.branchFlag(branchFlag), 
 		.branchPC(branchPC), 
@@ -54,7 +54,7 @@ module TestInstructionFetchNEW;
 		// Initialize Inputs
 		clk = 0;
 		reset = 1;
-		opcjump = 0;
+		jumpFlag = 0;
 		hazardFlag = 1;
 		branchFlag = 0;
 		branchPC = 0;

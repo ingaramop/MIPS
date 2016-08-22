@@ -80,7 +80,6 @@ module Test_ExecuteStage2;
 		.inRegDst(inRegDst), 
 		.inForwardingA(inForwardingA), 
 		.inForwardingB(inForwardingB), 
-		.inHazard(inHazard), 
 		.outmux_WBEXE(outmux_WBEXE), 
 		.aluResult_MEMEXE(aluResult_MEMEXE), 
 		.outPC(outPC), 
@@ -98,6 +97,7 @@ module Test_ExecuteStage2;
 	
 	initial begin
 		clock = 0;
+		reset =0;
 		forever #50 clock = ~clock;
 	end
 
@@ -121,7 +121,6 @@ module Test_ExecuteStage2;
 		
 		inForwardingA = 2'b00; //Selector del MUX_FRWD_A (salida de Unidad de Forwarding)
 		inForwardingB = 2'b00; //Selector del MUX_FRWD_B (salida de Unidad de Forwarding)
-		inHazard = 0; //Flag que determina si existe un riesgo y es necesario meter burbuja (Salida de Unidad Hazard)
 		outmux_WBEXE = 0; //Salida del MUX con DATOS de la etapa WriteBack. Son los 32 bits que van a escribirse en un registro si RegWrite = 1 y Rd es válida.
 		aluResult_MEMEXE = 0; //Resultado de la ALU de la próxima intrucción (Dirección de memoria).
 		#100;
