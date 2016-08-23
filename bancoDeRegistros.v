@@ -11,6 +11,7 @@ input wire [DATA_WIDTH-1:0] data;
 input wire reset;
 output wire [DATA_WIDTH-1:0] regA, regB;
 output wire [1023:0] registers;
+
  
 reg [REGFILE_WIDTH-1:0] ra1, ra2;
 integer i;
@@ -31,15 +32,49 @@ always@(addressA or addressB or reset) begin
 	end
 end
  
-always@(posedge clk) begin
+always@(negedge clk) begin
     if(we == 1 & ~reset) begin
         //$display("writing time:%ttAddress:%dtData:%d", $time, addressW, data);
-        banco[addressW] <= data;
+        banco[addressW] = data;
     end
-	 else if (reset)
-	 	for (i = 0; i < 2**REGFILE_WIDTH; i = i +1) begin
-			banco[i] <= 0;
+	 else if (reset) begin
+		banco[0] = 0;
+		banco[1] = 0;
+		banco[2] = 0;
+		banco[3] = 0;
+		banco[4] = 0;
+		banco[5] = 0;
+		banco[6] = 0;
+		banco[7] = 0;
+		banco[8] = 0;
+		banco[9] = 0;
+		banco[10] = 0;
+		banco[11] = 0;
+		banco[12] = 0;
+		banco[13] = 0;
+		banco[14] = 0;
+		banco[15] = 0;
+		banco[16] = 0;
+		banco[17] = 0;
+		banco[18] = 0;
+		banco[19] = 0;
+		banco[20] = 0;
+		banco[21] = 0;
+		banco[22] = 0;
+		banco[23] = 0;
+		banco[24] = 0;
+		banco[25] = 0;
+		banco[26] = 0;
+		banco[27] = 0;
+		banco[28] = 0;
+		banco[29] = 0;
+		banco[30] = 0;
+		banco[31] = 0;
+			for (i = 0; i < 2**REGFILE_WIDTH; i = i +1) begin
+				banco[i] = 0;
+			end
 		end
+
 end
 
 assign regA = banco[ra1];

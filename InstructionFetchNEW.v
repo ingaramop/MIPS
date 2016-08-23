@@ -51,7 +51,7 @@ begin
 		end
 	else if(jumpFlag)
 		begin
-		PC = jumpPC;
+		PC <= jumpPC;
 		end
 	else
 	begin

@@ -13,8 +13,8 @@ module DebuggerTx(
 		output reg [1:0] state_reg_tx
     );
 
-localparam frameSize = 1408; //176 bytes, 1 de relleno. Anda pero sin memorai ram
-//localparam frameSize = 1968; //214 bytes, 1 de relleno
+//localparam frameSize = 1408; //176 bytes, 1 de relleno. Anda pero sin memorai ram
+localparam frameSize = 1728; //214 bytes, 1 de relleno
 	 
 localparam [1:0]
 		idle 			= 2'b01,

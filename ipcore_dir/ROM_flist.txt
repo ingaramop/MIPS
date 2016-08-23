@@ -37,3 +37,4 @@ ROM\simulation\timing\simulate_mti.do
 ROM\simulation\timing\simulate_mti.sh
 ROM_flist.txt
 ROM_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

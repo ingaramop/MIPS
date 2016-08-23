@@ -46,7 +46,7 @@ always@(addra  or reset) begin
 	end
 end
  
-always@(posedge clka) begin
+always@(negedge clka) begin
     if(wea & ~reset) begin
         memoria[addra] <= dina;
     end
@@ -56,7 +56,7 @@ always@(posedge clka) begin
 		end
 end
 
-assign douta = memoria[addra];
+assign douta = memoria[read_address];
 assign memorias = {memoria[0],memoria[1], memoria[2], memoria[3], memoria[4],
 							memoria[5], memoria[6], memoria[7],memoria[8], memoria[9]};
  

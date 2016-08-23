@@ -31,6 +31,7 @@ module InstructionDecode(
 		output reg [4:0] rd,  //Instruction [15:11]
 		output wire [1023:0] registers,
 		output wire jumpFlag
+
     );
 initial regA = 0;
 initial regB = 0;

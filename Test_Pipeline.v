@@ -98,6 +98,10 @@ module Test_pipeline;
 		reset = 1;
 		#125;
 		reset = 0;
+		#4000;
+		reset = 1;
+		#125;
+		reset = 0;
 	end
       
 endmodule

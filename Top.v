@@ -37,7 +37,7 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 	wire PCSrc_MEMIF;//#29
 	wire [9:0] PCJump;//#24
 	wire [31:0] instruction_IFID;//#2
-	wire [9:0] PC_IFID;//#1
+	//wire [9:0] PC_IFID;//#1
 	wire regWrite_WBID;//#32
 	wire [4:0] writeRegister_WBID;//#36
 	wire [31:0] writeData_WBID;//#37
@@ -72,7 +72,8 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 	wire [31:0] ALUResult_MEMWB;//#35
 	wire [9:0] CurrentPC_MEMWB;//#33
 	
-	wire [1695:0] BusDebugger = {
+	wire [1728:0] BusDebugger = {
+											22'b00000000, // Relleno
 											PC_IFID, //#1
 											instruction_IFID,//#2						
 											Registers,//#3
@@ -102,7 +103,7 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 											regB_EXMEM,//#27
 											wr_EXMEM,//#28	
 											PCSrc_MEMIF,//#29
-//											Memorias, //#30
+											Memorias, //#30
 											MemToReg_MEMWB,//#31	
 											regWrite_WBID,//#32	
 											CurrentPC_MEMWB,//#33	
@@ -114,7 +115,7 @@ wire program_finished; //OUT: EndDetector - IN: DebuggerRx
 
 
 
-assign testigo = (readData_MEMWB == 105);
+assign testigo = program_finished;
 //assign PC_IFID_reg = PC_IFID;
 
 // Instantiate the module
@@ -170,8 +171,8 @@ EndProgramDetector endDetector (
 Pipeline pipeline (
     .clk(pipelineClk), 
     .reset(pipelineReset), 
-    .PCSrc_MEMIF(PCSrc_MEMIF), 
-    .PCJump(PCJump), 
+    .branchFlag(PCSrc_MEMIF), 
+    .branchPC(PCJump), 
     .instruction(instruction_IFID), 
     .PC_IFID(PC_IFID), 
     .regWrite_WBID(regWrite_WBID), 
