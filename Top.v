@@ -31,6 +31,7 @@ wire pipelineClk; //OUT: DebuggerRx - IN: Pipeline, EndDetector
 
 ////////// OUTPUTS EndDetector ////////////	
 wire program_finished; //OUT: EndDetector - IN: DebuggerRx
+wire clear_program_finished; //OUT: DebuggerRx  -  IN: EndDetector 
 
 ////////// OUTPUTS Pipeline ////////////	
 	//inputs if	 
@@ -144,7 +145,8 @@ DebuggerRx debuggerrx_unit (
     .rd_uart(rd_uart), 
 	 .current_state(current_state),
 	 .pipelineClk(pipelineClk),
-	 .pipelineReset(pipelineReset)
+	 .pipelineReset(pipelineReset),
+	 .clear_program_finished(clear_program_finished)
     );
 
 // Instantiate the module
@@ -159,12 +161,14 @@ DebuggerTx debuggertx_unit (
     .w_data(t_data),
 	 .state_reg_tx(state_reg_tx)
     );
-
-EndProgramDetector endDetector (
+	 
+// Instantiate the module
+EndProgramDetector instance_name (
     .pipeClk(pipelineClk), 
     .instruction_IFID(instruction_IFID), 
 //    .instruction_IFID(BusDebugger[41:10]), //
     .reset(pipelineReset), 
+    .clear_program_finished(clear_program_finished), 
     .programEnd(program_finished)
     );
 

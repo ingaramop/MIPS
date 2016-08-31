@@ -13,7 +13,8 @@ DebuggerRx instance_name (
     .rd_uart(rd_uart), 
     .current_state(current_state), 
     .pipelineClk(pipelineClk), 
-    .pipelineReset(pipelineReset)
+    .pipelineReset(pipelineReset), 
+    .clear_program_finished(clear_program_finished)
     );
 
 

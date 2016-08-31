@@ -4,7 +4,6 @@ dist_mem_gen_v7_2.asy
 dist_mem_gen_v7_2.gise
 dist_mem_gen_v7_2.mif
 dist_mem_gen_v7_2.ngc
-dist_mem_gen_v7_2.sym
 dist_mem_gen_v7_2.v
 dist_mem_gen_v7_2.veo
 dist_mem_gen_v7_2.xco

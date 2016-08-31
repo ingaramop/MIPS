@@ -6,6 +6,7 @@ EndProgramDetector instance_name (
     .pipeClk(pipeClk), 
     .instruction_IFID(instruction_IFID), 
     .reset(reset), 
+    .clear_program_finished(clear_program_finished), 
     .programEnd(programEnd)
     );
 

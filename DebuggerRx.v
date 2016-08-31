@@ -30,7 +30,8 @@ module DebuggerRx(
 	 //output reg [1759:0] sendData,
 	 output reg [2:0] current_state,
 	 output pipelineClk,
-	 output reg pipelineReset
+	 output reg pipelineReset,
+	 output reg clear_program_finished
     );
 	 
  
@@ -58,9 +59,11 @@ else
 			sendSignal<=0;
 			pipeline_clk_enable <=1;
 			pipelineReset <=1;
+			clear_program_finished <= 1;
 			current_state <=WAITING;
 		end
 		WAITING: begin
+			clear_program_finished <= 0;
 			rd_uart<=0;
 			sendSignal<=0;
 			pipeline_clk_enable <=0;
@@ -80,6 +83,7 @@ else
 						current_state <= SOFTWARE_RESET;
 						pipeline_clk_enable <= 1;
 						pipelineReset <=1;
+						clear_program_finished <= 1;
 					end
 					default begin
 						current_state <= UNKNOWN_COMMAND;
@@ -109,6 +113,7 @@ else
 			current_state <= SENDING;
 			rd_uart<=1;
 			pipeline_clk_enable <= 0;
+			clear_program_finished <= 0;
 			pipelineReset <=0;
 		end
 		UNKNOWN_COMMAND: begin

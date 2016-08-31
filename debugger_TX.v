@@ -14,7 +14,7 @@ module DebuggerTx(
     );
 
 //localparam frameSize = 1408; //176 bytes, 1 de relleno. Anda pero sin memorai ram
-localparam frameSize = 1728; //214 bytes, 1 de relleno
+localparam frameSize = 1728; //215 bytes + 1 de relleno
 	 
 localparam [1:0]
 		idle 			= 2'b01,

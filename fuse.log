@@ -1,0 +1,60 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Test_pipeline_isim_beh.exe -prj C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Test_pipeline_beh.prj work.Test_pipeline work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/UC.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/signExtend.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/muxForwarding.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/mux9.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Mux5Bit.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Mux.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Memoria.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/jumpControl.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/ipcore_dir/ROM.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/bancoDeRegistros.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/alu_adder.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/aluControl.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/alu.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/stage_wb.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/stage_mem.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/InstructionFetchNEW.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/InstructionDecode.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Hazard_Unit.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Forwarding_Unit.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/EX.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Pipeline.v" into library work
+Analyzing Verilog file "C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Test_Pipeline.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="spar...
+Compiling module ROM
+Compiling module InstructionFetchNEW
+Compiling module UC
+Compiling module mux9
+Compiling module bancoDeRegistros
+Compiling module signExtend
+Compiling module jumpControl
+Compiling module InstructionDecode
+Compiling module AluAdder
+Compiling module muxForwarding
+Compiling module Mux32Bit
+Compiling module Alu
+Compiling module AluControl
+Compiling module Mux5Bit
+Compiling module Execute
+Compiling module Memoria
+Compiling module stage_mem
+Compiling module stage_wb
+Compiling module Forwarding_Unit
+Compiling module Hazard_Unit
+Compiling module Pipeline
+Compiling module Test_pipeline
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 17 sub-compilation(s) to finish...
+Compiled 24 Verilog Units
+Built simulation executable C:/Users/Tincho/Downloads/MIPS-master/MIPS-master/Test_pipeline_isim_beh.exe
+Fuse Memory Usage: 29264 KB
+Fuse CPU Usage: 2968 ms

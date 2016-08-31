@@ -7,13 +7,15 @@ module EndProgramDetector(
 		input pipeClk,
 		input [31:0] instruction_IFID,
 		input reset,
+		input clear_program_finished,
 		output reg programEnd
     );
 
 reg [2:0]counter;
 
 always @(posedge pipeClk)begin
-	if (reset)begin
+	if (reset | clear_program_finished)
+	begin
 		counter =0;
 		programEnd =0;
 	end
