@@ -32,7 +32,7 @@ always@(addressA or addressB or reset) begin
 	end
 end
  
-always@(negedge clk) begin
+always@(posedge clk) begin
     if(we == 1 & ~reset) begin
         //$display("writing time:%ttAddress:%dtData:%d", $time, addressW, data);
         banco[addressW] = data;

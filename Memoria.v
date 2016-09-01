@@ -46,7 +46,7 @@ always@(addra  or reset) begin
 	end
 end
  
-always@(negedge clka) begin
+always@(posedge clka) begin
     if(wea & ~reset) begin
         memoria[addra] <= dina;
     end

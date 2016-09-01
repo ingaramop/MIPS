@@ -57,6 +57,7 @@ wire clear_program_finished; //OUT: DebuggerRx  -  IN: EndDetector
 	wire [31:0] signExtend;//#15
 	wire [4:0] rt;//#16
 	wire [4:0] rd;//#17
+	wire [4:0] rs;//#17 bis
 	wire Branch_EXMEM;//#20
 	wire MemRead_EXMEM;//#21
 	wire MemWrite_EXMEM;//#22
@@ -111,8 +112,9 @@ wire clear_program_finished; //OUT: DebuggerRx  -  IN: EndDetector
 											readData_MEMWB,//#34
 											ALUResult_MEMWB,//#35	
 											writeRegister_WBID,//#36
-											writeData_WBID,//#37 
-											8'b00000000}; // Relleno
+											writeData_WBID,//#37
+											rs, //#17 bis
+											11'b0}; // Relleno
 
 
 
@@ -196,7 +198,8 @@ Pipeline pipeline (
     .regB_IDEX(regB_IDEX), 
     .signExtend(signExtend), 
     .rt(rt), 
-    .rd(rd), 
+    .rd(rd),
+	 .rs(rs),	
     .Branch_EXMEM(Branch_EXMEM), 
     .MemRead_EXMEM(MemRead_EXMEM), 
     .MemWrite_EXMEM(MemWrite_EXMEM), 

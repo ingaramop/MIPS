@@ -13,8 +13,7 @@ module DebuggerTx(
 		output reg [1:0] state_reg_tx
     );
 
-//localparam frameSize = 1408; //176 bytes, 1 de relleno. Anda pero sin memorai ram
-localparam frameSize = 1728; //215 bytes + 1 de relleno
+localparam frameSize = 1736; //215 bytes + 1 de relleno
 	 
 localparam [1:0]
 		idle 			= 2'b01,
@@ -24,28 +23,19 @@ localparam [1:0]
 		
 		reg [1:0] state_next;
 		reg [10:0] aux_reg, aux_next;
-		//reg [1759:0] aux_data;
 		reg dataSent_next;
-		//reg block_data, block_data_next;
-		reg [7:0] contBytes;
-		reg [7:0] contBytes_next;
+
 
 always @(posedge clk, posedge reset)
 		if (reset) begin
 			state_reg_tx		= idle;
 			aux_reg			= frameSize-1;
 			dataSent			= 1'b1;
-			//aux_data 		= sendData;
-			//block_data 		= 1'b0;
-			contBytes		= 8'b0;
 		end
 		else begin
 			state_reg_tx		= state_next;
 			aux_reg 			= aux_next;
 			dataSent			= dataSent_next;
-			//block_data		= block_data_next;
-			//aux_data			= (block_data) ? aux_data: sendData;
-			contBytes		= contBytes_next;
 			
 		end
 		
@@ -55,12 +45,9 @@ always @(*)
 			aux_next 		= aux_reg;
 			wr_uart		 	= 1'b0 ;
 			dataSent_next 	= dataSent;
-			contBytes_next	= contBytes;
-			//block_data_next= block_data;
 			case (state_reg_tx)
 				idle:
 					begin
-						//block_data_next= 1'b0;
 						dataSent_next 	= 1'b1;
 						wr_uart		 	= 1'b0;
 						w_data			= 8'b0;
@@ -76,7 +63,6 @@ always @(*)
 								begin
 									dataSent_next	= 1'b0;
 									wr_uart			= 1'b1; 					//Habilito la escritura en el IC del Tx de la UART
-									//block_data_next= 1'b1;
 									w_data 			=	{sendData[aux_reg],
 															sendData[aux_reg-1],
 															sendData[aux_reg-2],
@@ -87,14 +73,12 @@ always @(*)
 															sendData[aux_reg-7]};
 									aux_next 		= aux_reg -4'h8;
 									state_next		= ( aux_next < 8 ) ?  lastByte : sending;
-									contBytes		= contBytes +1'b1;
 								end
 							end
 						else 
 							begin
 								dataSent_next	= 1'b0;
-								wr_uart			= 1'b0; 					//Habilito la escritura en el IC del Tx de la UART
-								//block_data_next= 1'b1;
+								wr_uart			= 1'b0; 					//Deshabilito la escritura en el IC del Tx de la UART
 								state_next 		= sending;
 							end
 					end
@@ -102,7 +86,6 @@ always @(*)
 					begin
 						dataSent_next	= 1'b0;
 						wr_uart			= 1; 					//Habilito la escritura en el IC del Tx de la UART
-						//block_data_next= 1'b1;
 					
 //						w_data			=sendData[aux_reg*8 +:8];
 						w_data 			= {	sendData[aux_reg],
@@ -115,17 +98,15 @@ always @(*)
 													sendData[aux_reg-7]};
 													
 						state_next 		= closing;
-						contBytes		= contBytes +1'b1;
+
 					end		
 				closing:
 					begin
-						//block_data_next	= 1'b0;
 						w_data 				= 8'b0;
 						dataSent_next 		= 1'b1;
 						aux_next				= frameSize-1;
 						wr_uart	 			= 1'b0;
 						state_next 			= idle;
-						contBytes			= 8'b0;
 					end
 			endcase
 		end		
