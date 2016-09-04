@@ -2,6 +2,7 @@
 
 module Execute(
 		input clock,
+		input clkEnable,
 		input reset,
 		input PCSrc,
 		input inBranch, 	//pasa
@@ -100,33 +101,36 @@ initial begin
 end
 
 always @(negedge clock) begin
-if (reset | PCSrc)
-	begin	
-		zero <= 0;
-		aluResult <= 0;
-		outData2 <= 0;
-		outPC <= 0;
-		wr <= 0;
-		outBranch <= 0;
-		outMemToReg <= 0;
-		outRegWrite <= 0;
-		outMemWrite <= 0;
-		outMemRead <= 0;
-		outCurrentPC <= 0;
-	end
-else
-	 begin	
-		zero <= zeroWire;
-		aluResult <= aluResultWire;
-		outData2 <= outForwardingB;
-		outPC <= outPCWire;
-		wr <= wrWire;
-		outBranch <= inBranch;
-		outMemToReg <= inMemToReg;
-		outRegWrite <= inRegWrite;
-		outMemWrite <= inMemWrite;
-		outMemRead <= inMemRead;
-		outCurrentPC <= inPC;
+if(clkEnable)
+	begin
+	if (reset | PCSrc)
+		begin	
+			zero <= 0;
+			aluResult <= 0;
+			outData2 <= 0;
+			outPC <= 0;
+			wr <= 0;
+			outBranch <= 0;
+			outMemToReg <= 0;
+			outRegWrite <= 0;
+			outMemWrite <= 0;
+			outMemRead <= 0;
+			outCurrentPC <= 0;
+		end
+	else
+		 begin	
+			zero <= zeroWire;
+			aluResult <= aluResultWire;
+			outData2 <= outForwardingB;
+			outPC <= outPCWire;
+			wr <= wrWire;
+			outBranch <= inBranch;
+			outMemToReg <= inMemToReg;
+			outRegWrite <= inRegWrite;
+			outMemWrite <= inMemWrite;
+			outMemRead <= inMemRead;
+			outCurrentPC <= inPC;
+		end
 	end
 end
 endmodule

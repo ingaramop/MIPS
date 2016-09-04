@@ -2,6 +2,7 @@
 
 module Pipeline(
 		input clk,
+		input clkEnable, 
 		input reset,
 		//inputs if	 
 		output branchFlag,//#29
@@ -65,6 +66,7 @@ wire [1:0] outFowardingB;
 
 	InstructionFetchNEW IF (
 		.clk(clk), 
+		.clkEnable(clkEnable),
 		.reset(reset), 
 		.jumpFlag(jumpFlag), 
 		.hazardFlag(hazardFlag), 
@@ -77,6 +79,7 @@ wire [1:0] outFowardingB;
 
 InstructionDecode ID (
 		.clk(clk), 
+		.clkEnable(clkEnable),
 		.Instruction(instruction), 
 		.PCCount(PC_IFID),
 		.reset(reset),
@@ -106,6 +109,7 @@ InstructionDecode ID (
 	
 Execute EX (
 		.clock(clk), 
+		.clkEnable(clkEnable),
 		.reset(reset), 
 		.PCSrc(branchFlag), 
 		.inBranch(Branch_IDEX), 
@@ -141,6 +145,7 @@ Execute EX (
 	 
 stage_mem MEM (
 		.clk(clk), 
+		.clkEnable(clkEnable),
 		.regWriteIn(RegWrite_EXMEM), 
 		.memToRegIn(MemToReg_EXMEM), 
 		.memWriteIn(MemWrite_EXMEM), 

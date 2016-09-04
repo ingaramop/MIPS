@@ -1,6 +1,7 @@
 `timescale 1ns / 1ps
 
 module stage_mem( input  clk,
+						input clkEnable,
 						input  regWriteIn,   //Bit de Uni. Ctrl pasa a stage WB
 						input  memToRegIn,	//Bit de Uni. Ctrl pasa a stage WB
 						input	 memWriteIn,	//Bit de Uni. Ctrl
@@ -36,6 +37,7 @@ assign address = aluResultIn[3:0];
 
 Memoria memoryData (
   .clka(clk), // input clka
+  .clkEnable(clkEnable),
   .wea(memWriteIn), //  we=1 -> Write we=0 -> Read
   .reset(reset),
   .addra(address), // input [9 : 0] addra
@@ -47,6 +49,8 @@ Memoria memoryData (
 assign PCSrcOut = branchIn & zero & ~reset;
 
 always @(negedge clk)
+if (clkEnable)
+begin
 	begin
 		if (reset)begin
 			regWriteOut <= 0;
@@ -65,5 +69,6 @@ always @(negedge clk)
 			outCurrentPC <= inCurrentPC;
 		end
 	end
+end
 
 endmodule

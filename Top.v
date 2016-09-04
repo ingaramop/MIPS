@@ -27,7 +27,7 @@ wire tx_done;
 ///////OUTPUTS DEBUGGER RX///////////
 wire rd_uart, sendSignal;
 wire pipelineReset; //OUT: DebuggerRx - IN: Pipeline, EndDetector
-wire pipelineClk; //OUT: DebuggerRx - IN: Pipeline, EndDetector
+wire pipelineClkEnable; //OUT: DebuggerRx - IN: Pipeline, EndDetector
 
 ////////// OUTPUTS EndDetector ////////////	
 wire program_finished; //OUT: EndDetector - IN: DebuggerRx
@@ -146,7 +146,7 @@ DebuggerRx debuggerrx_unit (
     .sendSignal(sendSignal), 
     .rd_uart(rd_uart), 
 	 .current_state(current_state),
-	 .pipelineClk(pipelineClk),
+	 .pipelineClkEnable(pipelineClkEnable),
 	 .pipelineReset(pipelineReset),
 	 .clear_program_finished(clear_program_finished)
     );
@@ -166,7 +166,8 @@ DebuggerTx debuggertx_unit (
 	 
 // Instantiate the module
 EndProgramDetector instance_name (
-    .pipeClk(pipelineClk), 
+    .clk(clock), 
+	 .clkEnable(pipelineClkEnable),
     .instruction_IFID(instruction_IFID), 
 //    .instruction_IFID(BusDebugger[41:10]), //
     .reset(pipelineReset), 
@@ -175,7 +176,8 @@ EndProgramDetector instance_name (
     );
 
 Pipeline pipeline (
-    .clk(pipelineClk), 
+    .clk(clk),
+	 .clkEnable(pipelineClkEnable), 
     .reset(pipelineReset), 
     .branchFlag(PCSrc_MEMIF), 
     .branchPC(PCJump), 

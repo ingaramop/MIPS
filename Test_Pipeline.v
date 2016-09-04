@@ -4,6 +4,7 @@ module Test_pipeline;
 
 	// Inputs
 	reg clk;
+	reg clkEnable;
 	reg reset;
 
 	// Outputs
@@ -48,7 +49,8 @@ module Test_pipeline;
 
 	// Instantiate the Unit Under Test (UUT)
 	Pipeline uut (
-		.clk(clk), 
+		.clk(clk),
+		.clkEnable(clkEnable),
 		.reset(reset), 
 		.branchFlag(branchFlag), 
 		.branchPC(branchPC), 
@@ -92,6 +94,7 @@ module Test_pipeline;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
+		clkEnable = 1;
 		forever #50 clk = ~clk;
 	end
 	initial begin

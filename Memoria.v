@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Memoria(
 				input clka,
+				input clkEnable,
 				input wea,
 				input reset,
 				input [3:0] addra,
@@ -47,13 +48,16 @@ always@(addra  or reset) begin
 end
  
 always@(posedge clka) begin
-    if(wea & ~reset) begin
-        memoria[addra] <= dina;
-    end
-	 if (reset)
-		for (i = 0; i < (2**MEM_WIDTH); i = i +1) begin
-			memoria[i] <= 0;
-		end
+if (clkEnable)
+	begin
+		 if(wea & ~reset) begin
+			  memoria[addra] <= dina;
+		 end
+		 if (reset)
+			for (i = 0; i < (2**MEM_WIDTH); i = i +1) begin
+				memoria[i] <= 0;
+			end
+	end
 end
 
 assign douta = memoria[read_address];

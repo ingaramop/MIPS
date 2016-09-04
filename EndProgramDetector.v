@@ -4,7 +4,8 @@
 //y en base a eso, levanta una bandera cuando el programa ha finalizado.
 
 module EndProgramDetector(
-		input pipeClk,
+		input clk,
+		input clkEnable,
 		input [31:0] instruction_IFID,
 		input reset,
 		input clear_program_finished,
@@ -13,14 +14,17 @@ module EndProgramDetector(
 
 reg [2:0]counter;
 
-always @(posedge pipeClk)begin
-	if (reset | clear_program_finished)
+always @(posedge clk)begin
+if (clkEnable)
 	begin
-		counter =0;
-		programEnd =0;
+		if (reset | clear_program_finished)
+		begin
+			counter =0;
+			programEnd =0;
+		end
+		if (instruction_IFID == 0) counter = counter + 1;
+		if (counter == 4) programEnd = 1;
 	end
-	if (instruction_IFID == 0) counter = counter + 1;
-	if (counter == 4) programEnd = 1;
 end
 
 

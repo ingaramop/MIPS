@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module InstructionFetchNEW(
 				input clk,
+				input clkEnable,
 				input reset,
 				input jumpFlag,
 				input hazardFlag,
@@ -36,27 +37,29 @@ ROM instance_ROM (	//Rom
 );
 
 always@(negedge clk)
-begin
-	if (reset)
+if (clkEnable)begin
 	begin
-		PC <= 0;
-	end
-	else if(branchFlag)
-	begin
-		PC <= branchPC;
-	end
-	else if(~hazardFlag)
+		if (reset)
 		begin
-		//do nothing
+			PC <= 0;
 		end
-	else if(jumpFlag)
+		else if(branchFlag)
 		begin
-		PC <= jumpPC;
+			PC <= branchPC;
 		end
-	else
-	begin
-		PC <= PC + 1;
-	end	
+		else if(~hazardFlag)
+			begin
+			//do nothing
+			end
+		else if(jumpFlag)
+			begin
+			PC <= jumpPC;
+			end
+		else
+		begin
+			PC <= PC + 1;
+		end	
+	end
 end
 
 endmodule

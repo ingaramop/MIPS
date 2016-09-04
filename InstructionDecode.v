@@ -2,6 +2,7 @@
 
 module InstructionDecode(
 		input clk,
+		input clkEnable,
 		input [31:0] Instruction,
 		input [9:0] PCCount,
 		input regWrite,
@@ -96,7 +97,8 @@ bancoDeRegistros banco_instance(
 			.addressA(Instruction[25:21]),
 			.addressB(Instruction[20:16]),
 			.addressW(writeRegister),
-			.clk(clk),							
+			.clk(clk),	
+			.clkEnable(clkEnable),
 			.data(writeData),
 			.reset(reset),
 			.regA(regAWire),
@@ -115,40 +117,43 @@ jumpControl jumpControl (
     );
 			
 always @(negedge clk) 
+if(clkEnable)
 begin
-	if (reset | PCSrc) begin
-		ALUOpOut <= 0;
-		RegDstOut <= 0;
-		ALUSrcOut <= 0;
-		BranchOut <= 0;
-		MemReadOut <= 0;
-		MemWriteOut <= 0;
-		MemToRegOut <= 0;
-		RegWriteOut <= 0;
-		regA <= 0;
-		regB <= 0;
-		signExtendOut <= 0;
-		rs <= 0;
-		rt <= 0;
-		rd <= 0;
-		PcCountOut <= 0;
-	end
-	else begin
-		ALUOpOut <= ALUOpWireOut;
-		RegDstOut <= RegDstWireOut;
-		ALUSrcOut <= ALUSrcWireOut;
-		BranchOut <= BranchWireOut;
-		MemReadOut <= MemReadWireOut;
-		MemWriteOut <= MemWriteWireOut;
-		MemToRegOut <= MemToRegWireOut;
-		RegWriteOut <= RegWriteWireOut;
-		regA <= regAWire;
-		regB <= regBWire;
-		signExtendOut <= signExtendWire;
-		rs <= Instruction [25:21];
-		rt <= Instruction [20:16];
-		rd <= Instruction [15:11];
-		PcCountOut <= PCCount;
+	begin
+		if (reset | PCSrc) begin
+			ALUOpOut <= 0;
+			RegDstOut <= 0;
+			ALUSrcOut <= 0;
+			BranchOut <= 0;
+			MemReadOut <= 0;
+			MemWriteOut <= 0;
+			MemToRegOut <= 0;
+			RegWriteOut <= 0;
+			regA <= 0;
+			regB <= 0;
+			signExtendOut <= 0;
+			rs <= 0;
+			rt <= 0;
+			rd <= 0;
+			PcCountOut <= 0;
+		end
+		else begin
+			ALUOpOut <= ALUOpWireOut;
+			RegDstOut <= RegDstWireOut;
+			ALUSrcOut <= ALUSrcWireOut;
+			BranchOut <= BranchWireOut;
+			MemReadOut <= MemReadWireOut;
+			MemWriteOut <= MemWriteWireOut;
+			MemToRegOut <= MemToRegWireOut;
+			RegWriteOut <= RegWriteWireOut;
+			regA <= regAWire;
+			regB <= regBWire;
+			signExtendOut <= signExtendWire;
+			rs <= Instruction [25:21];
+			rt <= Instruction [20:16];
+			rd <= Instruction [15:11];
+			PcCountOut <= PCCount;
+		end
 	end
 end
 endmodule

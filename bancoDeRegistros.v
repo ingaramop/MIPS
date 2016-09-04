@@ -1,11 +1,11 @@
 `timescale 1ns / 1ps
 
-module bancoDeRegistros(addressA, addressB, addressW, clk, we, data, reset, regA, regB, registers);
+module bancoDeRegistros(addressA, addressB, addressW, clk, clkEnable, we, data, reset, regA, regB, registers);
 parameter DATA_WIDTH = 32;
 parameter REGFILE_WIDTH = 5;
  
 //pin declarations
-input wire we, clk;
+input wire we, clk, clkEnable;
 input wire [REGFILE_WIDTH-1:0] addressA, addressB, addressW;
 input wire [DATA_WIDTH-1:0] data;
 input wire reset;
@@ -33,6 +33,8 @@ always@(addressA or addressB or reset) begin
 end
  
 always@(posedge clk) begin
+	if (clkEnable)
+	begin
     if(we == 1 & ~reset) begin
         //$display("writing time:%ttAddress:%dtData:%d", $time, addressW, data);
         banco[addressW] = data;
@@ -74,6 +76,7 @@ always@(posedge clk) begin
 				banco[i] = 0;
 			end
 		end
+	end
 
 end
 
