@@ -33,6 +33,7 @@ parameter MEM_WIDTH = 4;
   
 reg [MEM_WIDTH-1:0] read_address;
 integer i;
+wire writeClk;
  
 //memory declarations
 reg [DATA_WIDTH - 1:0] memoria[0:(2**MEM_WIDTH - 1)];
@@ -47,21 +48,19 @@ always@(addra  or reset) begin
 	end
 end
  
-always@(posedge clka) begin
-if (clkEnable)
-	begin
-		 if(wea & ~reset) begin
-			  memoria[addra] <= dina;
-		 end
-		 if (reset)
-			for (i = 0; i < (2**MEM_WIDTH); i = i +1) begin
-				memoria[i] <= 0;
-			end
-	end
+always@(posedge writeClk) begin
+	 if(wea & ~reset) begin
+		  memoria[addra] <= dina;
+	 end
+	 if (reset)
+		for (i = 0; i < (2**MEM_WIDTH); i = i +1) begin
+			memoria[i] <= 0;
+		end
 end
 
 assign douta = memoria[read_address];
 assign memorias = {memoria[0],memoria[1], memoria[2], memoria[3], memoria[4],
 							memoria[5], memoria[6], memoria[7],memoria[8], memoria[9]};
- 
+
+assign writeClk = clka & clkEnable;  
 endmodule

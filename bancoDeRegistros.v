@@ -15,6 +15,7 @@ output wire [1023:0] registers;
  
 reg [REGFILE_WIDTH-1:0] ra1, ra2;
 integer i;
+wire writeClk;
  
 //memory declarations
 reg [DATA_WIDTH - 1:0] banco[0:(2**REGFILE_WIDTH - 1)];
@@ -32,9 +33,7 @@ always@(addressA or addressB or reset) begin
 	end
 end
  
-always@(posedge clk) begin
-	if (clkEnable)
-	begin
+always@(posedge writeClk) begin
     if(we == 1 & ~reset) begin
         //$display("writing time:%ttAddress:%dtData:%d", $time, addressW, data);
         banco[addressW] = data;
@@ -76,8 +75,6 @@ always@(posedge clk) begin
 				banco[i] = 0;
 			end
 		end
-	end
-
 end
 
 assign regA = banco[ra1];
@@ -86,5 +83,6 @@ assign registers = {banco[0],banco[1], banco[2], banco[3], banco[4],banco[5], ba
 							banco[8], banco[9], banco[10], banco[11],banco[12], banco[13], banco[14], banco[15],
 							banco[16], banco[17], banco[18], banco[19],banco[20], banco[21], banco[22],banco[23],
 							banco[24], banco[25], banco[26], banco[27],banco[28], banco[29], banco[30], banco[31]};
- 
+
+assign writeClk = clk & clkEnable; 
 endmodule

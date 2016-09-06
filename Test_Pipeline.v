@@ -93,18 +93,23 @@ module Test_pipeline;
 	);
 	initial begin
 		// Initialize Inputs
-		clk = 0;
+		clk = 1;
 		clkEnable = 1;
-		forever #50 clk = ~clk;
+		forever 
+		begin
+			#50 clk = ~clk;
+			#50 clk = ~clk;
+			clkEnable = ~clkEnable;
+		end
 	end
 	initial begin
 		reset = 1;
 		#125;
 		reset = 0;
-		#4000;
-		reset = 1;
-		#125;
-		reset = 0;
+//		#4000;
+//		reset = 1;
+//		#125;
+//		reset = 0;
 	end
       
 endmodule

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Mon Aug 22 22:02:04 2016
+# Date: Tue Sep 06 19:49:01 2016
 #
 ##############################################################
 #
@@ -40,13 +40,13 @@ SELECT Distributed_Memory_Generator xilinx.com:ip:dist_mem_gen:7.2
 # END Select
 # BEGIN Parameters
 CSET ce_overrides=ce_overrides_sync_controls
-CSET coefficient_file="E:\mips\MIPS\Useful documents\Programas\prueba completa add sw lw beq j bucle.asm.COE"
+CSET coefficient_file=E:\mips\MIPS\code.COE
 CSET common_output_ce=false
 CSET common_output_clk=false
 CSET component_name=ROM
 CSET data_width=32
 CSET default_data=0
-CSET default_data_radix=2
+CSET default_data_radix=16
 CSET depth=1024
 CSET dual_port_address=non_registered
 CSET dual_port_output_clock_enable=false
@@ -70,4 +70,4 @@ CSET sync_reset_qspo=false
 MISC pkg_timestamp=2012-11-21T20:07:40Z
 # END Extra information
 GENERATE
-# CRC: ae4ad3a9
+# CRC: c8fd63c7

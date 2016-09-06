@@ -13,7 +13,7 @@ module DebuggerTx(
 		output reg [1:0] state_reg_tx
     );
 
-localparam frameSize = 1736; //215 bytes + 1 de relleno
+localparam frameSize = 1736; //1725 bits + 3 de relleno | 216 bytes
 	 
 localparam [1:0]
 		idle 			= 2'b01,

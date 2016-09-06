@@ -56,5 +56,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 17 sub-compilation(s) to finish...
 Compiled 24 Verilog Units
 Built simulation executable E:/mips/MIPS/Test_pipeline_isim_beh.exe
-Fuse Memory Usage: 29668 KB
-Fuse CPU Usage: 764 ms
+Fuse Memory Usage: 29684 KB
+Fuse CPU Usage: 810 ms

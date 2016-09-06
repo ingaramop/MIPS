@@ -74,8 +74,7 @@ wire clear_program_finished; //OUT: DebuggerRx  -  IN: EndDetector
 	wire [31:0] ALUResult_MEMWB;//#35
 	wire [9:0] CurrentPC_MEMWB;//#33
 	
-	wire [1728:0] BusDebugger = {
-											22'b00000000, // Relleno
+	wire [1735:0] BusDebugger = {
 											PC_IFID, //#1
 											instruction_IFID,//#2						
 											Registers,//#3
@@ -114,7 +113,7 @@ wire clear_program_finished; //OUT: DebuggerRx  -  IN: EndDetector
 											writeRegister_WBID,//#36
 											writeData_WBID,//#37
 											rs, //#17 bis
-											11'b0}; // Relleno
+											11'b0}; // Relleno para tener numero entero de bytes
 
 
 
@@ -176,7 +175,7 @@ EndProgramDetector instance_name (
     );
 
 Pipeline pipeline (
-    .clk(clk),
+    .clk(clock),
 	 .clkEnable(pipelineClkEnable), 
     .reset(pipelineReset), 
     .branchFlag(PCSrc_MEMIF), 

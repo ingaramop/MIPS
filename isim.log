@@ -7,7 +7,7 @@ WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for 
 This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
-# run 5000 ns
+# run 10000 ns
 Simulator is doing circuit initialization process.
 WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
 Finished circuit initialization process.
